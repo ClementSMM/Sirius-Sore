@@ -1,0 +1,24 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <h1>Dashboard</h1>
+  <p>
+    <%= link_to 'ajouter un produit', new_product_path%>
+  </p>
+  <p>
+    <%= link_to 'Voir et gérer les stocks', stocks_path%>
+  </p>
+  <p>
+    <%= link_to 'Voir et gérer les commandes', orders_path%>
+  </p>
+  <p>
+    <%= link_to 'Gérer les images', galleries_path%>
+  </p>
+  <p>
+    <%= link_to "Retour à l'accueil", root_path%>
+  </p>
+  <% else %>
+    <p>Vous ne pouvez pas accéder à cette page</p>
+    <%= link_to 'Accueil', root_path%>
+
+  <% end %>
+<% end %>

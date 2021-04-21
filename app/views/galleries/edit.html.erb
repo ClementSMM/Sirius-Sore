@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <h1> ajouter images</h1>
+
+    <%= simple_form_for(@gallery) do |f| %>
+      <%= f.label  %>
+      <%= f.file_field :images, multiple: true %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>

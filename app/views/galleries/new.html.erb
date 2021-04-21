@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <h1>New gallery</h1>
+
+    <%= simple_form_for(@gallery) do |f| %>
+      <%= f.input :category, label: 'nommez votre gallerie:' %>
+      <%= f.file_field :images, multiple: true %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>

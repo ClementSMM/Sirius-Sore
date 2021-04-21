@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <h1><%= @product.name %></h1>
+    <p> <%= stock.size %> </p>
+    <p> <%= stock.quantity %> </p>
+  <% end %>
+<% end %>

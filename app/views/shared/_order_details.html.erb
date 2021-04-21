@@ -1,0 +1,25 @@
+
+<% if  @order.order_items.length == 0 %>
+  <p>Votre panier est vide</p>
+
+<% else %>
+  <p>status : <%= @order.status %></p>
+
+  <ul>
+    <% @order.order_items.each do |item| %>
+      <li> <%=item.product.name %> (<%= item.size  %>) x <%= item.quantity %> --------- <%= humanized_money_with_symbol(item.total) %></li>
+      <%= button_to '+', order_item_add_one_path(item)%>
+      <%= button_to '-', order_item_remove_one_path(item)%>
+      <%= button_to 'X' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }%>
+    <% end %>
+    <p>Total de la commande: <%= humanized_money_with_symbol(@order.total) %></p>
+
+  </ul>
+
+  <%= form_tag order_pay_path(@order) do %>
+  <%= hidden_field_tag 'order_id', @order.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+
+<% end %>
+

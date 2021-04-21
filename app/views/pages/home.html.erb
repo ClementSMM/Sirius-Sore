@@ -1,0 +1,25 @@
+<h1>accueil</h1>
+
+<%= form_tag products_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a product"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<p>
+<%= link_to 'voir tous les produits', products_path%>
+</p>
+
+<p>
+<%= link_to 'ajouter un produit', new_product_path%>
+</p>
+<p>
+<%= link_to 'voir mes commandes', orders_path%>
+</p>
+
+<%# <%= link_to 'voir mon panier', order_path(session[:order_id])%>
+
+

@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+
+    <p>edit</p>
+
+    <%= @product.name %>
+
+    <% @product.images.each do |image| %>
+      <%= cl_image_tag(image.key,
+          width: 300, height: 200)  %>
+      <%= link_to 'delete image', delete_image_attachement_product_url(@product, image), method: :delete %>
+
+    <% end %>
+
+    <%= simple_form_for(@product) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :small_description %>
+      <%= f.text_field :small_description %>
+      <%= f.label :long_description %>
+      <%= f.text_area :long_description %>
+      <%= f.file_field :images, multiple: true %>
+      <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>

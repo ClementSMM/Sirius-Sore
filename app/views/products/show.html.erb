@@ -1,0 +1,34 @@
+
+<% @product.images.each do |image| %>
+  <%= cl_image_tag(image.key,
+      width: 400, height: 300)  %>
+<% end %>
+<h1><%= @product.name %></h1>
+<p><%= @product.small_description %></p>
+<p>Longue description : <%= @product.long_description %></p>
+<p>Prix : <span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
+
+<span>Categorie(s) :
+  <% @product_categories.map do |cat| %>
+    <span><%= cat %></span>
+  <% end %>
+</span>
+
+<%= simple_form_for (@order_item)do |f| %>
+  <%= f.input :size , label: "Taille :", collection: @stock.map{|st| st.size}, include_blank: false%>
+
+  <%= f.select :quantity, 1..10 %>
+  <%= f.input :product_id,
+                      required: false,
+                      as: :hidden,
+                      input_html: { value: params[:id] } %>
+  <%= f.submit 'Ajouter au panier'%>
+<% end %>
+
+
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <%= link_to 'delete this item', product_path(@product), method: :delete%>
+    <%= link_to 'edit this item', edit_product_path(@product)%>
+  <% end %>
+<% end %>

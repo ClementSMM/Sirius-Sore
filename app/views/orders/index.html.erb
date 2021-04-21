@@ -1,0 +1,60 @@
+<h2>Panier</h2>
+
+<p>Cette page, pour l'utilisateur, est son panier actuel, et ses commandes passées(éventuellement)</p>
+<p>Pour l'admin, ce sont toutes les commandes</p>
+
+
+<%# ####################################################################@ %>
+<%# PAGE UTILISATEUR NON ADMIN%>
+<%# ####################################################################@ %>
+
+<% if !current_user.admin? %>
+
+  <% @current_user_orders.each do |order| %>
+    <p>status : <%= order.status %></p>
+    <ul>
+      <% order.order_items.each do |item| %>
+        <li> <%=item.product.name  %> x <%= item.quantity %></li>
+      <% end %>
+      <li>Total : <%= order.total %> €</li>
+    </ul>
+    <%= link_to 'voir la commande', order_path(order) %> </br> </br>
+  <% end %>
+
+<% end %>
+
+<%# ####################################################################@ %>
+<%# PAGE ADMIN %>
+<%# ####################################################################@ %>
+
+<% if current_user.admin? %>
+
+  <p>Trier par</p>
+  <%= simple_form_for :search, method: "GET" do |f| %>
+    <%= f.select :status, status: @statuses %>
+    <%= f.submit 'OK' %>
+  <% end %>
+
+  <% @orders.each do |order| %>
+    <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
+    <p>status : <%= order.status %></p>
+    <ul>
+      <% order.order_items.each do |item| %>
+        <li> <%=item.product.name  %> x <%= item.quantity %></li>
+      <% end %>
+      <li>Total : <%= order.total %>€</li>
+    </ul>
+      <%= link_to 'voir la commande', order_path(order) %> </br>  </br>
+  <% end %>
+   
+
+<% end %>
+
+<%# ####################################################################@ %>
+<%# SORTE DE FOOTER INUTILE à SUPP PLUS TARD %>
+<%# ####################################################################@ %>
+
+<p>-----------------------------------------------------</p>
+<p>
+  <%= link_to 'retour à laccueil', root_path%>
+</p>

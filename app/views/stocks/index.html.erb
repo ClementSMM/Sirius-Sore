@@ -1,0 +1,35 @@
+<% if user_signed_in? %>
+  <% if current_user.admin  %>
+    <%= link_to 'créer stock', new_stock_path(@stocks)  %>
+
+     <%= form_tag stocks_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a product"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
+    <% @stocks.each do |stock| %>
+      <ul>
+        <li> <%= link_to stock.product.name, product_path(stock.product) %> </li>
+        <li> Taille: <%= stock.size %> </li>
+        <li> Prix actuel: <%= stock.price %>€</li>
+        <li>
+          <%= simple_form_for(stock) do |f| %>
+            <%= f.number_field :price %>
+            <%= f.submit 'modifier le prix' %>
+          <% end %>
+        </li>
+        <li> Quantitié en stock: <%= stock.quantity %> </li>
+        <li>
+          <%= simple_form_for(stock) do |f| %>
+            <%= f.number_field :quantity %>
+            <%= f.submit 'modifier le stock' %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,57 @@
+<p>show de orders</p>
+
+<%# ####################################################################@ %>
+<%# ENCART - contact client + modif status/delivery- pour les admin %>
+<%# ####################################################################@ %>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+        <h4>client : <%=  @order.user ? @order.user.email : 'userless order' %></h4>
+      <h4>Modifier le statut de la commande</h4>
+          <%= simple_form_for (@order) do |f| %>
+            <%= f.input :status, collection: @statuses %>
+            <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
+            <%= f.submit %>
+          <% end %>
+
+  <% end %>
+<% end %>
+
+<%# ####################################################################@ %>
+<%# DETAIL DE LA COMMANDE POUR LES UTILISATEURS CONNECTES %>
+<%# ####################################################################@ %>
+
+
+<% if user_signed_in? %>
+  <%# Restreindre l'accès%>
+  <% if @order.user == nil%>
+    <p>Vous ne pouvez pas voir ceci</p>
+    <%= link_to "retour à la page d'accueil", root_path %>
+
+  <%# Détail de la commande pour les utilisateurs lambda connectés  + les admins%>
+  <% elsif current_user.id == @order.user.id || current_user.admin? %>
+    <%= render 'shared/order_details' %>
+
+  <%# L'utilisateur n'a pas le droit de voir la page %>
+  <% else %>
+    <p>Vous ne pouvez pas voir ceci</p>
+    <%= link_to "retour à la page d'accueil", root_path %>
+  <% end %>
+
+<% end %>
+
+
+
+<%# ####################################################################@ %>
+<%# PAGE POUR LES UTILISATEURS NON CONNECTES %>
+<%# ####################################################################@ %>
+
+<% if !user_signed_in? %>
+  <% if session[:order_id] == params[:id].to_i %>
+      <%= render 'shared/order_details' %>
+
+  <% else %>
+    <p>Vous ne pouvez pas voir ceci</p>
+    <%= link_to "retour à la page d'accueil", root_path %>
+  <% end %>
+  
+<% end %>
