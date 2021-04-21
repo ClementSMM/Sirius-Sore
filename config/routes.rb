@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get :dashboard, to: "pages#dashboard"
+  get :about, to: "pages#about"
+  get :contact, to: "pages#contact"
+  get :salon, to: "pages#salon"
 
   resources :products do
     member do
