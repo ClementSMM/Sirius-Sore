@@ -15,7 +15,7 @@ const dynamicPrice = () => {
       // on compare chaque ligne de l'object avec la valeur selectionnée. Si c'est la même alors bingo :) 
       pricesOfSizes.map(el => {
         if (el["size"] === sizeValue.value){
-          priceToDisplay = el["price"]
+          priceToDisplay = el["price_cents"]/100
         }
       })
       // a un endroit bien spécifique, on injecte la valeur 
