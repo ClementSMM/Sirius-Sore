@@ -1,35 +1,188 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar-sirius">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <h1><%= link_to 'Maison Sirius', root_path, class: 'header-navbar' %></h1>  
+  <nav class = 'nav-links'>
+      <%= link_to "Accueil", root_path, class: "" %>
+      <a class= "" id ="boutique-btn">Boutique </a>
+      <%= link_to "Salon de toilettage", root_path, class: "" %>
+      <%= link_to "A propos", root_path, class: "" %>
+      <%= link_to "Contact", root_path, class: "" %>
+  </nav>
+  <div class= 'nav-search-login'>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class = 'nav-search'>
+      <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false %>
+           <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
+       <% end %>
+    </div>
+    <div class = 'nav-login'>
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <li class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user"></i> Bonjour <%= current_user.first_name %>
+         </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <% if current_user.admin? %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+            <% end %>
+
+            <%= link_to "Voir mes commandes", "#", class: "dropdown-item" %>
+            <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="far fa-user"></i> Login
+          <% end %>
         </li>
       <% end %>
-    </ul>
+    </div>
   </div>
+  <div>
+    <div class = 'nav-menu mobile' id = "nav-menu"><i class="fas fa-bars"></i></div>
+    <div class = 'nav-menu mobile' id = "nav-menu-open"><i class="fas fa-chevron-left"></i></div>
+  </div>
+
 </div>
+
+
+<%# DROPDOWN DE LA BOUTIQUE %>
+<div class = 'modal-background'></div>
+<div id= 'dropdown-boutique'>
+  <div id = "col-boutique-1" class= "col-boutique"> 
+      <p>Nouveautés</p>
+      <p>Editions limitées</p>
+      <p>Dernières pièces</p>
+  </div>
+
+  <div id = "col-boutique-2" class= "col-boutique"> 
+    <div>
+      <h5>COSMETIQUES</h5>
+        <p>Shampoings</p>
+        <p>Après-shampoings</p>
+        <p>Conditionners</p>
+        <p>Parfums</p>
+        <p>Outils de toilettage</p>
+      </div>
+
+    <div>
+      <h5>FRIANDISES</h5>
+        <p>Bois de cerf</p>
+        <p>Bâton de yak</p>
+        <p>Friandises Déshydratées</p>
+      </div>
+  </div>
+
+  <div id = "col-boutique-3" class= "col-boutique"> 
+    <div>
+      <h5>ACCESSOIRES</h5>
+        <p>Colpers</p>
+        <p>Harnais</p>
+        <p>Laisses</p>
+        <p>Bandanas</p>
+        <p>Médailles</p>
+        <p>Pochettes</p>
+      </div>
+
+    <div>
+      <h5>PANIERS</h5>
+        <p>Panier Sirius</p>
+        <p>Coussins</p>
+        <p>Orthopédique</p>
+        <p>Canapés</p>
+      </div>
+  </div>
+
+  <div id = "col-boutique-4" class= "col-boutique"> 
+    <div>
+      <h5>VETEMENTS</h5>
+        <p>Pulls</p>
+        <p>Manteaux</p>
+        <p>T-shirts</p>
+        <p>Autres</p>
+      </div>
+
+    <div>
+      <h5>JEUX</h5>
+        <p>Doudous</p>
+        <p>Pour les dents</p>
+      </div>
+  </div>
+
+  <div id = "col-boutique-5" class= "col-boutique"> 
+    <div>
+      <h5>GAMELLES</h5>
+        <p>Gamelles Sirius</p>
+        <p>Gamelles</p>
+        <p>Gamelles anti-glouton</p>
+      </div>
+
+    <div>
+      <h5>TRANSPORTS</h5>
+        <p>Sacs de transport</p>
+        <p>Poussettes</p>
+        <p>Sécurité</p>
+      </div>
+  </div>
+
+
+
+</div>
+
+<%# DROPDOWN DE LA BOUTIQUE MOBILE - version allégée %>
+<div class="side-menu mobile" id= 'side-menu'>
+  <div class = 'nav-search-mobile'>
+    <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false, id: 'search-mobile' %>
+          <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
+      <% end %>
+  </div>
+
+  <div class ="mobile-boutique">
+
+      <p>Nouveautés</p>
+      <p>Editions limitées</p>
+      <p>Dernières pièces</p>
+      
+      <div class = "separation-bar"></div>
+
+      <h5>Cosmétiques</h5>
+      <h5>Friandises</h5>
+      <h5>Accessoires</h5>
+      <h5>Paniers</h5>
+      <h5>Vêtements</h5>
+      <h5>Jeux</h5>
+      <h5>Gamelles</h5>
+      <h5>Transports</h5>
+
+  </div>
+
+  <div class = "separation-bar"></div>
+
+  <div class= nav-login-mobile>
+   <% if user_signed_in? %>
+      <p><i class="far fa-user"></i> Bonjour <%= current_user.first_name %></p> 
+      <% if current_user.admin? %>
+        <p><%= link_to "Dashboard", dashboard_path, class: "" %></p>
+
+      <% end %>
+      <p><%= link_to "Voir mes commandes", "#", class: "" %></p>
+      <p> <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class:"" %></p>
+            
+      <% else %>
+        <li class="nav-item">
+          <%= link_to new_user_session_path, class: "nav-link" do %>
+              <i class="far fa-user"></i> Login
+          <% end %>
+        </li>
+      <% end %>
+  </div>
+
+  
+
+</div>
+
+
+
