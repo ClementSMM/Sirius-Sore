@@ -24,9 +24,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { dynamicPrice } from './components/dynamicPrice'
+import { toggleBoutique } from './components/toggleBoutique'
+import { toggleMobileNavbar } from './components/toggleMobileNavbar'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   dynamicPrice();
+  toggleBoutique();
+  toggleMobileNavbar();
 });
