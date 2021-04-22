@@ -54,7 +54,7 @@ category_2 = Category.create!( name: 'Edition Limitée')
 puts "."
 category_3 = Category.create!( name: 'Dernières pièces')
 puts "."
-category_4 = Category.create!( name: 'Shampoing')
+category_4 = Category.create!( name: 'Shampoings')
 puts "."
 category_5 = Category.create!( name: 'Après-shampoings')
 puts "."
@@ -68,7 +68,7 @@ category_9 = Category.create!( name: 'Bois de Cerf')
 puts "."
 category_10 = Category.create!( name: 'Bâton de yak')
 puts "."
-category_11 = Category.create!( name: 'Friandises Deshydratées')
+category_11 = Category.create!( name: 'Friandises deshydratées')
 puts "."
 category_12 = Category.create!( name: 'Colliers')
 puts "."

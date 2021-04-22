@@ -1,0 +1,29 @@
+<h1>Paniers</h1>
+  
+  <h2> <%= @category_pu.name  %> </h2>
+
+  <% @category_pu.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_man.name  %> </h2>
+
+  <% @category_man.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_t.name  %> </h2>
+
+  <% @category_t.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_au.name  %> </h2>
+
+  <% @category_au.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
