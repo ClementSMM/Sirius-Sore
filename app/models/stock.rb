@@ -6,6 +6,7 @@ class Stock < ApplicationRecord
   #validates :price, presence: true
 
   monetize :price_cents
+  
   def update_stock(amount)
     self.quantity += (amount)
     self.save
