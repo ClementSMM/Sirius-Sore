@@ -26,6 +26,7 @@ import "bootstrap";
 import { dynamicPrice } from './components/dynamicPrice'
 import { toggleBoutique } from './components/toggleBoutique'
 import { toggleMobileNavbar } from './components/toggleMobileNavbar'
+import { carousel } from './components/carousel'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -33,4 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   dynamicPrice();
   toggleBoutique();
   toggleMobileNavbar();
+  carousel('carouselProduit');
 });
