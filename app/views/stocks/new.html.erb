@@ -4,7 +4,7 @@
   <%= simple_form_for(@stock) do |f| %>
     <%= f.input :size, label: 'Taille'  %>
     <%= f.input :quantity, label: 'Quantité' %>
-    <%= f.input :price, label: 'Prix'%>
+    <%= f.input :price_cents, label: 'Prix'%>
     <%= f.association :product, label: 'Produits', collection: Product.all, include_hidden: false, include_blank: false %>
     <%= f.submit %>
     <% end %>
