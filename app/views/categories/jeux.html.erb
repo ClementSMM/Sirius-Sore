@@ -1,0 +1,15 @@
+<h1>Jeux</h1>
+  
+  <h2> <%= @category_dou.name  %> </h2>
+
+  <% @category_dou.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_dent.name  %> </h2>
+
+  <% @category_dent.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>

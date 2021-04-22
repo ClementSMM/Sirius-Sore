@@ -1,0 +1,30 @@
+<h1>Paniers</h1>
+  
+  <h2> <%= @category_pan_s.name  %> </h2>
+
+  <% @category_pan_s.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_cous.name  %> </h2>
+
+  <% @category_cous.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_ortho.name  %> </h2>
+
+  <% @category_ortho.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_can.name  %> </h2>
+
+  <% @category_can.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
