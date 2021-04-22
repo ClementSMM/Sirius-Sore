@@ -1,0 +1,49 @@
+.product-show{
+  background-color: black;
+  color: yellow;
+  display: flex;
+
+  .product-image{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    .carouselProduitShow {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  .product-description{
+    width: 60vw;
+  }
+
+
+.form-product{
+  select{
+    width: 30%;
+  }
+}
+}
+
+@media (max-width:600px) {
+  .product-show{
+    display:block;
+    .product-image{
+      width:80%;
+    }
+    .product-description{
+      width: 80%
+    }
+    .carouselProduitShow {
+      width: 80vw !important;
+      height: 80vw !important;
+    }
+
+    .form-product{
+      select{
+        width: 80%;
+      }
+    }
+  }
+}

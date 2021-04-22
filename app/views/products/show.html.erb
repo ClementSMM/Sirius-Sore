@@ -1,29 +1,46 @@
+<div class = 'product-show container-sirius'>
 
-<% @product.images.each do |image| %>
-  <%= cl_image_tag(image.key,
-      width: 400, height: 300)  %>
-<% end %>
-<h1><%= @product.name %></h1>
-<p><%= @product.small_description %></p>
-<p>Longue description : <%= @product.long_description %></p>
-<p>Prix : <span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
+  <div class = 'product-image'>
+    <div class="carouselContainer carouselProduitShow">
+      <% @product.images.each do |image| %>
+        <%= cl_image_tag image.key, crop: :fill, width: 300, height: 300, class: 'carouselImgs carouselProduit' %>
+      <% end %>
+    <span class="prev" id="prevcarouselProduit"> </span>
+    <span class="next" id="nextcarouselProduit"> </span>
+    </div>
+  </div>
 
-<span>Categorie(s) :
-  <% @product_categories.map do |cat| %>
-    <span><%= cat %></span>
-  <% end %>
-</span>
+  <div class="product-description">
+  
+    <h1><%= @product.name %></h1>
+    <span>
+      <% @product_categories.map do |cat| %>
+        <span><%= cat %></span>
+      <% end %>
+    </span>
+    <p><%= @product.small_description %></p>
+    <p>Prix : <span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
 
-<%= simple_form_for (@order_item)do |f| %>
-  <%= f.input :size , label: "Taille :", collection: @stock.map{|st| st.size}, include_blank: false%>
 
-  <%= f.select :quantity, 1..10 %>
-  <%= f.input :product_id,
-                      required: false,
-                      as: :hidden,
-                      input_html: { value: params[:id] } %>
-  <%= f.submit 'Ajouter au panier'%>
-<% end %>
+    <%= simple_form_for (@order_item), html: {class: 'form-sirius form-product'} do |f| %>
+      <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
+
+      <%= f.select :quantity, 1..10, label: 'Quantité' %>
+      <%= f.input :product_id,
+                          required: false,
+                          as: :hidden,
+                          input_html: { value: params[:id] } %>
+      <%= f.submit 'Ajouter au panier'%>
+    <% end %>
+    <p>Longue description : <%= @product.long_description %></p>
+
+  </div>
+
+
+</div>
+
+
+
 
 
 <% if user_signed_in? %>

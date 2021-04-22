@@ -1,0 +1,44 @@
+// POUR LE CODE DES CAROUSELS
+// Wraper le tout dans la classe 'carouselContainer'
+// Définir à côté de 'carouselContainer' une classe spécifique pour la width
+// Ensuite on choisit une classe, qu'on applique à chaque photo de la série. Cette classe sera l'argument pour lancer le js.
+
+
+.carouselContainer {
+  margin: 0;
+  position: relative;
+}
+
+.carouselImgs {
+  width: 100%;
+  height: 100%;
+  animation: fade 1.5s;
+  display:none;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 0;
+  width:20%;
+  height:100%;
+}
+
+.prev {
+  left: 0px;
+  cursor: w-resize
+
+}
+
+.next {
+  right: 0px;
+  cursor: e-resize	
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
