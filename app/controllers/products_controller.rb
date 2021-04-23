@@ -2,27 +2,13 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @products = Product.all
 
-    if params[:query].present?
-      @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
+    if params[:search].present?
+      @products = Product.global_search(params[:search]["product"])
     else
       @products = Product.all
     end
-
-    if params[:query].present?
-      @products = Product.where("small_description ILIKE ?", "%#{params[:query]}%")
-    else
-      @products = Product.all
-    end
-
-    if params[:query].present?
-      @products = Product.where("long_description ILIKE ?", "%#{params[:query]}%")
-    else
-      @products = Product.all
-    end
-    
-
+  
     if @products.length == 0
       flash.alert = "Nous n'avons pas trouvé de produit correspondant à votre recherche"
       @products = Product.all
