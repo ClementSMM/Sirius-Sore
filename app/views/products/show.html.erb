@@ -8,7 +8,15 @@
     <span class="prev" id="prevcarouselProduit"> </span>
     <span class="next" id="nextcarouselProduit"> </span>
     </div>
+    <div id = 'image-dots'>
+      <% @product.images.each_with_index do |circle,index| %>
+        <i class="far fa-circle image-dot" id= <%= index +1 %> ></i>
+      <% end %>
+    </div>
   </div>
+
+
+
 
   <div class="product-description">
   
