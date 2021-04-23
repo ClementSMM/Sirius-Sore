@@ -278,7 +278,7 @@ puts "."
 
 
 puts "-------------------------------"
-puts "#{Stock.count} stock created (expected: 15)"
+puts "#{Stock.count} stock created (expected: 13)"
 puts "-------------------------------"
 
 # puts "-------------------------------"

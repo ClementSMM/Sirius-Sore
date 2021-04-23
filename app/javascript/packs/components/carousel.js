@@ -3,7 +3,7 @@ const carousel = (carouselImgs) => {
 
   if (slides.length !== 0){
     let currentSlide = 1;
-    console.log(slides)
+    const imageDots = document.getElementsByClassName('image-dot')
 
   function showSlide(slideIndex) {
     // CHANGE SLIDE
@@ -13,7 +13,14 @@ const carousel = (carouselImgs) => {
       slides[i].style.display = 'none'
     }
     slides[currentSlide - 1].style.display = 'flex'
-    
+    fillDotHandler(imageDots, currentSlide)
+  }
+
+  function fillDotHandler (imageDots, id){
+    Array.from(imageDots).forEach(imageDot => {
+      imageDot.className = "far fa-circle image-dot"
+    })
+    imageDots[id-1].className = "fas fa-circle image-dot"
   }
 
   
@@ -27,6 +34,16 @@ const carousel = (carouselImgs) => {
 
   
   showSlide(currentSlide);
+  fillDotHandler(imageDots, 1)
+
+  Array.from(imageDots).forEach(imageDot => {
+    imageDot.addEventListener('click', () => {
+      fillDotHandler(imageDots,imageDot.id )
+      currentSlide = imageDot.id
+      showSlide(imageDot.id)
+    })
+  });
+
   
   document.getElementById('prev'+carouselImgs).addEventListener('click', () => {
     previousSlide();
@@ -37,6 +54,8 @@ const carousel = (carouselImgs) => {
   })
 
   }
+
+
 
 }
 
