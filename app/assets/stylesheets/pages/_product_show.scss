@@ -1,16 +1,21 @@
 .product-show{
-  background-color: black;
-  color: yellow;
+  background-color: $background;
+  color: $primary-yellow;
   display: flex;
 
   .product-image{
     width: 40vw;
     display: flex;
-    justify-content: center;
-    align-content: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     .carouselProduitShow {
       width: 400px;
       height: 400px;
+      margin-bottom: 20px;
+    }
+    .image-dot{
+        font-size: 20px;
     }
   }
 

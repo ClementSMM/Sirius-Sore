@@ -1,0 +1,37 @@
+  <h1>Cosmétiques</h1>
+  
+  <h2> <%= @category_shamp.name  %> </h2>
+
+  <% @category_shamp.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_ap_shamp.name  %> </h2>
+
+  <% @category_ap_shamp.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_cond.name  %> </h2>
+
+  <% @category_cond.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_parf.name  %> </h2>
+
+  <% @category_parf.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_out.name  %> </h2>
+
+  <% @category_out.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+

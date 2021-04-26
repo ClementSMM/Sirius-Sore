@@ -1,5 +1,5 @@
 .navbar-sirius{
-  background-color: black;
+  background-color: $background;
   width: 100vw;
   height: 180px;
   display: flex;
@@ -9,36 +9,56 @@
   position: relative;
 
   .header-navbar{
-    color: gold;
+    color: $primary-yellow;
     font-size: 48px;
   }
   .nav-links{
-    color: gold;
+    color: $primary-yellow;
     a{
       margin: 0 24px;
     }
   }
-
-
-
+  
+  
+  
   .nav-search-login{
-    color:gold;
+    color:$primary-yellow;
     display: flex;
     align-items:center;
-    position:absolute;
-    top:5px;
-    right: 15px;
+    
+    
+    li{
+      position:absolute;
+      right: 100px;
+      top:8px;
+      margin: 0 10px;
+
+      button{
+        color: $primary-yellow ;
+      }
+    }
+    .nav-search{
+      position:absolute;
+      left: 15px;
+      top:8px;
+    }
     .nav-search-button{
-      color:gold;
+      color:$primary-yellow;
     }
     input{
       background-color: transparent;
       border:transparent;
-      border-bottom: 1px solid gold;
+      border-bottom: 1px solid $primary-yellow;
+      color: white;
     }
-    .nav-login{
-      margin: 0 10px;
+
+    .nav-cart{
+      position: absolute;
+      right: 10px;
+      top:8px;
+      font-size: 16px;
     }
+
   }
 
 
@@ -50,8 +70,8 @@
 
 #dropdown-boutique{
   display: none;
-  background-color: black;
-  color:gold;
+  background-color: $background;
+  color:$primary-yellow;
   width:80%;
   padding: 50px 50px;
   grid-template-columns: repeat (5, 1fr);
@@ -60,7 +80,9 @@
   position: absolute;
   left: calc(100vw - 90%);
   z-index: 15;
+  border: 1px solid $primary-yellow;
 
+ 
   .col-boutique{
     align-self: start;
     justify-self: center;
@@ -141,7 +163,7 @@
   .navbar-sirius{
     height: 100px;
     #nav-menu{
-      color: gold;
+      color: $primary-yellow;
       font-size: 24px;
       display: block;
       position: absolute;
@@ -150,7 +172,7 @@
     }
     #nav-menu-open{
       display:none;
-      color: gold;
+      color: $primary-yellow;
       font-size: 24px;
       position: absolute;
       left: 15px;
@@ -160,8 +182,8 @@
 
   .side-menu{
     text-align: center;
-    background-color: black;
-    color: gold;
+    background-color: $background;
+    color: $primary-yellow;
     transform:translateX(-100vh);
     transition: all 0.3s ease-out;
     position: absolute;
@@ -175,10 +197,10 @@
       input{
         background-color: transparent;
         border:transparent;
-        border-bottom: 1px solid gold;
+        border-bottom: 1px solid $primary-yellow;
       }
       .nav-search-button{
-        color:gold;
+        color:$primary-yellow;
       }
     }
 
@@ -188,7 +210,7 @@
 
     .separation-bar{
       width:50%;
-      border-bottom: 1px solid gold;
+      border-bottom: 1px solid $primary-yellow;
       margin: 30px auto;
     }
 

@@ -1,8 +1,14 @@
 .form-sirius{
   select, option, input{
-    background-color: black;
-    color: yellow;
-    border: 1px solid yellow;
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
   }
 
+}
+
+.form-account{
+  select, option, input{
+    color: $text !important;
+  }
 }

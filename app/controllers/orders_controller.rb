@@ -5,6 +5,13 @@ class OrdersController < ApplicationController
   def index
     @statuses = STATUSES
     @current_user_orders = Order.where(user: current_user)
+    
+    # commandes en cours de traitement par Sirius
+    @ongoing_orders = find_ongoing_orders
+
+    # anciennes commandes
+    @past_orders = find_past_orders
+
     if params[:search].present?
       @orders = Order.where(status: params[:search][:status])
     else
@@ -50,6 +57,27 @@ class OrdersController < ApplicationController
 
 
   private
+
+  def find_ongoing_orders
+    ongoing_orders = []
+    @current_user_orders.each do |order|
+      if ONGOING_STATUSES.include?(order.status)
+        ongoing_orders << order
+      end
+    end
+    return ongoing_orders
+
+  end
+
+  def find_past_orders
+    past_orders = []
+    @current_user_orders.each do |order|
+      if PAST_STATUSES.include?(order.status)
+        past_orders << order
+      end
+    end
+    return past_orders
+  end
 
   def order_params
     params.require(:order).permit(:status, :delivery_preference)

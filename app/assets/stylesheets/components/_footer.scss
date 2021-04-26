@@ -1,15 +1,15 @@
 /* ---------------------------------------------------------------------------------*/
 
-footer p { font-size:13px; color:gold; padding-bottom:0px; margin-bottom:8px;}
+footer p { font-size:13px; color:$primary-yellow; padding-bottom:0px; margin-bottom:8px;}
 .mb10 { padding-bottom:5px ;}
 .footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
 .footer_ul_amrc li {padding:0px 0px 5px 0px;}
-.footer_ul_amrc li a{ color:gold;}
+.footer_ul_amrc li a{ color:$primary-yellow;}
 .footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
 /* ---------------------------------------------------------------------------------*/
 
 .box-title {
-  color: gold;
+  color: $primary-yellow;
 }
 
 .footer-main{
@@ -27,7 +27,7 @@ footer p { font-size:13px; color:gold; padding-bottom:0px; margin-bottom:8px;}
 }
 
 .bottom-footer {
-  border-top: solid 1px gold;
+  border-top: solid 1px $primary-yellow;
   width: 300px;
   margin-left: 40%;
 }

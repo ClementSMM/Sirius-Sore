@@ -1,0 +1,44 @@
+<h1>Accessoires</h1>
+  
+  <h2> <%= @category_col.name  %> </h2>
+
+  <% @category_col.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_har.name  %> </h2>
+
+  <% @category_har.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_lais.name  %> </h2>
+
+  <% @category_lais.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+
+  <h2> <%= @category_band.name  %> </h2>
+
+  <% @category_band.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+  
+  <h2> <%= @category_med.name  %> </h2>
+
+  <% @category_med.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>
+
+  <h2> <%= @category_poc.name  %> </h2>
+
+  <% @category_poc.products.each do |produit| %>
+    <%= link_to produit.name, product_path(produit) %>
+    <%= produit.small_description  %>
+  <% end %>

@@ -39,6 +39,9 @@ gem 'simple_form'
 gem 'stripe'
 gem 'money-rails'
 gem 'stripe_event'
+gem 'pg_search', '~> 2.3.0'
+
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
