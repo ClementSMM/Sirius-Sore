@@ -27,8 +27,37 @@
 /* PANIER */
 
 .main-div-panier {
-
+  padding-left: 15vh;
 }
 
+.title-panier {
+  padding-bottom: 25px;
+}
 
+.total-panier {
+  padding-top: 50px;
+}
+
+.btn-payer-panier {
+  background-color: black;
+  color: gold;
+  border: solid 1px gold;
+  height: 40px;
+  width: 100px;
+}
+
+@media (max-width: 600px) {
+
+  .main-div-panier {
+    padding-left: 2vh;
+  }
+
+  .total-panier {
+    margin-left: 15px;
+  }
+
+  .btn-payer-panier-position{
+    margin-left: 15px;
+  }
+}
 /* PANIER */
