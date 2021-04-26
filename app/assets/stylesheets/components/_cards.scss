@@ -1,0 +1,125 @@
+/* CARD DU PANIER */
+
+.main-div-panier {
+  padding-left: 15vh;
+}
+
+.title-panier {
+  padding-bottom: 25px;
+}
+
+.main-card-panier {
+  display: flex;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: solid 1px gold;
+  width: 75vh;
+}
+
+.img-card-panier {
+  img{
+    height: 150px;
+    width:150px;
+    border: solid 2px gold;
+  }
+}
+
+.quantity-card-panier {
+  padding-right: 10px
+}
+
+.item-card-quantity {
+  padding: 0px 10px 0px 10px
+}
+
+.description-card-panier {
+  display: flex;
+  /*position: relative;*/
+  padding-left: 20px;
+  .description-card-panier-box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 10px;
+    width: 35vh;
+    .description-card-panier-box1-btn-qty {
+     /* position: absolute; */
+      display: flex;
+
+    }
+    .btn-card-panier {
+      background-color: black;
+      color: gold;
+      border: solid 1px gold;
+    }
+  }
+
+  .description-card-panier-box3 {
+    /*position: relative;*/
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .description-card-panier-box3-btn-supp {
+      /*position: absolute;*/
+      background-color: black;
+      color: gold;
+      border: solid 1px gold;
+    }
+  }
+}
+
+.total-panier {
+  padding-top: 50px;
+}
+
+.btn-payer-panier {
+  background-color: black;
+  color: gold;
+  border: solid 1px gold;
+  height: 40px;
+  width: 100px;
+}
+
+@media (max-width: 600px) {
+
+  .main-div-panier {
+    padding-left: 2vh;
+  }
+
+  .img-card-panier {
+    img{
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  .main-card-panier {
+    display: flex;
+    padding-bottom: 25px;
+    width: 48vh;
+  }
+
+  .description-card-panier {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .display-mobile {
+    display: none;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .total-panier {
+    margin-left: 15px;
+  }
+
+  .btn-payer-panier-position{
+    margin-left: 15px;
+  }
+}
+
+/* CARD DU PANIER */

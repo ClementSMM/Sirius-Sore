@@ -1,17 +1,18 @@
-<p>show de orders</p>
-
 <%# ####################################################################@ %>
 <%# ENCART - contact client + modif status/delivery- pour les admin %>
 <%# ####################################################################@ %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
-        <h4>client : <%=  @order.user ? @order.user.email : 'userless order' %></h4>
-      <h4>Modifier le statut de la commande</h4>
-          <%= simple_form_for (@order) do |f| %>
-            <%= f.input :status, collection: @statuses %>
-            <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
-            <%= f.submit %>
-          <% end %>
+
+
+    <h4>client : <%=  @order.user ? @order.user.email : 'userless order' %></h4>
+    <h4>Modifier le statut de la commande</h4>
+    <%= simple_form_for (@order) do |f| %>
+      <%= f.input :status, collection: @statuses %>
+      <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
+      <%= f.submit %>
+    <% end %>
+
 
   <% end %>
 <% end %>
@@ -53,5 +54,5 @@
     <p>Vous ne pouvez pas voir ceci</p>
     <%= link_to "retour à la page d'accueil", root_path %>
   <% end %>
-  
+
 <% end %>

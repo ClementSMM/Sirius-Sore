@@ -16,7 +16,7 @@ footer p { font-size:13px; color:gold; padding-bottom:0px; margin-bottom:8px;}
   width:100%;
   background-color:black;
   min-height:250px;
-  padding:0px 0px 0px 0px;
+  padding:100px 0px 0px 0px;
   height:300px;   /* Height of the footer */
 }
 
@@ -52,4 +52,8 @@ footer p { font-size:13px; color:gold; padding-bottom:0px; margin-bottom:8px;}
     text-align: center;
     margin-left: -110px;
   }
+}
+
+.lien-git {
+  text-decoration: underline;
 }

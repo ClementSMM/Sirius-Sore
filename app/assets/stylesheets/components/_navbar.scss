@@ -51,7 +51,7 @@
     }
   }
 
-  
+
 }
 .mobile{
   display:none;
@@ -70,7 +70,7 @@
   position: absolute;
   left: calc(100vw - 90%);
   z-index: 15;
-  
+
   .col-boutique{
     align-self: start;
     justify-self: center;
@@ -123,7 +123,7 @@
   position:fixed;
   top:0;
   left:0;
-  background-color: rgba(0,0,0,0.4); 
+  background-color: rgba(0,0,0,0.4);
   transition: all 0.3s ease-out;
   overflow: auto;
 }
@@ -207,6 +207,6 @@
     }
   }
 
-  
+
 
 }
