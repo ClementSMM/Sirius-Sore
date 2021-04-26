@@ -1,6 +1,6 @@
 .product-show{
-  background-color: black;
-  color: gold;
+  background-color: $background;
+  color: $primary-yellow;
   display: flex;
 
   .product-image{

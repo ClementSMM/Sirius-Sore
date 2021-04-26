@@ -27,7 +27,8 @@
               <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
             <% end %>
 
-            <%= link_to "Voir mes commandes", "#", class: "dropdown-item" %>
+            <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Voir mes commandes", orders_path, class: "dropdown-item" %>
             <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -175,7 +176,7 @@
         <p><%= link_to "Dashboard", dashboard_path, class: "" %></p>
 
       <% end %>
-      <p><%= link_to "Voir mes commandes", "#", class: "" %></p>
+      <p><%= link_to "Voir mon compte", orders_path, class: "" %></p>
       <p> <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class:"" %></p>
             
       <% else %>

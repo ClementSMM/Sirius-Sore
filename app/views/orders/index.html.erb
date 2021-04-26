@@ -1,26 +1,65 @@
-<h2>Panier</h2>
-
-<p>Cette page, pour l'utilisateur, est son panier actuel, et ses commandes passées(éventuellement)</p>
-<p>Pour l'admin, ce sont toutes les commandes</p>
-
-
 <%# ####################################################################@ %>
 <%# PAGE UTILISATEUR NON ADMIN%>
 <%# ####################################################################@ %>
 
 <% if !current_user.admin? %>
+  <div class="container-sirius">
 
-  <% @current_user_orders.each do |order| %>
-    <p>status : <%= order.status %></p>
-    <ul>
-      <% order.order_items.each do |item| %>
-        <li> <%=item.product.name  %> x <%= item.quantity %></li>
-      <% end %>
-      <li>Total : <%= order.total %> €</li>
-    </ul>
-    <%= link_to 'voir la commande', order_path(order) %> </br> </br>
-  <% end %>
+    <div class="user-account">
+      <%= render 'shared/account-nav' %>
 
+
+
+      <div class="user-account-orders">
+        <h2>Mes commandes en cours</h2>
+        <%# Aucune commande en cours%>
+        <% if @ongoing_orders.length == 0 %>
+        <p  class = 'order-details'>Vous n'avez aucune commande en cours</p>
+
+
+        <%# Commande en cours%>
+        <% else %>
+          <% @ongoing_orders.each do |order| %>
+
+            <div class = 'order-details'>
+              <h5>Commande <strong><%= order.status %></strong>  </h5>
+                <% order.order_items.each do |item| %>
+                  <div> <%=item.product.name  %> x <%= item.quantity %></div>
+                <% end %>
+                <div><%= order.delivery_preference %>  </div>
+                <div>Total : <%= order.total %> € </div>
+                <%= link_to 'voir la commande', order_path(order) %>
+            </div>
+            <% end %>
+
+        <% end %>
+
+        <%# Anciennes commandes%>
+
+        <h4>Commandes passées</h4>
+        <%# Aucune commande passée%>
+        <% if @past_orders.length == 0 %>
+          <p>Vous n'avez aucune commande passée</p>
+
+        <%# Il y a des commandes passées%>
+        <% else %>
+
+            <% @past_orders.each do |order| %>
+          <div class = 'order-details'>
+                    <div>En date du <%= order.created_at.strftime("%d / %m / %Y") %></div>
+                    <ul>
+                      <% order.order_items.each do |item| %>
+                        <li> - <%=item.product.name  %> ( <%= item.size %> )</li>
+                      <% end %>
+                    </ul>
+              <div>Total :  <%= order.total %> €</div>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
 <% end %>
 
 <%# ####################################################################@ %>
@@ -44,17 +83,8 @@
       <% end %>
       <li>Total : <%= order.total %>€</li>
     </ul>
-      <%= link_to 'voir la commande', order_path(order) %> </br>  </br>
+      <%= link_to 'voir la commande', order_path(order) %>
   <% end %>
    
 
 <% end %>
-
-<%# ####################################################################@ %>
-<%# SORTE DE FOOTER INUTILE à SUPP PLUS TARD %>
-<%# ####################################################################@ %>
-
-<p>-----------------------------------------------------</p>
-<p>
-  <%= link_to 'retour à laccueil', root_path%>
-</p>
