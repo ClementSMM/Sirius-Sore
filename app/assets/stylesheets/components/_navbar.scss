@@ -18,24 +18,29 @@
       margin: 0 24px;
     }
   }
-
-
-
+  
+  
+  
   .nav-search-login{
     color:$primary-yellow;
     display: flex;
     align-items:center;
     
     
-    .nav-login{
+    li{
       position:absolute;
-      right: 15px;
-      top:5px;
+      right: 100px;
+      top:8px;
+      margin: 0 10px;
+
+      button{
+        color: $primary-yellow ;
+      }
     }
     .nav-search{
       position:absolute;
       left: 15px;
-      top:5px;
+      top:8px;
     }
     .nav-search-button{
       color:$primary-yellow;
@@ -46,9 +51,14 @@
       border-bottom: 1px solid $primary-yellow;
       color: white;
     }
-    .nav-login{
-      margin: 0 10px;
+
+    .nav-cart{
+      position: absolute;
+      right: 10px;
+      top:8px;
+      font-size: 16px;
     }
+
   }
 
 

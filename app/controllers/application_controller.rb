@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :record_user_activity
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  include CurrentOrder
+  before_action :set_order
 
   STATUSES = ["En cours", "Payée" , "Prise en charge", "Prête à être retirée", "Expédiée", "Archivée - abandon", "Archivée - succès"]
   ONGOING_STATUSES = ["Payée" , "Prise en charge", "Prête à être retirée", "Expédiée"]

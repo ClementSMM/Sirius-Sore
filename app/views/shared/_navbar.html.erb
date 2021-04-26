@@ -17,6 +17,10 @@
        <% end %>
     </div>
     <div class = 'nav-login'>
+      <%= link_to order_path(session[:order_id]), class: "nav-link nav-cart" do %>
+         <i class="fas fa-shopping-bag"></i> Panier
+      <% end %>
+
       <% if user_signed_in? %>
         <li class="dropdown">
           <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
