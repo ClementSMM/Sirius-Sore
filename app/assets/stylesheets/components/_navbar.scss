@@ -25,9 +25,18 @@
     color:gold;
     display: flex;
     align-items:center;
-    position:absolute;
-    top:5px;
-    right: 15px;
+    
+    
+    .nav-login{
+      position:absolute;
+      right: 15px;
+      top:5px;
+    }
+    .nav-search{
+      position:absolute;
+      left: 15px;
+      top:5px;
+    }
     .nav-search-button{
       color:gold;
     }
@@ -35,6 +44,7 @@
       background-color: transparent;
       border:transparent;
       border-bottom: 1px solid gold;
+      color: white;
     }
     .nav-login{
       margin: 0 10px;

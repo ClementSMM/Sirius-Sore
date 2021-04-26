@@ -18,7 +18,7 @@
         <li> Prix actuel: <%= stock.price %>€</li>
         <li>
           <%= simple_form_for(stock) do |f| %>
-            <%= f.number_field :price %>
+            <%= f.number_field :price_cents %>
             <%= f.submit 'modifier le prix' %>
           <% end %>
         </li>

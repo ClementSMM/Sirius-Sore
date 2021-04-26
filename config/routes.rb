@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   get :about, to: "pages#about"
   get :contact, to: "pages#contact"
   get :salon, to: "pages#salon"
+  get :cosmetiques, to: "categories#cosmetiques"
+  get :friandises, to: "categories#friandises"
+  get :accessoires, to: "categories#accessoires"
+  get :paniers, to: "categories#paniers"
+  get :vetements, to: "categories#vetements"
+  get :jeux, to: "categories#jeux"
+  get :gamelles, to: "categories#gamelles"
+  get :transports, to: "categories#transports"
 
   resources :products do
     member do
