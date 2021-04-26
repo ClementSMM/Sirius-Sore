@@ -1,6 +1,4 @@
 class OrderItemsController < ApplicationController
-  include CurrentOrder
-  before_action :set_order, only: [:create]
   skip_before_action :authenticate_user!
 
   def index
