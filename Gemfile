@@ -40,6 +40,7 @@ gem 'stripe'
 gem 'money-rails'
 gem 'stripe_event'
 gem 'pg_search', '~> 2.3.0'
+gem 'country_select'
 
 
 group :development, :test do  gem 'pry-byebug'
