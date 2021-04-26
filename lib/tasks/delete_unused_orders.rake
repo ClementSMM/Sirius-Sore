@@ -7,10 +7,12 @@ namespace :delete do
     now = Time.current
     # lister dans un array toutes les commandes qui sont plus vielles qu'une heure
     orders = Order.where(status: "En cours")
-    order_match = []
 
+    # a partir de l'array ci dessus, on récupère toutes celles dont l'utilisateur est inactif depuis plus d'une heure
+    # on récupère aussi toutes celles qui n'ont pas d'utilisateur
+    order_match = []
     orders.each do |order|
-      if order.user.last_seen_at.before?(now - 1.hour)
+      if order.user.last_seen_at.before?(now - 1.hour) || order.user === nil
         order_match << order
       end
     end
