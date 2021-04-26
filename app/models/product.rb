@@ -11,6 +11,14 @@ class Product < ApplicationRecord
   validates :small_description, presence: true
   validates :categories, presence: true
 
+  def find_first_price
+    @product_prices = []
+    self.stocks.each do |stock|
+      @product_prices << stock.price_cents
+    end
+    return @product_prices.sort!.first / 100
+  end
+  
   pg_search_scope :global_search,
     against: [ :name, :long_description, :small_description ],
     associated_against: {
@@ -19,5 +27,4 @@ class Product < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end

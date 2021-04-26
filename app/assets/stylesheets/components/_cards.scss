@@ -1,12 +1,5 @@
 /* CARD DU PANIER */
 
-.main-div-panier {
-  padding-left: 15vh;
-}
-
-.title-panier {
-  padding-bottom: 25px;
-}
 
 .main-card-panier {
   display: flex;
@@ -83,10 +76,6 @@
 
 @media (max-width: 600px) {
 
-  .main-div-panier {
-    padding-left: 2vh;
-  }
-
   .img-card-panier {
     img{
       height: 100px;
@@ -113,13 +102,65 @@
     padding-left: 15px;
   }
 
-  .total-panier {
-    margin-left: 15px;
-  }
 
-  .btn-payer-panier-position{
-    margin-left: 15px;
-  }
 }
 
 /* CARD DU PANIER */
+
+/* CARD INDEX PRODUCTS*/
+
+.product-index-card {
+  width: 250px;
+  justify-self: center;
+  align-self: center;
+}
+
+.card-product-index-img {
+  width: 250px;
+  img{
+    height: 250px;
+    width: 250px;
+    border: solid 2px gold;
+  }
+}
+
+.text-product-index-card {
+  text-align: left;
+  margin-bottom: 24px;
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-index-card {
+    width: 200px;
+  }
+
+  .card-product-index-img{
+    img{
+      height: 200px;
+      width: 200px;
+      border: solid 2px gold;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .product-index-card {
+    width: 150px;
+  }
+
+  .card-product-index-img{
+    img{
+      height: 150px;
+      width: 150px;
+      border: solid 2px gold;
+    }
+  }
+  .card-product-index-img {
+    width: 150px;
+  }
+
+}
+/* CARD INDEX PRODUCT*/

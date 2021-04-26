@@ -1,6 +1,13 @@
-<% @products.each do |product| %>
-  <p>
-    <%= link_to product.name, product_path(product)%>
-    <%= product.small_description  %>
-  </p>
-<% end %>
+<div class="product-index-container ">
+  <% @products.each do |product| %>
+    <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+    </div>
+  <% end %>
+</div>

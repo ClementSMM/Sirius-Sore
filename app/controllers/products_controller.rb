@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-  
+
     if @products.length == 0
       flash.alert = "Nous n'avons pas trouvé de produit correspondant à votre recherche"
       @products = Product.all
@@ -103,10 +103,11 @@ class ProductsController < ApplicationController
     @image.purge
     redirect_to edit_product_path(@product)
   end
-    private
 
-    def product_params
-      params.require(:product).permit(:name, :small_description, :long_description, :category_id, :images)
-    end
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :small_description, :long_description, :category_id, :images)
+  end
 
 end
