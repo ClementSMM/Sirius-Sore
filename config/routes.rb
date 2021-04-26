@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    resources :users, only: [:show]
-  end
+  devise_for :users
 
   root to: 'pages#home'
   get :dashboard, to: "pages#dashboard"

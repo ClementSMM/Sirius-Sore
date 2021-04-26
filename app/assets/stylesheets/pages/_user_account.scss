@@ -1,0 +1,59 @@
+
+.user-account{
+  display:flex;
+
+  .user-account-nav{
+    width: 30%;
+
+    p{
+      border-left: 5px solid transparent;
+      padding: 10px;
+    }
+
+    .active{
+      font-weight: bolder;
+      border-left: 5px solid $brightbg;
+    }
+  }
+
+  .user-account-edit{
+    width: 50%;
+    h3{
+      margin-top: 48px;
+    }
+  } 
+  .user-account-orders{
+    width: 50%;
+    h4{
+      margin-top: 48px;
+    }
+  }
+
+  .order-details{
+    background-color: $overlay;
+    padding: 8px;
+    margin: 10px 0;
+  }
+
+}
+
+
+@media (max-width:600px) {
+
+  .user-account{
+    display:block;
+  
+    .user-account-nav{
+      width: 100%;
+    }
+  
+    .user-account-edit{
+      width: 100%;
+    }
+
+  .user-account-orders{
+    width: 100%;
+  }
+  }
+  
+}
