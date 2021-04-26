@@ -1,6 +1,6 @@
-<h2>Log in</h2>
+<h2 class="text-center mb-4" >Se connecter</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-sirius form-account form-full-page" }) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
@@ -15,6 +15,6 @@
   <div class="form-actions">
     <%= f.button :submit, "Log in" %>
   </div>
+<%= render "devise/shared/links" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
