@@ -1,25 +1,62 @@
 
 <% if  @order.order_items.length == 0 %>
-  <p>Votre panier est vide</p>
+  <div class="main-div-panier-vide">
+    <div class="panier-vide">
+      <h1>Votre panier est vide</h1>
+    </div>
+
+    <div class="link-empty-panier">
+      <%= link_to "Commencez votre shopping", products_path  %>
+    </div>
+  </div>
 
 <% else %>
-  <p>status : <%= @order.status %></p>
+<div class="main-div-panier">
+
+  <div class="title-panier">
+    <h1>Mon panier</h1>
+  </div>
 
   <ul>
     <% @order.order_items.each do |item| %>
-      <li> <%=item.product.name %> (<%= item.size  %>) x <%= item.quantity %> --------- <%= humanized_money_with_symbol(item.total) %></li>
-      <%= button_to '+', order_item_add_one_path(item)%>
-      <%= button_to '-', order_item_remove_one_path(item)%>
-      <%= button_to 'X' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }%>
+    <li>
+      <div class="main-card-panier">
+        <div class="img-card-panier">
+          <%= cl_image_tag item.product.images.first.key, crop: :fill%>
+        </div>
+        <div class="description-card-panier">
+          <div class="description-card-panier-box1">
+            <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
+            <div class="display-mobile"> <%= item.product.small_description %> </div>
+            <div class="description-card-panier-box1-btn-qty">
+              <div class="quantity-card-panier"> <p>Quantité:</p> </div>
+              <%= button_to '-', order_item_remove_one_path(item), class: 'btn-card-panier'%>
+              <div class="item-card-quantity"> <p> <%= item.quantity %> </p></div>
+              <%= button_to '+', order_item_add_one_path(item), class: 'btn-card-panier'%>
+            </div>
+          </div>
+          <div class="description-card-panier-box3">
+            <p>Prix: <%= item.total %>€</p>
+            <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
+          </div>
+        </div>
+      </div>
+    </li>
     <% end %>
-    <p>Total de la commande: <%= humanized_money_with_symbol(@order.total) %></p>
-
   </ul>
 
-  <%= form_tag order_pay_path(@order) do %>
-  <%= hidden_field_tag 'order_id', @order.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
+    <div class="total-panier">
+      <h4>Total de la commande: <%= @order.total %>€</h4>
+    </div>
+
+  <div class="btn-payer-panier-position">
+    <%= form_tag order_pay_path(@order) do %>
+    <%= hidden_field_tag 'order_id', @order.id %>
+    <%= submit_tag 'Payer', class: 'btn-payer-panier' %>
+    <% end %>
+  </div>
+
+</div>
 
 <% end %>
 
