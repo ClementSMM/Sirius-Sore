@@ -14,7 +14,15 @@
 <div class="main-div-panier">
 
   <div class="title-panier">
+    <%# La commande est en cours %>
+    <% if @order.status == "En cours" %>
     <h1>Mon panier</h1>
+
+    <%# La commande n'est pas en cours %>
+    <% else %>
+    <h1>Commande du <%= @order.created_at.strftime("%d / %m / %Y") %></h1>
+    <h2><%= @order.status %></h2>
+    <% end %>
   </div>
 
   <ul>
@@ -29,15 +37,24 @@
             <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
             <div class="display-mobile"> <%= item.product.small_description %> </div>
             <div class="description-card-panier-box1-btn-qty">
-              <div class="quantity-card-panier"> <p>Quantité:</p> </div>
-              <%= button_to '-', order_item_remove_one_path(item), class: 'btn-card-panier'%>
-              <div class="item-card-quantity"> <p> <%= item.quantity %> </p></div>
-              <%= button_to '+', order_item_add_one_path(item), class: 'btn-card-panier'%>
+              <%# La commande est en cours %>
+              <% if @order.status == "En cours" %>
+                <div class="quantity-card-panier"> <p>Quantité:</p> </div>
+                <%= button_to '-', order_item_remove_one_path(item), class: 'btn-card-panier'%>
+                <div class="item-card-quantity"> <p> <%= item.quantity %> </p></div>
+                <%= button_to '+', order_item_add_one_path(item), class: 'btn-card-panier'%>
+              <%# La commande n'est pas en cours %>
+              <% else %>
+                  <div class="item-card-quantity"> <p> Quantité : <%= item.quantity %> </p></div>
+              <% end %>
             </div>
           </div>
           <div class="description-card-panier-box3">
             <p>Prix: <%= item.total %>€</p>
-            <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
+                <%# La commande est en cours %>
+            <% if @order.status == "En cours" %>
+                <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
+            <% end %>
           </div>
         </div>
       </div>
@@ -49,12 +66,17 @@
       <h4>Total de la commande: <%= @order.total %>€</h4>
     </div>
 
-  <div class="btn-payer-panier-position">
-    <%= form_tag order_pay_path(@order) do %>
-    <%= hidden_field_tag 'order_id', @order.id %>
-    <%= submit_tag 'Payer', class: 'btn-payer-panier' %>
+    <%# La commande est en cours %>
+    <% if @order.status == "En cours" %>
+      <div class="btn-payer-panier-position">
+        <%= form_tag order_pay_path(@order) do %>
+        <%= hidden_field_tag 'order_id', @order.id %>
+        <%= submit_tag 'Payer', class: 'btn-payer-panier' %>
+        <% end %>
+      </div>
+
     <% end %>
-  </div>
+
 
 </div>
 
