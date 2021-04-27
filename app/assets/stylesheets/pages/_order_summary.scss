@@ -1,0 +1,26 @@
+.order-summary-page{
+  text-align: center;
+  .order-summary{
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 16px;
+    background-color: $overlay;
+    &-user-info{
+      border-bottom: 1px solid $primary-yellow;
+      margin-bottom: 10px;
+    }
+  }
+
+  .order-summary-info{
+    color: grey;
+    font-size: 12px;
+    a{
+      text-decoration: underline;
+    }
+  }
+}
+
+.order-success-message{
+  padding: 32px;
+
+}

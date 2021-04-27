@@ -1,11 +1,14 @@
 <div class="navbar-sirius">
-  <h1><%= link_to 'Maison Sirius', root_path, class: 'header-navbar' %></h1>  
-  <nav class = 'nav-links'>
-      <%= link_to "Accueil", root_path, class: "" %>
-      <a class= "" id ="boutique-btn">Boutique </a>
-      <%= link_to "Salon de toilettage", salon_path, class: "" %>
-      <%= link_to "A propos", about_path, class: "" %>
-      <%= link_to "Contact", contact_path, class: "" %>
+  <div class = 'header-navbar'>
+    <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619535338/Logocouleur_nom-_fond_transparent_1_1_zcmwho.png", height: 120, width:120, class: 'desktop' %>
+    <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>  
+  </div>
+  <nav class = 'nav-links desktop'>
+      <%= link_to "Accueil", root_path, class: "hover" %>
+      <a class= "hover" id ="boutique-btn">Boutique</a>
+      <%= link_to "Salon de toilettage", salon_path, class: "hover" %>
+      <%= link_to "A propos", about_path, class: "hover" %>
+      <%= link_to "Contact", contact_path, class: "hover" %>
   </nav>
   <div class= 'nav-search-login'>
 
@@ -38,7 +41,7 @@
       <% else %>
         <li class="nav-item">
           <%= link_to new_user_session_path, class: "nav-link" do %>
-              <i class="far fa-user"></i> Login
+              <i class="far fa-user"></i> Se connecter
           <% end %>
         </li>
       <% end %>
@@ -59,6 +62,13 @@
     </div>
 
     <div class ="mobile-boutique">
+
+      <%= link_to order_path(session[:order_id]), class: "nav-link nav-cart" do %>
+         <i class="fas fa-shopping-bag"></i> Mon panier
+      <% end %>
+
+        <div class = "separation-bar"></div>
+
 
         <p> <%= link_to 'Nouveautés', category_path(1) %></p>
         <p><%= link_to 'Editions limitées', category_path(2) %></p>
@@ -92,7 +102,7 @@
         <% else %>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: "nav-link" do %>
-                <i class="far fa-user"></i> Login
+                <i class="far fa-user"></i> Se connecter
             <% end %>
           </li>
         <% end %>
