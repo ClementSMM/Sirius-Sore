@@ -1,0 +1,35 @@
+.stock-edit-side {
+  width: 70%;
+}
+
+.stock-search-bar {
+  padding-bottom: 50px;
+  width: 370px;
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+}
+
+.grid-cards-stock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.space-btn {
+  padding: 15px 0px 0px 0px;
+  width: 150px;
+}
+
+.card-stocks {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $primary-yellow;
+  width: 350px;
+
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+}

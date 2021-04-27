@@ -1,12 +1,19 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
-    <p>stock new</p>
-  <%= simple_form_for(@stock) do |f| %>
-    <%= f.input :size, label: 'Taille'  %>
-    <%= f.input :quantity, label: 'Quantité' %>
-    <%= f.input :price_cents, label: 'Prix'%>
-    <%= f.association :product, label: 'Produits', collection: Product.all, include_hidden: false, include_blank: false %>
-    <%= f.submit %>
-    <% end %>
+  <div class="container-sirius dashboard-container">
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="stock-new-side">
+      <h1>Créez votre nouveau stock</h1>
+        <%= simple_form_for(@stock) do |f| %>
+      <div class="stock-new-form">
+          <%= f.input :size, label: 'Taille'  %>
+          <%= f.input :quantity, label: 'Quantité' %>
+          <%= f.input :price_cents, label: 'Prix'%>
+          <%= f.association :product, label: 'Produits', collection: Product.all, include_hidden: false, include_blank: false %>
+          <%= f.submit %>
+      </div>
+          <% end %>
+    </div>
+  </div>
   <% end %>
 <% end %>

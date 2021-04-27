@@ -1,0 +1,17 @@
+.new-product-side {
+  display: inline;
+}
+
+.new-product-form{
+  display: inline-grid;
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+}
+
+.new-product-column-checkbox {
+  display: grid;
+  grid-template-column: 1fr 1fr;
+}

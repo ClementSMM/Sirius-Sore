@@ -4,12 +4,9 @@
     <%= link_to "Ajouter un produit", new_product_path, class: "" %>
   </p>
 
-
   <p class='<%= 'active'if current_page?(stocks_path) %>' >
     <%= link_to "Gerer les stock", stocks_path, class: "" %>
   </p>
-
-
 
   <p class='<%= 'active'if current_page?(orders_path) %>' >
     <%= link_to "Gerer les commandes", orders_path, class: "" %>

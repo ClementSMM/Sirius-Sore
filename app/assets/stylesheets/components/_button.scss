@@ -1,5 +1,8 @@
 .btn-sirius {
-  background-color: black;
+  background-color: $background;
   color: $primary-yellow;
   border: solid 1px $primary-yellow;
+  padding: 0 auto;
+  width: 300px;
+  text-align: center;
 }

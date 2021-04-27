@@ -68,25 +68,33 @@
 <%# PAGE ADMIN %>
 <%# ####################################################################@ %>
 
-  <% if current_user.admin? %>
-  <%= render 'shared/admin_dashboard_nav' %>
-  <p>Trier par</p>
-  <%= simple_form_for :search, method: "GET" do |f| %>
-    <%= f.select :status, status: @statuses %>
-    <%= f.submit 'OK' %>
-  <% end %>
+<% if current_user.admin? %>
+  <div class="container-sirius dashboard-container">
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="orders-gestion-side">
+      <p>Trier par:</p>
+      <div class="order-admin-form">
+        <%= simple_form_for :search, method: "GET" do |f| %>
+          <%= f.select :status, status: @statuses %>
+          <%= f.submit 'OK' %>
+        <% end %>
+      </div>
 
-  <% @orders.each do |order| %>
-    <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
-    <p>status : <%= order.status %></p>
-    <ul>
-      <% order.order_items.each do |item| %>
-        <li> <%=item.product.name  %> x <%= item.quantity %></li>
-      <% end %>
-      <li>Total : <%= order.total %>€</li>
-    </ul>
-      <%= link_to 'voir la commande', order_path(order) %>
-  <% end %>
-
-
+      <div class="grid-order-admin-card">
+        <% @orders.each do |order| %>
+          <div class="order-admin-card">
+            <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
+            <p>STATUS : <%= order.status %></p>
+            <ul>
+              <% order.order_items.each do |item| %>
+              <li> <%= item.product.name  %> x <%= item.quantity %></li>
+              <% end %>
+              <li>Total : <%= order.total %>€</li>
+            </ul>
+            <%= link_to 'voir la commande', order_path(order) %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
 <% end %>

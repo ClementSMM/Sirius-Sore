@@ -1,0 +1,25 @@
+.orders-gestion-side {
+  width: 70%;
+  display: inline;
+}
+
+.grid-order-admin-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.order-admin-form {
+  padding-bottom: 50px;
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+}
+
+.order-admin-card {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid $primary-yellow;
+  width: 215px;
+}

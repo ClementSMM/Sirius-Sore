@@ -1,8 +1,6 @@
 <div class="user-account-nav">
-        <p class='<%= 'active'if current_page?(orders_path) %>'
-            <%= link_to "Mes commandes", orders_path, class: "" %>>
-        </p>
-
+      <p class='<%= 'active'if current_page?(orders_path) %>' >
+             <%= link_to "Mes commandes", orders_path, class: "" %>
 
         <p class='<%= 'active'if current_page?(edit_user_registration_path) %>' >
             <%= link_to "Informations personnelles", edit_user_registration_path, class: "" %>

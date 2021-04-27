@@ -1,0 +1,14 @@
+.product-edit-side {
+  display: inline;
+  width: 70%;
+}
+
+.product-edit-side-subcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-edit-form {
+  display: grid;
+  width: 500px;
+}
