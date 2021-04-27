@@ -40,7 +40,7 @@
                           required: false,
                           as: :hidden,
                           input_html: { value: params[:id] } %>
-      <%= f.submit 'Ajouter au panier'%>
+      <%= f.submit 'Ajouter au panier', class: 'btn-sirius'%>
     <% end %>
     <h4>Détails : </h4>
     <p><%= @product.long_description %></p>
@@ -53,7 +53,6 @@
 
 <% if user_signed_in? %>
   <% if current_user.admin  %>
-    <%= link_to 'delete this item', product_path(@product), method: :delete%>
     <%= link_to 'edit this item', edit_product_path(@product)%>
   <% end %>
 <% end %>

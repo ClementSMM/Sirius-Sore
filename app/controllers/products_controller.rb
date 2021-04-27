@@ -98,9 +98,9 @@ class ProductsController < ApplicationController
     # image qui appartient a la product -- on la supprime de la galerie
     @image = @product.images.attachments.where(id: params[:format])
     # image a supprimer de cloudinary
+    @image.purge
     @image_cloudinary = ActiveStorage::Blob.find(params[:format])
     @image_cloudinary.purge
-    @image.purge
     redirect_to edit_product_path(@product)
   end
 
