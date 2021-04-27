@@ -46,8 +46,8 @@ class OrdersController < ApplicationController
       currency: 'eur',
       quantity: 1
     }],
-    success_url: root_url,
-    cancel_url: products_url
+    success_url: success_url,
+    cancel_url: fail_url
   )
 
   @order.update(checkout_session_id: session.id)

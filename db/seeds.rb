@@ -281,41 +281,17 @@ puts "-------------------------------"
 puts "#{Stock.count} stock created (expected: 13)"
 puts "-------------------------------"
 
-# puts "-------------------------------"
-# puts "creating orders"
-# puts "-------------------------------"
 
-# random_order = Order.new
-# random_order.user = random
-# random_order.save
-# random_item_order = OrderItem.new
-# random_item_order.product = fromage
-# random_item_order.size = 'potite canine'
-# random_item_order.quantity = 2
-# random_order.order_items << random_item_order
-# random_order.save
-# puts "."
+gallery_1 = Gallery.create!( category: 'Bannière')
+gallery_1_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619543984/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_18.57.06_x9ybgc.png')
+gallery_1.images.attach(io:gallery_1_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_1.save
 
-# userless_order = Order.create!
-# userless_item_order = OrderItem.new
-# userless_item_order.product = collier_bleu
-# userless_item_order.size = 'poti chien'
-# userless_item_order.quantity = 3
-# userless_order.order_items << userless_item_order
-# userless_item_order.save
-
-# userless_item_order2 = OrderItem.new
-# userless_item_order2.product = fromage
-# userless_item_order2.quantity = 2
-# userless_item_order2.size = 'potite canine'
-# userless_order.order_items << userless_item_order2
-# userless_order.save
+puts "."
 
 
-# puts "-------------------------------"
-# puts "#{OrderItem.count} OrderItem created (expected: 3)"
-# puts "-------------------------------"
 
-# puts "-------------------------------"
-# puts "#{Order.count} Order created (expected: 2)"
-# puts "-------------------------------"
+
+puts "-------------------------------"
+puts "#{Gallery.count} galleries created (expected: 1)"
+puts "-------------------------------"

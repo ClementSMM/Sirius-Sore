@@ -10,19 +10,19 @@
   top: 0;
   opacity: 1;
   z-index: 10;
+  border-bottom: 5px ridge $primary-yellow;
+
 
   .header-navbar{
+    display: flex;
+    align-items: center;
     color: $primary-yellow;
-    font-size: 48px;
+    h1{font-size: 48px;}
   }
   .nav-links{
     color: $primary-yellow;
     a{
       margin: 0 24px;
-      &:hover{
-        transition: all 0.3s ease-in-out;
-        border-bottom: 1px solid $primary-yellow;
-      }
     }
   }
   
@@ -75,6 +75,7 @@
 }
 
 
+
 #dropdown-boutique{
   display: none;
   background-color: $background;
@@ -87,7 +88,7 @@
   position: absolute;
   left: calc(100vw - 90%);
   z-index: 15;
-  border: 1px solid $primary-yellow;
+  border: 5px ridge $primary-yellow;
 
  
   .col-boutique{
@@ -147,11 +148,47 @@
   overflow: auto;
 }
 
+.hover{
+  transition: all 0.15s ease-in-out;
+  position: relative;
+    &:before,
+    &:after {
+      content: ".";
+      position: absolute;
+      bottom: -32px;
+      left : 0;
+      right: 0;
+      top:0;
+      width: 0%;
+      height: 1px;
+      margin: auto;
+      transition: all 0.15s ease-in-out;
+      transition-duration: 0.75s;
+      opacity: 0;
+      color: transparent;
+      background-color: $primary-yellow;
+      z-index:-1;
+    }
+    &:hover {
+      cursor: pointer;
+      &:before,
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
+  }
+    
+}
+
 
 @media (max-width:600px) {
 
   .mobile{
     display:block
+  }
+
+  .desktop{
+    display:none;
   }
 
   .modal-background{
@@ -160,7 +197,7 @@
   }
 
   .nav-links{
-    display:none
+    display:none;
   }
 
   .nav-search-login{
@@ -198,7 +235,7 @@
     z-index:10;
     width:100vw;
     .nav-search-mobile{
-      margin-bottom: 24px;
+      margin-bottom: 0px;
       form{
         justify-content: center;
       }
@@ -219,7 +256,7 @@
     .separation-bar{
       width:50%;
       border-bottom: 1px solid $primary-yellow;
-      margin: 30px auto;
+      margin: 16px auto;
     }
 
     .nav-login-mobile{
