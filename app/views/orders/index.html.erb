@@ -22,7 +22,9 @@
           <% @ongoing_orders.each do |order| %>
 
             <div class = 'order-details'>
+            <%= link_to order_path(order), class: "" do %>
               <h5>Commande <strong><%= order.status %></strong>  </h5>
+            <% end %>
                 <% order.order_items.each do |item| %>
                   <div> <%=item.product.name  %> x <%= item.quantity %></div>
                 <% end %>
@@ -44,19 +46,19 @@
         <%# Il y a des commandes passées%>
         <% else %>
 
-            <% @past_orders.each do |order| %>
+          <% @past_orders.each do |order| %>
           <div class = 'order-details'>
-                    <div>En date du <%= order.created_at.strftime("%d / %m / %Y") %></div>
-                    <ul>
-                      <% order.order_items.each do |item| %>
-                        <li> - <%=item.product.name  %> ( <%= item.size %> )</li>
-                      <% end %>
-                    </ul>
-              <div>Total :  <%= order.total %> €</div>
-            </div>
+            <%= link_to order_path(order), class: "" do %>
+              <div>En date du <%= order.created_at.strftime("%d / %m / %Y") %></div>
             <% end %>
+            <% order.order_items.each do |item| %>
+              <%=item.product.name  %> ( <%= item.size %> )</li>
+            <% end %>
+            <div>Total :  <%= order.total %> €</div>
+          </div>
         <% end %>
-      </div>
+      <% end %>
+    </div>
 
     </div>
   </div>

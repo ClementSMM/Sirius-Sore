@@ -1,5 +1,4 @@
 <div class="navbar-sirius">
-
   <h1><%= link_to 'Maison Sirius', root_path, class: 'header-navbar' %></h1>  
   <nav class = 'nav-links'>
       <%= link_to "Accueil", root_path, class: "" %>
@@ -48,6 +47,59 @@
   <div>
     <div class = 'nav-menu mobile' id = "nav-menu"><i class="fas fa-bars"></i></div>
     <div class = 'nav-menu mobile' id = "nav-menu-open"><i class="fas fa-chevron-left"></i></div>
+  </div>
+
+  <%# DROPDOWN DE LA BOUTIQUE MOBILE - version allégée %>
+  <div class="side-menu mobile" id= 'side-menu'>
+    <div class = 'nav-search-mobile'>
+      <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false, id: 'search-mobile' %>
+            <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
+        <% end %>
+    </div>
+
+    <div class ="mobile-boutique">
+
+        <p> <%= link_to 'Nouveautés', category_path(1) %></p>
+        <p><%= link_to 'Editions limitées', category_path(2) %></p>
+        <p><%= link_to 'Dernières pièces', category_path(3) %></p>
+        
+        <div class = "separation-bar"></div>
+
+        <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
+        <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
+        <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
+        <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
+        <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
+        <h5><%= link_to 'JEUX', jeux_path %>  </h5>
+        <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
+        <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
+
+    </div>
+
+    <div class = "separation-bar"></div>
+
+    <div class= nav-login-mobile>
+    <% if user_signed_in? %>
+        <p><i class="far fa-user"></i> Bonjour <%= current_user.first_name %></p> 
+        <% if current_user.admin? %>
+          <p><%= link_to "Dashboard", dashboard_path, class: "" %></p>
+
+        <% end %>
+        <p><%= link_to "Voir mon compte", orders_path, class: "" %></p>
+        <p> <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class:"" %></p>
+              
+        <% else %>
+          <li class="nav-item">
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+                <i class="far fa-user"></i> Login
+            <% end %>
+          </li>
+        <% end %>
+    </div>
+
+    
+
   </div>
 
 </div>
@@ -143,58 +195,6 @@
 
 </div>
 
-<%# DROPDOWN DE LA BOUTIQUE MOBILE - version allégée %>
-<div class="side-menu mobile" id= 'side-menu'>
-  <div class = 'nav-search-mobile'>
-    <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false, id: 'search-mobile' %>
-          <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
-      <% end %>
-  </div>
-
-  <div class ="mobile-boutique">
-
-      <p> <%= link_to 'Nouveautés', category_path(1) %></p>
-      <p><%= link_to 'Editions limitées', category_path(2) %></p>
-      <p><%= link_to 'Dernières pièces', category_path(3) %></p>
-      
-      <div class = "separation-bar"></div>
-
-      <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
-      <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
-      <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
-      <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
-      <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
-      <h5><%= link_to 'JEUX', jeux_path %>  </h5>
-      <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
-      <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
-
-  </div>
-
-  <div class = "separation-bar"></div>
-
-  <div class= nav-login-mobile>
-   <% if user_signed_in? %>
-      <p><i class="far fa-user"></i> Bonjour <%= current_user.first_name %></p> 
-      <% if current_user.admin? %>
-        <p><%= link_to "Dashboard", dashboard_path, class: "" %></p>
-
-      <% end %>
-      <p><%= link_to "Voir mon compte", orders_path, class: "" %></p>
-      <p> <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class:"" %></p>
-            
-      <% else %>
-        <li class="nav-item">
-          <%= link_to new_user_session_path, class: "nav-link" do %>
-              <i class="far fa-user"></i> Login
-          <% end %>
-        </li>
-      <% end %>
-  </div>
-
-  
-
-</div>
 
 
 
