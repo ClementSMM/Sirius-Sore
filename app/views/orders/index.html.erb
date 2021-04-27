@@ -68,8 +68,8 @@
 <%# PAGE ADMIN %>
 <%# ####################################################################@ %>
 
-<% if current_user.admin? %>
-
+  <% if current_user.admin? %>
+  <%= render 'shared/admin_dashboard_nav' %>
   <p>Trier par</p>
   <%= simple_form_for :search, method: "GET" do |f| %>
     <%= f.select :status, status: @statuses %>
@@ -87,6 +87,6 @@
     </ul>
       <%= link_to 'voir la commande', order_path(order) %>
   <% end %>
-   
+
 
 <% end %>

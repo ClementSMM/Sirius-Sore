@@ -5,7 +5,7 @@ footer p { font-size:13px; color:$primary-yellow; padding-bottom:0px; margin-bot
 .footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
 .footer_ul_amrc li {padding:0px 0px 5px 0px;}
 .footer_ul_amrc li a{ color:$primary-yellow;}
-.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.footer_ul_amrc li a:hover{ color:$text; text-decoration:none;}
 /* ---------------------------------------------------------------------------------*/
 
 .box-title {
@@ -14,7 +14,7 @@ footer p { font-size:13px; color:$primary-yellow; padding-bottom:0px; margin-bot
 
 .footer-main{
   width:100%;
-  background-color:black;
+  background-color: $background;
   min-height:250px;
   padding:100px 0px 0px 0px;
   height:300px;   /* Height of the footer */
