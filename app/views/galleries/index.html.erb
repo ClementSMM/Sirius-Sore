@@ -2,6 +2,7 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
     <h1>index galleries</h1>
+     <%= render 'shared/admin_dashboard_nav' %>
     <ul>
       <li>
         <% @galleries.each do |gallery| %>

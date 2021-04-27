@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
+   <%= render 'shared/admin_dashboard_nav' %>
     <%= link_to 'créer stock', new_stock_path(@stocks)  %>
 
      <%= form_tag stocks_path, method: :get do %>
