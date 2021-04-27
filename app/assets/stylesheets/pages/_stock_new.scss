@@ -1,0 +1,11 @@
+.stock-new-side {
+  display: inline;
+}
+
+.stock-new-form {
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+}

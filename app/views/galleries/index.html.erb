@@ -1,22 +1,27 @@
 
 <% if user_signed_in? %>
   <% if current_user.admin  %>
-    <h1>index galleries</h1>
-     <%= render 'shared/admin_dashboard_nav' %>
-    <ul>
-      <li>
-        <% @galleries.each do |gallery| %>
-          <%= gallery.category %>
-          <%= simple_form_for(gallery) do |f| %>
-            <%= f.file_field :images, multiple: true %>
-            <%= f.submit %>
+  <div class="container-sirius dashboard-container">
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="galleries-edit-side">
+      <h1>index galleries</h1>
+
+      <ul>
+        <li>
+          <% @galleries.each do |gallery| %>
+            <%= gallery.category %>
+            <%= simple_form_for(gallery) do |f| %>
+              <%= f.file_field :images, multiple: true %>
+              <%= f.submit %>
+          <% end %>
+          <% gallery.images.each do |image| %>
+            <%= cl_image_tag(image.key, width: 400, height: 300) %>
+            <%= link_to 'delete image', delete_image_attachement_gallery_url(gallery, image), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cette image. Etes vous sur ?" } %>
+          <% end %>
+        </li>
         <% end %>
-        <% gallery.images.each do |image| %>
-          <%= cl_image_tag(image.key, width: 400, height: 300) %>
-          <%= link_to 'delete image', delete_image_attachement_gallery_url(gallery, image), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cette image. Etes vous sur ?" } %>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
+  </div>
   <% end %>
 <% end %>

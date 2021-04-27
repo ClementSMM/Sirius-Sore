@@ -1,27 +1,34 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
+  <div class="container-sirius dashboard-container">
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="product-edit-side">
+      <h1>Modifiez votre produit</h1>
 
-    <p>edit</p>
-
-    <%= @product.name %>
-
-    <% @product.images.each do |image| %>
-      <%= cl_image_tag(image.key,
-          width: 300, height: 200)  %>
-      <%= link_to 'delete image', delete_image_attachement_product_url(@product, image), method: :delete %>
-
-    <% end %>
-
-    <%= simple_form_for(@product) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :small_description %>
-      <%= f.text_field :small_description %>
-      <%= f.label :long_description %>
-      <%= f.text_area :long_description %>
-      <%= f.file_field :images, multiple: true %>
-      <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
-      <%= f.submit %>
-    <% end %>
+      <h3><%= @product.name %></h3>
+      <div class="product-edit-side-subcontainer">
+        <% @product.images.each do |image| %>
+          <div class="grid-subcontainer-child">
+            <%= cl_image_tag(image.key,
+                width: 150, height: 150)  %>
+            <p>  <%= link_to 'delete image', delete_image_attachement_product_url(@product, image), method: :delete %> </p>
+          </div>
+        <% end %>
+      </div>
+        <%= simple_form_for(@product) do |f| %>
+          <div class="form-sirius product-edit-form">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :small_description %>
+          <%= f.text_field :small_description %>
+          <%= f.label :long_description %>
+          <%= f.text_area :long_description %>
+          <%= f.file_field :images, multiple: true %>
+          <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
+          <%= f.submit %>
+          </div>
+        <% end %>
+    </div>
+  </div>
   <% end %>
 <% end %>

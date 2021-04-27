@@ -1,7 +1,10 @@
 .btn-sirius {
   background-color: $background;
   color: $primary-yellow;
-  border: solid 1px $primary-variant;
+  border: solid 1px $primary-yellow;
+  padding: 0 auto;
+  width: 300px;
+  text-align: center;
 }
 .btn-sirius-thick{
   padding:16px 24px 16px 24px;

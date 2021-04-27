@@ -2,6 +2,7 @@ class StocksController < ApplicationController
 
   def new
     @stock = Stock.new
+    redirect_to stocks_path
   end
 
   def create
@@ -25,6 +26,11 @@ class StocksController < ApplicationController
 
   def edit
     @stock = Stock.find(params[:id])
+  end
+
+  def destroy
+    @stock = Stock.find(params[:id])
+    @stock.delete
   end
 
   def update

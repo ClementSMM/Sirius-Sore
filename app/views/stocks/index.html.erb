@@ -1,36 +1,45 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
-   <%= render 'shared/admin_dashboard_nav' %>
-    <%= link_to 'créer stock', new_stock_path(@stocks)  %>
+  <div class="container-sirius dashboard-container">
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="stock-edit-side">
+      <h1>Gerez vos stocks</h1>
 
-     <%= form_tag stocks_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a product"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
 
-    <% @stocks.each do |stock| %>
-      <ul>
-        <li> <%= link_to stock.product.name, product_path(stock.product) %> </li>
-        <li> Taille: <%= stock.size %> </li>
-        <li> Prix actuel: <%= stock.price %>€</li>
-        <li>
-          <%= simple_form_for(stock) do |f| %>
-            <%= f.number_field :price_cents %>
-            <%= f.submit 'modifier le prix' %>
-          <% end %>
-        </li>
-        <li> Quantitié en stock: <%= stock.quantity %> </li>
-        <li>
-          <%= simple_form_for(stock) do |f| %>
-            <%= f.number_field :quantity %>
-            <%= f.submit 'modifier le stock' %>
-          <% end %>
-        </li>
-      </ul>
-    <% end %>
+      <div class="stock-search-bar">
+        <%= form_tag stocks_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a product" %>
+          <div class="space-btn"> <%= submit_tag "Search", class: "btn-sirius" %> </div>
+        <% end %>
+
+        <div class="space-btn"> <%= link_to 'créer stock', new_stock_path(@stocks), class: 'btn-sirius '  %> </div>
+      </div>
+      <div class="grid-cards-stock">
+        <% @stocks.each do |stock| %>
+          <ul>
+            <div class="card-stocks">
+              <li> <%= link_to stock.product.name, product_path(stock.product) %> </li>
+              <li> Taille: <%= stock.size %> </li>
+              <li> Prix actuel: <%= stock.price %>€</li>
+              <li>
+                <%= simple_form_for(stock) do |f| %>
+                  <%= f.number_field :price_cents %>
+                  <%= f.submit 'modifier le prix' %>
+                <% end %>
+              </li>
+              <li> Quantitié en stock: <%= stock.quantity %> </li>
+              <li>
+                <%= simple_form_for(stock) do |f| %>
+                  <%= f.number_field :quantity %>
+                  <%= f.submit 'modifier le stock' %>
+                <% end %>
+                 <p class=" btn-sirius"><%= link_to 'Supprimer le stock (pas de routes)', "#"%></p>
+              </li>
+            </div>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <% end %>
 <% end %>
