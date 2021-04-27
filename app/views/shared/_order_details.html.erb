@@ -13,6 +13,7 @@
 <% else %>
 <div class="main-div-panier">
 
+  <%# TITRE DE LA PAGE %>
   <div class="title-panier">
     <%# La commande est en cours %>
     <% if @order.status == "En cours" %>
@@ -25,6 +26,7 @@
     <% end %>
   </div>
 
+  <%# LISTE DES PRODUITS %>
   <ul>
     <% @order.order_items.each do |item| %>
     <li>
@@ -34,7 +36,9 @@
         </div>
         <div class="description-card-panier">
           <div class="description-card-panier-box1">
-            <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
+            <%= link_to product_path(item.product), class: "" do %>
+              <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
+            <% end %>
             <div class="display-mobile"> <%= item.product.small_description %> </div>
             <div class="description-card-panier-box1-btn-qty">
               <%# La commande est en cours %>

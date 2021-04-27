@@ -35,10 +35,14 @@
     justify-content: space-evenly;
     padding-right: 10px;
     width: 35vh;
+    .display-mobile {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .description-card-panier-box1-btn-qty {
      /* position: absolute; */
       display: flex;
-
     }
     .btn-card-panier {
       background-color: black;

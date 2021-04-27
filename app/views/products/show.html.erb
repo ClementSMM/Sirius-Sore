@@ -21,26 +21,29 @@
   <div class="product-description">
 
     <h1><%= @product.name %></h1>
-    <span>
-      <% @product_categories.map do |cat| %>
-        <span><%= cat %></span>
+    
+    <% @product_categories.each do |cat| %>
+      <%@category = Category.find_by(name: cat ) %>
+      <%= link_to category_path(@category), class: "category" do%>
+        <% @category.name %>
       <% end %>
-    </span>
+    <% end %>
+
     <p><%= @product.small_description %></p>
     <p>Prix : <span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
 
 
     <%= simple_form_for (@order_item), html: {class: 'form-sirius form-product'} do |f| %>
       <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
-
-      <%= f.select :quantity, 1..10, label: 'Quantité' %>
+      <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
       <%= f.input :product_id,
                           required: false,
                           as: :hidden,
                           input_html: { value: params[:id] } %>
       <%= f.submit 'Ajouter au panier'%>
     <% end %>
-    <p>Longue description : <%= @product.long_description %></p>
+    <h4>Détails : </h4>
+    <p><%= @product.long_description %></p>
 
   </div>
 </div>

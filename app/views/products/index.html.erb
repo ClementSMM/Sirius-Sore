@@ -2,7 +2,9 @@
   <% @products.each do |product| %>
     <div class="product-index-card">
         <div class="card-product-index-img">
+        <%= link_to product_path(product) do%>
           <%= cl_image_tag product.images.first.key, crop: :fill%>
+        <% end %>
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
