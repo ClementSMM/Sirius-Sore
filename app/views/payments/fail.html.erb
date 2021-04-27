@@ -1,0 +1,8 @@
+<div class="container-sirius order-summary-page">
+
+  <h1>Oups, il semble qu'il y ait eu un problème ... </h1>
+  <p class = 'order-success-message'>Votre payement n'a pas pu être réalisé. Vous pouvez réessayer à nouveau depuis votre panier. </br>Si le problème persiste, n'hésitez pas à nous contacter.</p>
+  <%= link_to "Mon panier", order_path(session[:order_id]), class: "btn-sirius-thick" %>
+
+
+</div>

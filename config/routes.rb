@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get :jeux, to: "categories#jeux"
   get :gamelles, to: "categories#gamelles"
   get :transports, to: "categories#transports"
+  get :success, to: 'payments#success'
+  get :fail, to: 'payments#fail'
 
   resources :products do
     member do
