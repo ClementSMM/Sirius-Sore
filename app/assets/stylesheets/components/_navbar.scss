@@ -10,6 +10,8 @@
   top: 0;
   opacity: 1;
   z-index: 10;
+  border-bottom: 5px ridge $primary-yellow;
+
 
   .header-navbar{
     display: flex;
@@ -86,7 +88,7 @@
   position: absolute;
   left: calc(100vw - 90%);
   z-index: 15;
-  border: 1px solid $primary-yellow;
+  border: 5px ridge $primary-yellow;
 
  
   .col-boutique{
