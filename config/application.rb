@@ -21,6 +21,7 @@ module SiriusStore
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     config.hosts << '28e0235e4a15.ngrok.io'
+    config.hosts << "sirius-online-store.herokuapp.com"
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
