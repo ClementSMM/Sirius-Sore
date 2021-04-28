@@ -69,24 +69,25 @@
 
         <div class = "separation-bar"></div>
 
-
         <p> <%= link_to 'Nouveautés', category_path(1) %></p>
         <p><%= link_to 'Editions limitées', category_path(2) %></p>
-        <p><%= link_to 'Dernières pièces', category_path(3) %></p>
         
         <div class = "separation-bar"></div>
 
-        <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
-        <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
-        <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
-        <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
-        <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
-        <h5><%= link_to 'JEUX', jeux_path %>  </h5>
-        <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
-        <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
+        <p><%= link_to 'Cosmétiques', cosmetiques_path %>  </p>
+        <p><%= link_to 'Friandises', friandises_path %>  </p>
+        <p><%= link_to 'Accessoires', accessoires_path %>  </p>
+        <p><%= link_to 'Paniers', paniers_path %>  </p>
+        <p><%= link_to 'Vêtements', vetements_path %>  </p>
+        <p><%= link_to 'Jeux', jeux_path %>  </p>
+        <p><%= link_to 'Gamelles', gamelles_path %>  </p>
+        <p><%= link_to 'Transports', transports_path %>  </p>
 
     </div>
 
+    <div class = "separation-bar"></div>
+
+      <p> <%= link_to 'Salon de toilettage', salon_path %>  |  <%= link_to 'Contact', contact_path %> </p>
     <div class = "separation-bar"></div>
 
     <div class= nav-login-mobile>
@@ -112,98 +113,101 @@
 
   </div>
 
+  <%# DROPDOWN DE LA BOUTIQUE DESKTOP%>
+  <div class = 'modal-background'></div>
+  <div id= 'dropdown-boutique'>
+    <div id = "col-boutique-1" class= "col-boutique"> 
+    
+        <p> <%= link_to 'Nouveautés', category_path(1) %></p>
+        <p><%= link_to 'Editions limitées', category_path(2) %></p>
+        <p><%= link_to 'Dernières pièces', category_path(3) %></p>
+        <p><%= link_to 'Voir tous les produits', products_path %></p>
+        <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619535338/Logocouleur_nom-_fond_transparent_1_1_zcmwho.png", height: 120, width:120, class: 'dropdown-logo' %>
+
+    </div>
+    
+
+    <div id = "col-boutique-2" class= "col-boutique"> 
+      <div>
+        <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
+        <p> <%= link_to 'Shampoings', category_path(4) %></p>
+        <p> <%= link_to 'Après-shampoings', category_path(5) %></p>
+        <p> <%= link_to 'Conditionners', category_path(6) %></p>
+        <p> <%= link_to 'Parfums', category_path(7) %></p>
+        <p> <%= link_to 'Outils de toilettage', category_path(8) %></p>
+        </div>
+
+      <div>
+        <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
+
+          <p> <%= link_to 'Bois de cerf', category_path(9) %></p>
+          <p> <%= link_to 'Bâton de yak', category_path(10) %></p>
+          <p> <%= link_to 'Friandises Déshydratées', category_path(11) %></p>
+        </div>
+    </div>
+
+    <div id = "col-boutique-3" class= "col-boutique"> 
+      <div>
+        <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
+
+          <p> <%= link_to 'Colliers', category_path(12) %></p>
+          <p> <%= link_to 'Harnais', category_path(13) %></p>
+          <p> <%= link_to 'Laisses', category_path(14) %></p>
+          <p> <%= link_to 'Bandanas', category_path(15) %></p>
+          <p> <%= link_to 'Médailles', category_path(16) %></p>
+          <p> <%= link_to 'Pochettes', category_path(17) %></p>
+        </div>
+
+      <div>
+        <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
+          <p> <%= link_to 'Panier Sirius', category_path(18) %></p>
+          <p> <%= link_to 'Coussins', category_path(19) %></p>
+          <p> <%= link_to 'Orthopédique', category_path(20) %></p>
+          <p> <%= link_to 'Canapés', category_path(21) %></p>
+        </div>
+    </div>
+
+    <div id = "col-boutique-4" class= "col-boutique"> 
+      <div>
+        <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
+
+          <p> <%= link_to 'Pulls', category_path(22) %></p>
+          <p> <%= link_to 'Manteaux', category_path(23) %></p>
+          <p> <%= link_to 'T-shirts', category_path(24) %></p>
+          <p> <%= link_to 'Autres', category_path(25) %></p>
+        </div>
+
+      <div>
+        <h5><%= link_to 'JEUX', jeux_path %>  </h5>
+
+          <p> <%= link_to 'Doudous', category_path(26) %></p>
+          <p> <%= link_to 'Pour les dents', category_path(27) %></p>
+        </div>
+    </div>
+
+    <div id = "col-boutique-5" class= "col-boutique"> 
+      <div>
+        <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
+          <p> <%= link_to 'Gamelles Sirius', category_path(28) %></p>
+          <p> <%= link_to 'Gamelles', category_path(29) %></p>
+          <p> <%= link_to 'Gamelles anti-glouton', category_path(30) %></p>
+        </div>
+
+      <div>
+        <h5></h5>
+        <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
+          <p> <%= link_to 'Sacs de transport', category_path(31) %></p>
+          <p> <%= link_to 'Poussettes', category_path(32) %></p>
+          <p> <%= link_to 'Sécurité', category_path(33) %></p>
+        </div>
+    </div>
+
+
+
+  </div>
+
 </div>
 
-
-<%# DROPDOWN DE LA BOUTIQUE %>
-<div class = 'modal-background'></div>
-<div id= 'dropdown-boutique'>
-  <div id = "col-boutique-1" class= "col-boutique"> 
-  
-      <p> <%= link_to 'Nouveautés', category_path(1) %></p>
-      <p><%= link_to 'Editions limitées', category_path(2) %></p>
-      <p><%= link_to 'Dernières pièces', category_path(3) %></p>
-  </div>
-  
-
-  <div id = "col-boutique-2" class= "col-boutique"> 
-    <div>
-      <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
-      <p> <%= link_to 'Shampoings', category_path(4) %></p>
-      <p> <%= link_to 'Après-shampoings', category_path(5) %></p>
-      <p> <%= link_to 'Conditionners', category_path(6) %></p>
-      <p> <%= link_to 'Parfums', category_path(7) %></p>
-      <p> <%= link_to 'Outils de toilettage', category_path(8) %></p>
-      </div>
-
-    <div>
-      <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
-
-        <p> <%= link_to 'Bois de cerf', category_path(9) %></p>
-        <p> <%= link_to 'Bâton de yak', category_path(10) %></p>
-        <p> <%= link_to 'Friandises Déshydratées', category_path(11) %></p>
-      </div>
-  </div>
-
-  <div id = "col-boutique-3" class= "col-boutique"> 
-    <div>
-      <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
-
-        <p> <%= link_to 'Colliers', category_path(12) %></p>
-        <p> <%= link_to 'Harnais', category_path(13) %></p>
-        <p> <%= link_to 'Laisses', category_path(14) %></p>
-        <p> <%= link_to 'Bandanas', category_path(15) %></p>
-        <p> <%= link_to 'Médailles', category_path(16) %></p>
-        <p> <%= link_to 'Pochettes', category_path(17) %></p>
-      </div>
-
-    <div>
-      <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
-        <p> <%= link_to 'Panier Sirius', category_path(18) %></p>
-        <p> <%= link_to 'Coussins', category_path(19) %></p>
-        <p> <%= link_to 'Orthopédique', category_path(20) %></p>
-        <p> <%= link_to 'Canapés', category_path(21) %></p>
-      </div>
-  </div>
-
-  <div id = "col-boutique-4" class= "col-boutique"> 
-    <div>
-      <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
-
-         <p> <%= link_to 'Pulls', category_path(22) %></p>
-         <p> <%= link_to 'Manteaux', category_path(23) %></p>
-         <p> <%= link_to 'T-shirts', category_path(24) %></p>
-         <p> <%= link_to 'Autres', category_path(25) %></p>
-      </div>
-
-    <div>
-      <h5><%= link_to 'JEUX', jeux_path %>  </h5>
-
-        <p> <%= link_to 'Doudous', category_path(26) %></p>
-        <p> <%= link_to 'Pour les dents', category_path(27) %></p>
-      </div>
-  </div>
-
-  <div id = "col-boutique-5" class= "col-boutique"> 
-    <div>
-      <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
-         <p> <%= link_to 'Gamelles Sirius', category_path(28) %></p>
-         <p> <%= link_to 'Gamelles', category_path(29) %></p>
-         <p> <%= link_to 'Gamelles anti-glouton', category_path(30) %></p>
-      </div>
-
-    <div>
-      <h5></h5>
-      <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
-         <p> <%= link_to 'Sacs de transport', category_path(31) %></p>
-         <p> <%= link_to 'Poussettes', category_path(32) %></p>
-         <p> <%= link_to 'Sécurité', category_path(33) %></p>
-      </div>
-  </div>
-
-
-
-</div>
 
 
 

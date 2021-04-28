@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
 
+
   #NE PAS OUBLIER DE SUPPRIMER
   def new
     @gallery = Gallery.new

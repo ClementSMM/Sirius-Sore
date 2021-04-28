@@ -17,7 +17,12 @@
     display: flex;
     align-items: center;
     color: $primary-yellow;
-    h1{font-size: 48px;}
+    h1{
+      font-size: 48px;
+      font-weight: 400;
+      letter-spacing: 3px;
+
+    }
   }
   .nav-links{
     color: $primary-yellow;
@@ -86,6 +91,7 @@
   grid-gap: 10px;
   align-items:center;
   position: absolute;
+  top:180px;
   left: calc(100vw - 90%);
   z-index: 15;
   border: 5px ridge $primary-yellow;
@@ -107,6 +113,7 @@
 
   #col-boutique-1{
     grid-column: 1/2;
+    position: relative;
 
   }
   #col-boutique-2{
@@ -130,6 +137,11 @@
     align-self: start;
     justify-self:center;
 
+  }
+  .dropdown-logo{
+    position: absolute;
+    bottom: -180px;
+    left: 24px;
   }
 }
 
@@ -234,8 +246,11 @@
     top:100px;
     z-index:10;
     width:100vw;
+    border-bottom: 1px ridge $primary-yellow;
+
     .nav-search-mobile{
       margin-bottom: 0px;
+
       form{
         justify-content: center;
       }
@@ -251,12 +266,15 @@
 
     .mobile-boutique{
       margin-bottom: 20px;
+      p{
+        margin: 4px;
+      }
     }
 
     .separation-bar{
       width:50%;
       border-bottom: 1px solid $primary-yellow;
-      margin: 16px auto;
+      margin: 8px auto;
     }
 
     .nav-login-mobile{
