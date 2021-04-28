@@ -1,4 +1,6 @@
-<div class="navbar-sirius">
+<div class="navbar-sirius" id = '<%= "navbar-home" if current_page?(root_url) %>'>
+
+
   <div class = 'header-navbar'>
     <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619535338/Logocouleur_nom-_fond_transparent_1_1_zcmwho.png", height: 120, width:120, class: 'desktop' %>
     <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>  
@@ -206,6 +208,22 @@
 
   </div>
 
+</div>
+
+  <%# PETITE NAVBAR DE LA HOMEPAGE %>
+  <div class = "small-home-navbar desktop<%= "d-none" if !current_page?(root_url) %>">
+      <div class = 'nav-search'>
+        <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+          <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false %>
+            <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
+        <% end %>
+      </div>
+      <div class = 'small-home-shop'>
+        <%= link_to "Visiter la boutique", products_path, class: "hover" %>
+        <%= link_to order_path(session[:order_id]), class: "nav-link nav-cart" do %>
+          <i class="fas fa-shopping-bag"></i> Panier
+        <% end %>   
+      </div>
 </div>
 
 

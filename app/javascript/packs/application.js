@@ -27,6 +27,7 @@ import { dynamicPrice } from './components/dynamicPrice'
 import { toggleBoutique } from './components/toggleBoutique'
 import { toggleMobileNavbar } from './components/toggleMobileNavbar'
 import { carousel } from './components/carousel'
+import { navHomePage } from './components/navbar'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleBoutique();
   toggleMobileNavbar();
   carousel('carouselProduit');
+  navHomePage();
 });

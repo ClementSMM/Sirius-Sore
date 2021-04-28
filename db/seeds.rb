@@ -290,6 +290,14 @@ gallery_1.save
 puts "."
 
 
+gallery_2 = Gallery.create!( category: 'Image accueil')
+gallery_2_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619538279/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_17.42.44_snbapn.png')
+gallery_2.images.attach(io:gallery_2_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_2.save
+
+puts "."
+
+
 
 
 puts "-------------------------------"

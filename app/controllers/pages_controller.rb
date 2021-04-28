@@ -3,6 +3,9 @@ class PagesController < ApplicationController
 
   def home
     @gallery_banner = Gallery.find_by(category: "Bannière")
+    @gallery_accueil = Gallery.find_by(category: "Image accueil")
+    @category_new = Category.find_by(name: 'Nouveautés')
+
 
   end
 
