@@ -18,7 +18,10 @@
         <% @stocks.each do |stock| %>
           <ul>
             <div class="card-stocks">
-              <li> <%= link_to stock.product.name, product_path(stock.product) %> </li>
+              <%= link_to edit_product_path(stock.product) do %>
+              <span>  <%= stock.product.name %>  <i class="fas fa-edit"></i></span>
+              <% end %>
+
               <li> Taille: <%= stock.size %> </li>
               <li> Prix actuel: <%= stock.price %>€</li>
               <li>
@@ -33,8 +36,6 @@
                   <%= f.number_field :quantity %>
                   <%= f.submit 'modifier le stock' %>
                 <% end %>
-                 <p class=" btn-sirius"><%= link_to 'Supprimer le stock (pas de routes)', "#"%></p>
-                 <p class=" btn-sirius"> <%= link_to 'Modifier produit (routes)', '#'%> </p>
               </li>
             </div>
           </ul>
