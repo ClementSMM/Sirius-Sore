@@ -1,88 +1,97 @@
+<% if current_user.admin?%>
+  <div class="container-sirius ">
+    <div class="order-details-side">
+      <h1>Liste des produits</h1>
 
-<% if  @order.order_items.length == 0 %>
-  <div class="main-div-panier-vide">
-    <div class="panier-vide">
-      <h1>Votre panier est vide</h1>
-    </div>
-
-    <div class="link-empty-panier">
-      <%= link_to "Commencez votre shopping", products_path  %>
+      <% @order.order_items.each do |item| %>
+        <h5>- <%=item.product.name %> <span > (<%= item.size %>)</span> x <%= item.quantity %></h5>
+      <% end %>
     </div>
   </div>
 
 <% else %>
-<div class="main-div-panier">
+  <% if  @order.order_items.length == 0 %>
+    <div class="main-div-panier-vide">
+      <div class="panier-vide">
+        <h1>Votre panier est vide</h1>
+      </div>
 
-  <%# TITRE DE LA PAGE %>
-  <div class="title-panier">
-    <%# La commande est en cours %>
-    <% if @order.status == "En cours" %>
-    <h1>Mon panier</h1>
+      <div class="link-empty-panier">
+        <%= link_to "Commencez votre shopping", products_path  %>
+      </div>
+    </div>
 
-    <%# La commande n'est pas en cours %>
-    <% else %>
-    <h1>Commande du <%= @order.created_at.strftime("%d / %m / %Y") %></h1>
-    <h2><%= @order.status %></h2>
-    <% end %>
-  </div>
+  <% else %>
+  <div class="main-div-panier">
 
-  <%# LISTE DES PRODUITS %>
-  <ul>
-    <% @order.order_items.each do |item| %>
-    <li>
-      <div class="main-card-panier">
-        <div class="img-card-panier">
-          <%= cl_image_tag item.product.images.first.key, crop: :fill%>
-        </div>
-        <div class="description-card-panier">
-          <div class="description-card-panier-box1">
-            <%= link_to product_path(item.product), class: "" do %>
-              <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
-            <% end %>
-            <div class="display-mobile"> <%= item.product.small_description %> </div>
-            <div class="description-card-panier-box1-btn-qty">
-              <%# La commande est en cours %>
+    <%# TITRE DE LA PAGE %>
+    <div class="title-panier">
+      <%# La commande est en cours %>
+      <% if @order.status == "En cours" %>
+      <h1>Mon panier</h1>
+
+      <%# La commande n'est pas en cours %>
+      <% else %>
+      <h1>Commande du <%= @order.created_at.strftime("%d / %m / %Y") %></h1>
+      <h2><%= @order.status %></h2>
+      <% end %>
+    </div>
+
+    <%# LISTE DES PRODUITS %>
+    <ul>
+      <% @order.order_items.each do |item| %>
+      <li>
+        <div class="main-card-panier">
+          <div class="img-card-panier">
+            <%= cl_image_tag item.product.images.first.key, crop: :fill%>
+          </div>
+          <div class="description-card-panier">
+            <div class="description-card-panier-box1">
+              <%= link_to product_path(item.product), class: "" do %>
+                <h5><%=item.product.name %> <span > (<%= item.size %>)</span></h5>
+              <% end %>
+              <div class="display-mobile"> <%= item.product.small_description %> </div>
+              <div class="description-card-panier-box1-btn-qty">
+                <%# La commande est en cours %>
+                <% if @order.status == "En cours" %>
+                  <div class="quantity-card-panier"> <p>Quantité:</p> </div>
+                  <%= button_to '-', order_item_remove_one_path(item), class: 'btn-card-panier'%>
+                  <div class="item-card-quantity"> <p> <%= item.quantity %> </p></div>
+                  <%= button_to '+', order_item_add_one_path(item), class: 'btn-card-panier'%>
+                <%# La commande n'est pas en cours %>
+                <% else %>
+                    <div class="item-card-quantity"> <p> Quantité : <%= item.quantity %> </p></div>
+                <% end %>
+              </div>
+            </div>
+            <div class="description-card-panier-box3">
+              <p>Prix: <%= item.total %>€</p>
+                  <%# La commande est en cours %>
               <% if @order.status == "En cours" %>
-                <div class="quantity-card-panier"> <p>Quantité:</p> </div>
-                <%= button_to '-', order_item_remove_one_path(item), class: 'btn-card-panier'%>
-                <div class="item-card-quantity"> <p> <%= item.quantity %> </p></div>
-                <%= button_to '+', order_item_add_one_path(item), class: 'btn-card-panier'%>
-              <%# La commande n'est pas en cours %>
-              <% else %>
-                  <div class="item-card-quantity"> <p> Quantité : <%= item.quantity %> </p></div>
+                  <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
               <% end %>
             </div>
           </div>
-          <div class="description-card-panier-box3">
-            <p>Prix: <%= item.total %>€</p>
-                <%# La commande est en cours %>
-            <% if @order.status == "En cours" %>
-                <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
-            <% end %>
-          </div>
         </div>
-      </div>
-    </li>
-    <% end %>
-  </ul>
+      </li>
+      <% end %>
+    </ul>
 
-    <div class="total-panier">
-      <h4>Total de la commande: <%= @order.total %>€</h4>
-    </div>
-
-    <%# La commande est en cours %>
-    <% if @order.status == "En cours" %>
-      <div class="btn-payer-panier-position">
-        <%= form_tag order_pay_path(@order) do %>
-        <%= hidden_field_tag 'order_id', @order.id %>
-        <%= submit_tag 'Payer', class: 'btn-payer-panier' %>
-        <% end %>
+      <div class="total-panier">
+        <h4>Total de la commande: <%= @order.total %>€</h4>
       </div>
 
-    <% end %>
+      <%# La commande est en cours %>
+      <% if @order.status == "En cours" %>
+        <div class="btn-payer-panier-position">
+          <%= form_tag order_pay_path(@order) do %>
+          <%= hidden_field_tag 'order_id', @order.id %>
+          <%= submit_tag 'Payer', class: 'btn-payer-panier' %>
+          <% end %>
+        </div>
 
+      <% end %>
+  </div>
 
-</div>
-
+  <% end %>
 <% end %>
-

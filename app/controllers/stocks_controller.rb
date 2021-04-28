@@ -2,7 +2,7 @@ class StocksController < ApplicationController
 
   def new
     @stock = Stock.new
-    redirect_to stocks_path
+
   end
 
   def create
