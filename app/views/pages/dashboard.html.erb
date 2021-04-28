@@ -1,7 +1,12 @@
 <% if user_signed_in? %>
   <% if current_user.admin  %>
-    <h1>Dashboard</h1>
+  <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
+    <div class="dashboard-side">
+      <h1>Dashboard</h1>
+      <h3>Bienvenue sur le dashboard, d'ici vous pourrez acceder a toutes les taches admin</h3>
+    </div>
+  </div>
   <% else %>
     <p>Vous ne pouvez pas accéder à cette page</p>
     <%= link_to 'Accueil', root_path%>

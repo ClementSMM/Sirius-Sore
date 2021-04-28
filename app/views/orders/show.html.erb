@@ -3,17 +3,65 @@
 <%# ####################################################################@ %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
+    <div class="container-sirius dashboard-container">
+      <%= render 'shared/admin_dashboard_nav' %>
+      <div class="order-show-admin-side">
+        <h1>Commande client</h1>
+        <% if @order.status == 'En cours' %>
+          <h1><strong>⚠️COMMANDE EN COURS NE PAS MODIFIER⚠️</strong></h1>
+        <% end %>
+        <div class="order-details-grid">
+          <div class="user-data-order-details">
+            <h4>Client : <%=  @order.user ? @order.user.email : 'userless order' %></h4>
+            <h5>Informations:</h5>
 
 
-    <h4>client : <%=  @order.user ? @order.user.email : 'userless order' %></h4>
-    <h4>Modifier le statut de la commande</h4>
-    <%= simple_form_for (@order) do |f| %>
-      <%= f.input :status, collection: @statuses %>
-      <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
-      <%= f.submit %>
-    <% end %>
+            <% if @order.user != nil %>
 
+                <% if @order.user.first_name != nil %>
+                  <p>- Nom : <%= @order.user.first_name%> <%= @order.user.last_name %></p>
+                <% end %>
 
+                <% if @order.user.address_1 != nil%>
+                  <p>- Adresse 1 : <%= @order.user.address_1 %></p>
+                <% end %>
+
+                <% if @order.user.address_2 != nil %>
+                  <p>- Adresse 2 : <%= @order.user.address_2 %> </p>
+                <% end %>
+
+                <% if @order.user.post_code != nil %>
+                  <p>- Code postal : <%= @order.user.post_code %></p>
+                <% end %>
+
+                <% if @order.user.country != nil %>
+                  <p>- Pays : <%= @order.user.country %></p>
+                <% end %>
+
+                <% if @order.user.phone_number != nil %>
+                  <p>- Numero de telephone : <%= @order.user.phone_number %> </p>
+                <% end %>
+
+                <% if @order.user.email != nil %>
+                  <p>- Email : <%= @order.user.email %></p>
+                <% end %>
+
+                <% if @order.user.updated_at != nil %>
+                  <p>- Date : <%= @order.user.updated_at %></p>
+                <% end %>
+            <% end %>
+          </div>
+          <div class="user-order-status">
+            <h4>Modifier le statut de la commande</h4>
+            <%= simple_form_for (@order) do |f| %>
+              <%= f.input :status, collection: @statuses %>
+              <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
+              <%= f.submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 <% end %>
 
