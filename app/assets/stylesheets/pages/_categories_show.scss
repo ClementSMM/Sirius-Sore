@@ -1,0 +1,31 @@
+.categories-show-container {
+  margin-left: 20px;
+  margin-top: 25px;
+
+}
+
+.sub-categories-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+
+  .sub-categories-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .sub-categories-container {
+    margin-left: 50px;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+}

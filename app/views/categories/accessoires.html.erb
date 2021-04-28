@@ -1,44 +1,107 @@
-<h1>Accessoires</h1>
-  
-  <h2> <%= @category_col.name  %> </h2>
+<div class="container-sirius">
 
-  <% @category_col.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
-  
-  <h2> <%= @category_har.name  %> </h2>
+  <h1>Accessoires</h1>
+  <div class="categories-show-container">
+    <h2> <%= @category_col.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_col.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-  <% @category_har.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
+    <h2> <%= @category_har.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_har.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-  <h2> <%= @category_lais.name  %> </h2>
+    <h2> <%= @category_lais.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_lais.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-  <% @category_lais.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
+    <h2> <%= @category_band.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_band.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
+    <h2> <%= @category_med.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_med.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-  <h2> <%= @category_band.name  %> </h2>
-
-  <% @category_band.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
-  
-  <h2> <%= @category_med.name  %> </h2>
-
-  <% @category_med.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
-
-  <h2> <%= @category_poc.name  %> </h2>
-
-  <% @category_poc.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
-  <% end %>
+    <h2> <%= @category_poc.name  %> </h2>
+    <div class="sub-categories-container">
+      <% @category_poc.products.each do |product| %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
