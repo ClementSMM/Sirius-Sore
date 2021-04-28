@@ -1,18 +1,38 @@
-<%= render 'shared/banner' %>
+<header>
+    <% @gallery_accueil.images.each do |image| %>
+      <%= cl_image_tag image.key, gravity: :center, crop: :fit, class: '' %>
+    <% end %>
+  <h1>MAISON SIRIUS</h1>
+  <h3>La meilleure boutique en ligne</h3>
+</header>
 
 
-<p>
-<%= link_to 'voir tous les produits', products_path%>
-</p>
+<div class = "home-page">
 
-<p>
-<%= link_to 'ajouter un produit', new_product_path%>
-</p>
-<p>
-<%= link_to 'voir mes commandes', orders_path%>
-</p>
+  <h2>Une boutique haut de gamme pour tous les toutous. </h2>
 
+  <section class = "home-nouveautes">
+  
+    <h3>Nouveautés</h3>
 
-<%# <%= link_to 'voir mon panier', order_path(session[:order_id])%>
+    <div class="home-nouveautes-produits">
+      <% @category_new.products.sample(4).each do |product|%>
+        <div class="product-index-card">
+              <div class="card-product-index-img">
+              <%= link_to product_path(product) do%>
+                <%= cl_image_tag product.images.first.key, crop: :fill%>
+              <% end %>
+              </div>
+              <div class="text-product-index-card">
+                <p > <%= link_to product.name, product_path(product)%> </p>
+                <p >A partir de: <%= product.find_first_price %>€</p>
+              </div>
+          </div>  
+      <% end %>
+    </div>
 
+  
+  </section>
+
+</div>  
 

@@ -1,1 +1,54 @@
-// Specific CSS for your home-page
+
+header{
+  height: 100vh;
+  margin-top: -180px;
+  z-index: -1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  
+  img{
+    filter: grayscale(40%);
+    position: absolute;
+    z-index: -1;
+    width:100%;
+    height:100%;
+  }
+  h1{
+    font-weight: 900;
+    font-size: 64px;
+
+  }
+}
+
+.home-page{
+  text-align:center;
+
+  h2{
+    margin: 40px;
+  }
+
+  .home-nouveautes{
+    &-produits{
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      div{
+        margin: 24px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .home-nouveautes{
+    &-produits{
+      flex-direction: column;
+      div{
+        margin: 12px;
+      }
+    }}
+}

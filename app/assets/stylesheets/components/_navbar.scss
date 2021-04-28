@@ -11,6 +11,8 @@
   opacity: 1;
   z-index: 10;
   border-bottom: 5px ridge $primary-yellow;
+  transition: all 1s ease-out;
+
 
 
   .header-navbar{
@@ -72,9 +74,47 @@
     }
 
   }
-
-
+  
+  
 }
+
+.small-home-navbar{
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index:5;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: top;
+
+
+  .nav-search{
+    color:$primary-yellow;
+    display: flex;
+    margin: 10px 20px; 
+    form {
+      flex-flow: row nowrap;
+    }
+  }
+  .nav-search-button{
+    color:$primary-yellow;
+  }
+  input{
+    background-color: transparent;
+    border:transparent;
+    border-bottom: 1px solid $primary-yellow;
+    color: white;
+  }
+
+  .small-home-shop{
+    display: flex;
+    align-items: center;
+    margin: 10px 20px; 
+    margin-left: calc(100vw - 500px)
+
+  }
+}
+
 .mobile{
   display:none;
 }
