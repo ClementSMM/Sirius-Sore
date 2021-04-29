@@ -34,13 +34,17 @@
 
 
     <%= simple_form_for (@order_item), html: {class: 'form-sirius form-product'} do |f| %>
-    <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
-    <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
-    <%= f.input :product_id,
-    required: false,
-    as: :hidden,
-    input_html: { value: params[:id] } %>
-    <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
+      <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
+      <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
+      <%= f.input :product_id,
+          required: false,
+          as: :hidden,
+          input_html: { value: params[:id] } %>
+      <% if @product.online == true %>
+        <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
+      <% else %>
+        <p class = 'text-center btn-sirius-thick'> Nous sommes désolés, ce produit n'est pas disponible actuellement</p>
+      <% end %>
     <% end %>
     <h4>Détails : </h4>
     <p><%= @product.long_description %></p>

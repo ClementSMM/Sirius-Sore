@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @gallery_banner = Gallery.find_by(category: "Bannière")
     @gallery_accueil = Gallery.find_by(category: "Image accueil")
-    @category_new = Category.find_by(name: 'Nouveautés')
+    @products_new = find_new_products
 
 
   end
@@ -26,6 +26,20 @@ class PagesController < ApplicationController
   def salon 
     @gallery_banner = Gallery.find_by(category: "Bannière")
 
+  end
+
+
+  private 
+
+  def find_new_products
+  @new_products = []
+
+  @category_new = Category.find_by(name: 'Nouveautés')
+  @category_new.products.each do |product| 
+    next if product.online == false
+    @new_products << product
+  end
+  return @new_products
   end
 
 end
