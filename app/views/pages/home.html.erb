@@ -16,7 +16,7 @@
     <h3>Nouveautés</h3>
 
     <div class="home-nouveautes-produits">
-      <% @category_new.products.sample(4).each do |product|%>
+      <% @products_new.each do |product|%>
         <div class="product-index-card">
               <div class="card-product-index-img">
               <%= link_to product_path(product) do%>
