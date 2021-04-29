@@ -19,27 +19,31 @@
             <% if @order.user != nil %>
 
                 <% if @order.user.first_name != nil %>
-                  <p>- Nom : <%= @order.user.first_name%> <%= @order.user.last_name %></p>
+                  <p><%= @order.user.first_name%> <%= @order.user.last_name %></p>
                 <% end %>
 
                 <% if @order.user.address_1 != nil%>
-                  <p>- Adresse 1 : <%= @order.user.address_1 %></p>
+                  <p><%= @order.user.address_1 %></p>
                 <% end %>
 
                 <% if @order.user.address_2 != nil %>
-                  <p>- Adresse 2 : <%= @order.user.address_2 %> </p>
+                  <p><%= @order.user.address_2 %> </p>
+                <% end %>
+
+                <% if @order.user.city != nil %>
+                  <p><%= @order.user.city %> </p>
                 <% end %>
 
                 <% if @order.user.post_code != nil %>
-                  <p>- Code postal : <%= @order.user.post_code %></p>
+                  <p><%= @order.user.post_code %></p>
                 <% end %>
 
                 <% if @order.user.country != nil %>
-                  <p>- Pays : <%= @order.user.country %></p>
+                  <p><%= @order.user.country %></p>
                 <% end %>
 
                 <% if @order.user.phone_number != nil %>
-                  <p>- Numero de telephone : <%= @order.user.phone_number %> </p>
+                  <p><%= @order.user.phone_number %> </p>
                 <% end %>
 
                 <% if @order.user.email != nil %>

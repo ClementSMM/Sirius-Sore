@@ -15,6 +15,7 @@
   height: 100%;
   animation: fade 1.5s;
   display:none;
+  border: 2px solid $primary-yellow;
 }
 
 .prev, .next {
@@ -27,7 +28,7 @@
 .prev {
   left: 0px;
   cursor: url(https://res.cloudinary.com/maison-sirius/image/upload/v1619176347/Group_1_1_ahvgpn.png), auto;
-  
+
 }
 
 .next {
