@@ -1,11 +1,21 @@
-
-
-  <h1>show categorie</h1>
-
+<div class="container-sirius">
   <h1> <%= @category.name  %> </h1>
-
-  <% @category.products.each do |product| %>
-  <% next if product.online == false %>
-    <%= link_to product.name, product_path(product) %>
-    <%= product.small_description  %>
-  <% end %>
+  <div class="categories-show-container">
+    <div class="sub-categories-container">
+      <% @category.products.each do |product| %>
+      <% next if product.online == false %>
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de: <%= product.find_first_price %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
