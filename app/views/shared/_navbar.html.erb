@@ -211,7 +211,7 @@
 </div>
 
   <%# PETITE NAVBAR DE LA HOMEPAGE %>
-  <div class = "small-home-navbar desktop<%= "d-none" if !current_page?(root_url) %>">
+  <div class = "small-home-navbar desktop <%= "d-none" if !current_page?(root_url) %>">
       <div class = 'nav-search'>
         <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
           <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false %>
