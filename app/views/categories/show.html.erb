@@ -4,7 +4,8 @@
 
   <h1> <%= @category.name  %> </h1>
 
-  <% @category.products.each do |produit| %>
-    <%= link_to produit.name, product_path(produit) %>
-    <%= produit.small_description  %>
+  <% @category.products.each do |product| %>
+  <% next if product.online == false %>
+    <%= link_to product.name, product_path(product) %>
+    <%= product.small_description  %>
   <% end %>

@@ -5,13 +5,18 @@ class ProductsController < ApplicationController
 
     if params[:search].present?
       @products = Product.global_search(params[:search]["product"])
+      @products = @products.where(online: true)
     else
       @products = Product.all
+      @products = @products.where(online: true)
+
     end
 
     if @products.length == 0
       flash.alert = "Nous n'avons pas trouvé de produit correspondant à votre recherche"
       @products = Product.all
+      @products = @products.where(online: true)
+
     end
 
   end
@@ -26,6 +31,10 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
 
+  end
+
+  def hidden_products
+    @products = Product.where(online: false)
   end
 
   def create
@@ -107,7 +116,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :small_description, :long_description, :category_id, :images)
+    params.require(:product).permit(:name, :small_description, :long_description, :category_id, :images, :online)
   end
 
 end

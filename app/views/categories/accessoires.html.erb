@@ -5,6 +5,7 @@
     <h2> <%= @category_col.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_col.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -22,6 +23,7 @@
     <h2> <%= @category_har.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_har.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -39,6 +41,7 @@
     <h2> <%= @category_lais.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_lais.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -56,6 +59,7 @@
     <h2> <%= @category_band.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_band.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -73,6 +77,7 @@
     <h2> <%= @category_med.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_med.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -90,6 +95,7 @@
     <h2> <%= @category_poc.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_poc.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
