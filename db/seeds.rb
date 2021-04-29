@@ -124,7 +124,7 @@ puts "creating products"
 puts "-------------------------------"
 
 shampoing_toutou = Product.new( name: 'Shampoing toudou', small_description: 'tout doux', long_description: 'shampoing tout doux pour les toutou')
-shampoing_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974443/sham_ndpnjh.png')
+shampoing_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974443/Base%20seeds/sham_ndpnjh.png')
 #shampoing_img2 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1618220970/doge_qit8ec.jpg')
 shampoing_toutou.images.attach(io:shampoing_img, filename: 'images_shampoing.jpg', content_type: 'images/jpg')#shampoing_toutou.images.
 #attach(io:shampoing_img2, filename: 'images_shampoing.jpg', content_type: 'images/jpg')
@@ -133,14 +133,14 @@ shampoing_toutou.save
 puts "."
 
 collier_bleu = Product.new( name: 'Collier bleu', small_description: "c'est un collier bleu", long_description: "bleu foncé")
-collier_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974444/collier_ig9944.jpg')
+collier_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974444/Base%20seeds/collier_ig9944.jpg')
 collier_bleu.images.attach(io:collier_img, filename: 'images_collier.jpg', content_type: 'images/jpg')
 collier_bleu.categories << category_12
 collier_bleu.save
 puts "."
 
 pull_boxer = Product.new( name: 'Pull boxer', small_description: 'pull-over', long_description: 'pull-over pour boxer')
-pull_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/pull_ii4cjw.jpg')
+pull_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/pull_ii4cjw.jpg')
 pull_boxer.images.attach(io:pull_img, filename: 'images_pull.jpg', content_type: 'images/jpg')
 pull_boxer.categories << category_22
 pull_boxer.categories << category_1
@@ -149,36 +149,36 @@ pull_boxer.save
 puts "."
 
 gar_gamelle = Product.new( name: 'La gar-gamelle', small_description:'potite gamelle', long_description: 'la gamelle idealle pour les bleu')
-gamelle_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/gamelle_j6r7bj.jpg')
+gamelle_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/gamelle_j6r7bj.jpg')
 gar_gamelle.images.attach(io:gamelle_img, filename: 'images_gamelle.jpg', content_type: 'images/jpg')
 gar_gamelle.categories << category_29
 gar_gamelle.save
 puts "."
 
 panier_piano = Product.new( name: 'Panier piano', small_description:'panier en forme de piano', long_description: "Répète le nom du produit 10 fois sans rater et c'est la réduc !")
-panier_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974441/panier_nxwqut.jpg')
+panier_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974441/Base%20seeds/panier_nxwqut.jpg')
 panier_piano.images.attach(io:panier_img, filename: 'images_panier.jpg', content_type: 'images/jpg')
 panier_piano.categories << category_19
 panier_piano.save
 puts "."
 
 toutoudou = Product.new( name: 'Toutoudou', small_description:'le doudou du chien ', long_description: 'Un doudou tout doux pour le toutou')
-toutoudou_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/doudou_fkjxjg.jpg')
+toutoudou_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/doudou_fkjxjg.jpg')
 toutoudou.images.attach(io:toutoudou_img, filename: 'images_doudou.jpg', content_type: 'images/jpg')
 toutoudou.categories << category_26
 toutoudou.save
 puts "."
 
 uber_chien = Product.new( name: 'Uber chien', small_description:'Uber mais pour les chiens', long_description: 'Un coup de fil et votre toutou prend la route !')
-uber_chien_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/transport_ulwhlc.jpg')
+uber_chien_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/transport_ulwhlc.jpg')
 uber_chien.images.attach(io:uber_chien_img, filename: 'images_uber_chien.jpg', content_type: 'images/jpg')
 uber_chien.categories << category_31
 uber_chien.save
 puts "."
 
 poussette = Product.new( name: 'Poussette de compet', small_description:'Grande poussette pour courir avec son chien', long_description: 'Idéal pour le transport de toutous plus agés. Existe en 2 formats.  ')
-poussette_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089695/poussette_uyk4kf.jpg')
-poussette2_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089692/poussette-grande_js5dpo.jpg')
+poussette_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089695/Base%20seeds/poussette_uyk4kf.jpg')
+poussette2_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089692/Base%20seeds/poussette-grande_js5dpo.jpg')
 poussette.images.attach(io:poussette_img, filename: 'poussette-rouge.jpg', content_type: 'images/jpg')
 poussette.images.attach(io:poussette2_img, filename: 'poussette-poid-loud.jpg', content_type: 'images/jpg')
 poussette.categories << category_32
@@ -186,7 +186,7 @@ poussette.save
 puts "."
 
 panier_snug = Product.new( name: 'Panier snug Botanical garden', small_description:'Panier orthopédique pour chiens de haute qualité', long_description: 'Mousse orthopédique, résistant aux tâches, lavable à 30 degrés')
-panier_snug_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089695/poussette_uyk4kf.jpg')
+panier_snug_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619089695/Base%20seeds/poussette_uyk4kf.jpg')
 panier_snug.images.attach(io:panier_snug_img, filename: 'panier-ortho.jpg', content_type: 'images/jpg')
 panier_snug.categories << category_20
 panier_snug.categories << category_1
@@ -194,7 +194,7 @@ panier_snug.save
 puts "."
 
 shampoing_banane = Product.new( name: 'Shampoing banane SLS free', small_description:"Pour chien et chats à poils texturés doubles ou mi-longs. L'action enrichissante rend l'élasticité du poil qui devient doux et brillant", long_description: "Mode d'emploi : Mouiller le pelage à l'eau tiède, diluer le shampoing avec de l'eau chaude et frictionner légèrement le sgampoing sur l'animal/Laisser agir quelques minutes et bien rincer. Conseil pour un meilleur résultat : utiliser l'après shampoing banane.")
-shampoing_banane_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619090497/shampoing_tldiac.jpg')
+shampoing_banane_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619090497/Base%20seeds/shampoing_tldiac.jpg')
 shampoing_banane.images.attach(io:shampoing_banane_img, filename: 'shampoing-banane.jpg', content_type: 'images/jpg')
 shampoing_banane.categories << category_4
 shampoing_banane.save
@@ -283,7 +283,7 @@ puts "-------------------------------"
 
 
 gallery_1 = Gallery.create!( category: 'Bannière')
-gallery_1_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619543984/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_18.57.06_x9ybgc.png')
+gallery_1_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619543984/Base%20seeds/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_18.57.06_x9ybgc.png')
 gallery_1.images.attach(io:gallery_1_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_1.save
 
@@ -291,9 +291,69 @@ puts "."
 
 
 gallery_2 = Gallery.create!( category: 'Image accueil')
-gallery_2_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619538279/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_17.42.44_snbapn.png')
+gallery_2_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619538279/Base%20seeds/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_17.42.44_snbapn.png')
 gallery_2.images.attach(io:gallery_2_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_2.save
+
+puts "."
+gallery_3 = Gallery.create!( category: 'illu_cosmetique')
+gallery_3_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/cosmetique_tnadyy.jpg')
+gallery_3.images.attach(io:gallery_3_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_3.save
+
+puts "."
+gallery_4 = Gallery.create!( category: 'illu_friandise')
+gallery_4_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/friandise_d0yw0l.jpg')
+gallery_4.images.attach(io:gallery_4_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_4.save
+
+puts "."
+gallery_5 = Gallery.create!( category: 'illu_accessoire')
+gallery_5_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/bandana_qq0ox8.jpg')
+gallery_5.images.attach(io:gallery_5_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_5.save
+
+puts "."
+gallery_6 = Gallery.create!( category: 'illu_panier')
+gallery_6_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/panier_vaw0fj.jpg')
+gallery_6.images.attach(io:gallery_6_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_6.save
+
+puts "."
+gallery_7 = Gallery.create!( category: 'illu_vetement')
+gallery_7_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/vetement_pu3vtr.jpg')
+gallery_7.images.attach(io:gallery_7_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_7.save
+
+puts "."
+gallery_8 = Gallery.create!( category: 'illu_jeux')
+gallery_8_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/jouet_uff6kp.jpg')
+gallery_8.images.attach(io:gallery_8_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_8.save
+
+puts "."
+gallery_9 = Gallery.create!( category: 'illu_gamelles')
+gallery_9_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/gamelle_sjip2c.jpg')
+gallery_9.images.attach(io:gallery_9_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_9.save
+
+puts "."
+gallery_10 = Gallery.create!( category: 'illu_transports')
+gallery_10_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/transport_exx9qe.png')
+gallery_10.images.attach(io:gallery_10_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_10.save
+
+puts "."
+gallery_11 = Gallery.create!( category: 'logo_grand')
+gallery_11_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703861/Base%20seeds/Logocouleur_nom-_fond_transparent_1_1_eqc2cf.png')
+gallery_11.images.attach(io:gallery_11_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_11.save
+
+puts "."
+gallery_12 = Gallery.create!( category: 'logo_petit')
+gallery_12_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png')
+gallery_12.images.attach(io:gallery_12_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_12.save
 
 puts "."
 

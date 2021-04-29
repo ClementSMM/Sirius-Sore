@@ -2,7 +2,7 @@
 
 
   <div class = 'header-navbar'>
-    <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619535338/Logocouleur_nom-_fond_transparent_1_1_zcmwho.png", height: 120, width:120, class: 'desktop' %>
+    <%= cl_image_tag $logokey, height: 120, width:120, class: 'desktop' %>
     <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>  
   </div>
   <nav class = 'nav-links desktop'>
@@ -124,7 +124,7 @@
         <p><%= link_to 'Editions limitées', category_path(2) %></p>
         <p><%= link_to 'Dernières pièces', category_path(3) %></p>
         <p><%= link_to 'Voir tous les produits', products_path %></p>
-        <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619535338/Logocouleur_nom-_fond_transparent_1_1_zcmwho.png", height: 120, width:120, class: 'dropdown-logo' %>
+        <%= cl_image_tag $logokey, height: 120, width:120, class: 'dropdown-logo' %>
 
     </div>
     

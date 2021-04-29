@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   STATUSES = ["En cours", "Payée" , "Prise en charge", "Prête à être retirée", "Expédiée", "Archivée - abandon", "Archivée - succès"]
   ONGOING_STATUSES = ["Payée" , "Prise en charge", "Prête à être retirée", "Expédiée"]
   PAST_STATUSES = ["Archivée - abandon", "Archivée - succès"]
+  $logokey = Gallery.find_by(category:"logo_petit").images.last.key
 
   def after_sign_in_path_for(resource)
     if current_user.admin?
