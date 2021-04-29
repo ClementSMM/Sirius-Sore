@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get :transports, to: "categories#transports"
   get :success, to: 'payments#success'
   get :fail, to: 'payments#fail'
+  get :hidden_products, to: 'products#hidden_products'
 
   resources :products do
     member do

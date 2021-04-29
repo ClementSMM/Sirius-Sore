@@ -1,0 +1,25 @@
+<div class="container-sirius dashboard-container">
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+
+
+    <%= render 'shared/admin_dashboard_nav' %>
+    <div class="orders-gestion-side">
+    <h1>Produits archivés</h1>
+    <p>En cliquant sur le produit, vous pourrez accéder à l'éditeur et le remettre en ligne</p>
+
+    <% @products.each do |product| %>
+        <%= link_to edit_product_path(product) do %>
+              <p>  <%= product.name %>  <i class="fas fa-edit"></i> </p>
+        <% end %>
+    <% end %>
+
+    </div>
+
+  <% else %>
+
+  Vous ne pouvez pas voir ceci
+  <% end %>
+
+<% end %>
+</div>

@@ -17,4 +17,8 @@
     <%= link_to "Modifier les galleries", galleries_path, class: "" %>
   </p>
 
+  <p class='<%= 'active'if current_page?(hidden_products_path) %>' >
+    <%= link_to "Voir les produits archivés", hidden_products_path, class: "" %>
+  </p>
+
 </div>

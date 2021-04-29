@@ -5,6 +5,7 @@
     <h2> <%= @category_bois.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_bois.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -22,6 +23,7 @@
     <h2> <%= @category_baton.name  %> </h2>
      <div class="sub-categories-container">
       <% @category_baton.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -40,6 +42,7 @@
 
      <div class="sub-categories-container">
       <% @category_des.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>

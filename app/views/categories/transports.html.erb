@@ -6,6 +6,7 @@
 
     <div class="sub-categories-container">
       <% @category_sac.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -24,6 +25,7 @@
 
     <div class="sub-categories-container">
       <% @category_pous.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
@@ -42,6 +44,7 @@
 
     <div class="sub-categories-container">
       <% @category_sec.products.each do |product| %>
+      <% next if product.online == false %>
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>

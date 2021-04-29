@@ -25,6 +25,7 @@
           <%= f.text_area :long_description %>
           <%= f.file_field :images, multiple: true %>
           <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
+          <%= f.input :online, as: :radio_buttons, label: 'Le produit est présent sur le site' %>
           <%= f.submit %>
           </div>
         <% end %>

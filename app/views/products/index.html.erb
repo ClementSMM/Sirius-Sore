@@ -1,5 +1,6 @@
 <div class="product-index-container ">
   <% @products.each do |product| %>
+  <% next if product.online == false %>
     <div class="product-index-card">
         <div class="card-product-index-img">
         <%= link_to product_path(product) do%>
