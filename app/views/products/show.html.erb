@@ -3,14 +3,14 @@
   <div class = 'product-image'>
     <div class="carouselContainer carouselProduitShow">
       <% @product.images.each do |image| %>
-        <%= cl_image_tag image.key, crop: :fill, width: 300, height: 300, class: 'carouselImgs carouselProduit' %>
+      <%= cl_image_tag image.key, crop: :fill, width: 300, height: 300, class: 'carouselImgs carouselProduit' %>
       <% end %>
-    <span class="prev" id="prevcarouselProduit"> </span>
-    <span class="next" id="nextcarouselProduit"> </span>
+      <span class="prev" id="prevcarouselProduit"> </span>
+      <span class="next" id="nextcarouselProduit"> </span>
     </div>
     <div id = 'image-dots'>
       <% @product.images.each_with_index do |circle,index| %>
-        <i class="far fa-circle image-dot" id= <%= index +1 %> ></i>
+      <i class="far fa-circle image-dot" id= <%= index +1 %> ></i>
       <% end %>
     </div>
   </div>
@@ -21,12 +21,12 @@
   <div class="product-description">
 
     <h1><%= @product.name %></h1>
-    
+
     <% @product_categories.each do |cat| %>
-      <%@category = Category.find_by(name: cat ) %>
-      <%= link_to category_path(@category), class: "category" do%>
-        <% @category.name %>
-      <% end %>
+    <%@category = Category.find_by(name: cat ) %>
+    <%= link_to category_path(@category), class: "category" do%>
+    <% @category.name %>
+    <% end %>
     <% end %>
 
     <p><%= @product.small_description %></p>
@@ -34,17 +34,16 @@
 
 
     <%= simple_form_for (@order_item), html: {class: 'form-sirius form-product'} do |f| %>
-      <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
-      <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
-      <%= f.input :product_id,
-                          required: false,
-                          as: :hidden,
-                          input_html: { value: params[:id] } %>
-      <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
+    <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
+    <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
+    <%= f.input :product_id,
+    required: false,
+    as: :hidden,
+    input_html: { value: params[:id] } %>
+    <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
     <% end %>
     <h4>Détails : </h4>
     <p><%= @product.long_description %></p>
-
   </div>
 </div>
 
