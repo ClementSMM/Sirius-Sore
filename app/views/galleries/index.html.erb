@@ -4,20 +4,29 @@
   <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
     <div class="galleries-edit-side">
-      <h1>index galleries</h1>
+      <h1>Gérez vos galleries</h1>
 
       <ul>
         <li>
           <% @galleries.each do |gallery| %>
-            <%= gallery.category %>
+          <div class="name-gallery">
+            <h3><%= gallery.category %></h3>
+          </div>
+          <div class="btn-gestion-gallery">
             <%= simple_form_for(gallery) do |f| %>
               <%= f.file_field :images, multiple: true %>
               <%= f.submit %>
-          <% end %>
-          <% gallery.images.each do |image| %>
-            <%= cl_image_tag(image.key, width: 400, height: 300) %>
-            <%= link_to 'delete image', delete_image_attachement_gallery_url(gallery, image), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cette image. Etes vous sur ?" } %>
-          <% end %>
+            <% end %>
+          </div>
+
+          <div class="img-card-gallery-container">
+            <% gallery.images.each do |image| %>
+            <div class="image-card-gallery">
+              <%= cl_image_tag(image.key, width: 150, height: 150) %>
+              <%= link_to 'delete image', delete_image_attachement_gallery_url(gallery, image), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cette image. Etes vous sur ?" } %>
+            </div>
+            <% end %>
+          </div>
         </li>
         <% end %>
       </ul>

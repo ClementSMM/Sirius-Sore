@@ -1,3 +1,21 @@
 .galleries-edit-side {
   width: 70%;
 }
+
+.name-gallery {
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+
+.btn-gestion-gallery {
+  padding-bottom: 15px;
+}
+
+.img-card-gallery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.image-card-gallery {
+  display: grid;
+}
