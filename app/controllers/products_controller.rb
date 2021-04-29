@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
         end
       end
       flash.notice = "Le produit a été ajouté"
-      redirect_to new_product_path
+      redirect_to new_stock_path
     else
       flash.notice = "Il y a eu un problème ... veuillez recommencer"
       render :new
