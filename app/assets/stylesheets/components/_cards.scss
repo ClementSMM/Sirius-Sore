@@ -78,8 +78,22 @@
   width: 100px;
 }
 
-.card-category{
-  
+.discover-cards{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .discover-card{
+    position: relative;
+    margin: 10px;
+    img{
+      width:400px;
+      height: 250px;
+    }
+    .discover-card-description{
+      position: absolute;
+      bottom: -20px;
+      right: 60px;
+    }
+  }
 }
 
 
@@ -152,6 +166,10 @@
       border: solid 2px gold;
     }
   }
+
+  .discover-cards{
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -168,6 +186,10 @@
   }
   .card-product-index-img {
     width: 150px;
+  }
+
+  .discover-cards{
+    grid-template-columns: 1fr;
   }
 
 }

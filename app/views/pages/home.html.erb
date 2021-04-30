@@ -1,15 +1,11 @@
 <header>
-    <% @gallery_accueil.images.each do |image| %>
-      <%= cl_image_tag image.key, gravity: :center, crop: :fit, class: '' %>
-    <% end %>
-  <h1>MAISON SIRIUS</h1>
-  <h3>La meilleure boutique en ligne</h3>
+  <%= cl_image_tag @gallery_logo, class: '' %>
+    <h1>MAISON SIRIUS</h1>
+    <h3>La meilleure boutique en ligne</h3>
 </header>
-
 
 <div class = "home-page">
 
-  <h2>Une boutique haut de gamme pour tous les toutous. </h2>
 
   <section class = "home-nouveautes">
   
@@ -25,16 +21,30 @@
               </div>
               <div class="text-product-index-card">
                 <p > <%= link_to product.name, product_path(product)%> </p>
-                <p >A partir de: <%= product.find_first_price %>€</p>
+                <p >A partir de <%= product.find_first_price %>€</p>
               </div>
           </div>  
       <% end %>
     </div>
   </section>
 
+  <h2>Une boutique haut de gamme pour tous les toutous. </h2>
 
   <section class="discover">
-      <h3>Découvrir</h3>
+      <h3 class = 'mb-4'>Découvrir</h3>
+
+      <div class="discover-cards">
+        <% @discover_cat.each do |cat| %>
+          <div class = "discover-card">
+              <%= link_to find_url(cat) do%>
+                <%= cl_image_tag Gallery.find_by(category: cat).images.last.key, quality: 50, crop: :fill, class: 'border-sirius' %>
+                <div class = 'discover-card-description btn-sirius-mid-thick'><%= cat %> <i class="fas fa-chevron-right"></i></div>
+              <% end %>
+
+
+          </div>
+        <% end %>
+      </div>
 
       
 
@@ -43,4 +53,3 @@
   </section>
 
 </div>  
-
