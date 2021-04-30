@@ -72,28 +72,66 @@
   <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
     <div class="orders-gestion-side">
-      <p>Trier par:</p>
-      <div class="order-admin-form">
-        <%= simple_form_for :search, method: "GET" do |f| %>
-          <%= f.select :status, status: @statuses %>
-          <%= f.submit 'OK' %>
-        <% end %>
+
+      <div class = 'header-orders'>
+        <h2>Nouvelles commandes</h2>
+        <small>Les nouvelles commandes de vos clients. Elles sont payées.</small>
       </div>
 
-      <div class="grid-order-admin-card">
-        <% @orders.each do |order| %>
-          <div class="order-admin-card">
-            <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
-            <p>STATUS : <%= order.status %></p>
-            <ul>
-              <% order.order_items.each do |item| %>
-              <li> <%= item.product.name  %> x <%= item.quantity %></li>
-              <% end %>
-              <li>Total : <%= order.amount %>€</li>
-            </ul>
-            <%= link_to 'voir la commande', order_path(order) %>
-          </div>
-        <% end %>
+        <%# MONTRER LES NOUVELLES COMMANDES - Avec le status payé %>
+        <div class="grid-order-admin-card">
+          <% @paid_orders.each do |order| %>
+            <div class="order-admin-card">
+              <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
+              <p>STATUS : <%= order.status %></p>
+                <% order.order_items.each do |item| %>
+                <li> <%= item.product.name  %> x <%= item.quantity %></li>
+                <% end %>
+              <p>Total :  <strong><%= order.amount %></strong> €</p>
+
+              <%= link_to 'voir la commande', order_path(order) %>
+            </div>
+          <% end %>
+        </div>
+
+      <div class = 'header-orders'>
+        <h2>Commandes en cours</h2>
+        <small>Les commandes dont vous avez connaissance, qui sont en cours de traitement</small>
+      </div>
+        <%# MONTRER LES COMMANDES EN COURS - Avec un des status "Prise en charge", "Prête à être retirée", "Expédiée" %>
+
+        <div class="grid-order-admin-card">
+          <% @processing_orders.each do |order| %>
+            <div class="order-admin-card">
+              <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
+              <p>STATUS : <%= order.status %></p>
+                <% order.order_items.each do |item| %>
+                <li> <%= item.product.name  %> x <%= item.quantity %></li>
+                <% end %>
+                <p>Total :  <strong><%= order.amount %></strong> €</p>
+              <%= link_to 'voir la commande', order_path(order) %>
+            </div>
+          <% end %>
+        </div>
+
+
+      <div class = 'header-orders'>
+        <h2>Anciennes commandes</h2>
+        <small>Les commandes que vous avez archivées</small>
+      </div>
+        <%# MONTRER LES ANCIENNES COMMANDES %>
+        <div class="grid-order-admin-card">
+          <% @past_orders_admin.each do |order| %>
+            <div class="order-admin-card">
+              <h4><%=  order.user ? order.user.email : 'userless order' %></h4>
+              <p>STATUS : <%= order.status %></p>
+                <% order.order_items.each do |item| %>
+                <li> <%= item.product.name  %> x <%= item.quantity %></li>
+                <% end %>
+              <p>Total :  <strong><%= order.amount %></strong> €</p>
+              <%= link_to 'voir la commande', order_path(order) %>
+            </div>
+          <% end %>
         </div>
     </div>
   </div>

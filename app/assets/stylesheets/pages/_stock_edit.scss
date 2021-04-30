@@ -23,13 +23,18 @@
 }
 
 .card-stocks {
-  padding-bottom: 15px;
-  border-bottom: 1px solid $primary-yellow;
+  padding: 15px;
+  border: 1px solid $brightbg;
   width: 350px;
+  margin: 20px 0;
+
+
+
 
   select, option, input{
     background-color:$overlay !important;
     color: $primary-yellow !important;
     border: 1px solid  transparent !important;
+    margin: 5px 0;
   }
 }
