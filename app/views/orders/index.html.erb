@@ -29,7 +29,7 @@
                   <div> <%=item.product.name  %> x <%= item.quantity %></div>
                 <% end %>
                 <div><%= order.delivery_preference %>  </div>
-                <div>Total : <%= order.total %> € </div>
+                <div>Total : <%= order.amount %> € </div>
                 <%= link_to 'voir la commande', order_path(order) %>
             </div>
             <% end %>
@@ -54,7 +54,7 @@
             <% order.order_items.each do |item| %>
               <%=item.product.name  %> ( <%= item.size %> )</li>
             <% end %>
-            <div>Total :  <%= order.total %> €</div>
+            <div>Total :  <%= order.amount %> €</div>
           </div>
         <% end %>
       <% end %>

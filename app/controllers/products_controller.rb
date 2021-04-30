@@ -51,6 +51,8 @@ class ProductsController < ApplicationController
         params[:product][:images].each do |image|
           @product.images.attach(image)
         end
+      else 
+        set_default_image
       end
       flash.notice = "Le produit a été ajouté"
       redirect_to new_stock_path
@@ -74,7 +76,6 @@ class ProductsController < ApplicationController
       @category = Category.find(cat)
       @product.categories << @category
     end
-    #@product.images.attach(params[:product][:images])
 
     if @product.update(product_params)
 
@@ -84,7 +85,7 @@ class ProductsController < ApplicationController
         end
       end
       flash.notice = "Le produit a été modifié"
-      redirect_to product_path(@product)
+      redirect_to stocks_path
     else
       flash.notice = "Il y a eu un problème ... veuillez recommencer"
       render :edit
@@ -107,13 +108,24 @@ class ProductsController < ApplicationController
     # image qui appartient a la product -- on la supprime de la galerie
     @image = @product.images.attachments.where(id: params[:format])
     # image a supprimer de cloudinary
-    @image.purge
     @image_cloudinary = ActiveStorage::Blob.find(params[:format])
     @image_cloudinary.purge
+    @image.purge
+    # si jamais c'était la dernière image, on en rajoute une par défaut
+    if @product.images.all.length == 0
+      set_default_image
+      flash.alert = "Vous avez supprimé la dernière image, nous en avons rajouté une par défaut"
+    end
     redirect_to edit_product_path(@product)
   end
 
   private
+
+  def set_default_image
+    require 'open-uri'
+    default_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png')
+    @product.images.attach(io:default_img, filename: 'images_default.jpg', content_type: 'images/jpg')
+  end
 
   def product_params
     params.require(:product).permit(:name, :small_description, :long_description, :category_id, :images, :online)

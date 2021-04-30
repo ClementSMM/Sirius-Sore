@@ -1,15 +1,10 @@
-<% if current_user.admin?%>
-  <div class="container-sirius ">
-    <div class="order-details-side">
-      <h1>Liste des produits</h1>
+<%# DÉTAILS ESSENTIELS POUR LES ADMINS %>
 
-      <% @order.order_items.each do |item| %>
-        <h5>- <%=item.product.name %> <span > (<%= item.size %>)</span> x <%= item.quantity %></h5>
-      <% end %>
-    </div>
-  </div>
 
-<% else %>
+
+
+<%# COMMANDE COMPLETE %>
+
   <% if  @order.order_items.length == 0 %>
     <div class="main-div-panier-vide">
       <div class="panier-vide">
@@ -94,4 +89,4 @@
   </div>
 
   <% end %>
-<% end %>
+
