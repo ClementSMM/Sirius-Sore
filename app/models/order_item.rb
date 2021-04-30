@@ -9,7 +9,12 @@ class OrderItem < ApplicationRecord
   validates :size, presence: true
 
   def price
-    self.product.stocks.find_by(size: self.size).price
+    product = self.product.stocks.find_by(size: self.size)
+    if product == nil
+      return "Cette taille n'est plus disponible "
+    else return product.price
+    end
+    #self.product.stocks.find_by(size: self.size).price
   end
 
   def total

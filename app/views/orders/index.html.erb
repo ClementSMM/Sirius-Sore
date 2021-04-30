@@ -89,7 +89,7 @@
               <% order.order_items.each do |item| %>
               <li> <%= item.product.name  %> x <%= item.quantity %></li>
               <% end %>
-              <li>Total : <%= order.total %>€</li>
+              <li>Total : <%= order.amount %>€</li>
             </ul>
             <%= link_to 'voir la commande', order_path(order) %>
           </div>

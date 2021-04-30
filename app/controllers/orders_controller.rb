@@ -37,6 +37,7 @@ class OrdersController < ApplicationController
 
   def pay
     @order = Order.find(params[:id])
+    @order.update(updated_at: Time.current)
     @order.amount = @order.total
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],

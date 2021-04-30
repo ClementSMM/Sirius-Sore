@@ -10,7 +10,11 @@ class Order < ApplicationRecord
   end
 
   def total
-    order_items.to_a.sum(&:total)
+    begin 
+      order_items.to_a.sum(&:total)
+    rescue 
+      "Une des tailles a été supprimée "
+    end
   end
 
 
