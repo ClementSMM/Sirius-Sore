@@ -10,18 +10,18 @@ puts "-------------------------------"
 puts "Destroying everything"
 puts "-------------------------------"
 
+OrderItem.destroy_all
+puts "."
+Order.destroy_all
+puts "."
+Stock.destroy_all
+puts "."
+Category.destroy_all
+puts "."
 Product.destroy_all
 puts "."
 User.destroy_all
 puts "."
-puts "."
-Category.destroy_all
-puts "."
-Stock.destroy_all
-puts "."
-OrderItem.destroy_all
-puts "."
-Order.destroy_all
 
 puts "-------------------------------"
 puts "Everything is destroyed"
