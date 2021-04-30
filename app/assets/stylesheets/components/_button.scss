@@ -19,5 +19,26 @@
     color:$primary-yellow;
     border: solid 1px $primary-variant;
     opacity: 1;
+    cursor: pointer;
+  }
+}
+
+
+
+.btn-sirius-mid-thick{
+  padding:8px 16px 8px 16px;
+  margin: 8px 0 32px 0;
+  width: 250px;
+  background-color: $background;
+  color: $primary-yellow;
+  border: solid 1px rgba($primary-variant, 0.5);
+  transition: all 0.3s ease-in-out;
+
+  &:hover{
+    color:$primary-yellow;
+    border: solid 1px $primary-variant;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.05);
   }
 }

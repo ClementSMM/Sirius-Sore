@@ -2,7 +2,9 @@
 
 
   <div class = 'header-navbar'>
-    <%= cl_image_tag $logokey, height: 120, width:120, class: 'desktop' %>
+    <%= link_to root_path, class: '' do %>
+      <%= cl_image_tag $logokey, height: 120, width:120, class: 'desktop' %>
+    <% end %>
     <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>  
   </div>
   <nav class = 'nav-links desktop'>
@@ -211,8 +213,9 @@
 </div>
 
   <%# PETITE NAVBAR DE LA HOMEPAGE %>
-  <div class = "small-home-navbar desktop <%= "d-none" if !current_page?(root_url) %>">
-      <div class = 'nav-search'>
+  <div class = "small-home-navbar <%= "d-none" if !current_page?(root_url) %>">
+    <div class="container-small-nav">
+      <div class = 'nav-search desktop'>
         <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
           <%= f.input :product, input_html: {placeholder: "Rechercher..."}, label: false %>
             <button type="submit" class="nav-search-button btn"><i class="fas fa-search"></i></button>
@@ -224,6 +227,7 @@
           <i class="fas fa-shopping-bag"></i> Panier
         <% end %>   
       </div>
+    </div>
 </div>
 
 

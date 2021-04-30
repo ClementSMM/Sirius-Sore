@@ -1,16 +1,20 @@
-<div class="product-index-container ">
-  <% @products.each do |product| %>
-  <% next if product.online == false %>
-    <div class="product-index-card">
-        <div class="card-product-index-img">
-        <%= link_to product_path(product) do%>
-          <%= cl_image_tag product.images.first.key, crop: :fill%>
-        <% end %>
-        </div>
-        <div class="text-product-index-card">
-          <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
-        </div>
-    </div>
-  <% end %>
+<div class="container-sirius">
+  <h1>Tous nos produits</h1>
+  <div class="product-index-container ">
+    <% @products.each do |product| %>
+    <% next if product.online == false %>
+      <div class="product-index-card">
+          <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+            <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <% end %>
+          </div>
+          <div class="text-product-index-card">
+            <p > <%= link_to product.name, product_path(product)%> </p>
+            <p >A partir de <%= product.find_first_price %>€</p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>

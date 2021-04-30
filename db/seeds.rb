@@ -296,49 +296,49 @@ gallery_2.images.attach(io:gallery_2_img, filename: 'image_banner.jpg', content_
 gallery_2.save
 
 puts "."
-gallery_3 = Gallery.create!( category: 'illu_cosmetique')
+gallery_3 = Gallery.create!( category: 'Cosmétiques')
 gallery_3_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/cosmetique_tnadyy.jpg')
 gallery_3.images.attach(io:gallery_3_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_3.save
 
 puts "."
-gallery_4 = Gallery.create!( category: 'illu_friandise')
+gallery_4 = Gallery.create!( category: 'Friandises')
 gallery_4_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/friandise_d0yw0l.jpg')
 gallery_4.images.attach(io:gallery_4_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_4.save
 
 puts "."
-gallery_5 = Gallery.create!( category: 'illu_accessoire')
+gallery_5 = Gallery.create!( category: 'Accessoires')
 gallery_5_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/bandana_qq0ox8.jpg')
 gallery_5.images.attach(io:gallery_5_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_5.save
 
 puts "."
-gallery_6 = Gallery.create!( category: 'illu_panier')
+gallery_6 = Gallery.create!( category: 'Paniers')
 gallery_6_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/panier_vaw0fj.jpg')
 gallery_6.images.attach(io:gallery_6_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_6.save
 
 puts "."
-gallery_7 = Gallery.create!( category: 'illu_vetement')
+gallery_7 = Gallery.create!( category: 'Vêtements')
 gallery_7_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703264/Base%20seeds/vetement_pu3vtr.jpg')
 gallery_7.images.attach(io:gallery_7_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_7.save
 
 puts "."
-gallery_8 = Gallery.create!( category: 'illu_jeux')
+gallery_8 = Gallery.create!( category: 'Jeux')
 gallery_8_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/jouet_uff6kp.jpg')
 gallery_8.images.attach(io:gallery_8_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_8.save
 
 puts "."
-gallery_9 = Gallery.create!( category: 'illu_gamelles')
+gallery_9 = Gallery.create!( category: 'Gamelles')
 gallery_9_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/gamelle_sjip2c.jpg')
 gallery_9.images.attach(io:gallery_9_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_9.save
 
 puts "."
-gallery_10 = Gallery.create!( category: 'illu_transports')
+gallery_10 = Gallery.create!( category: 'Transports')
 gallery_10_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619703265/Base%20seeds/transport_exx9qe.png')
 gallery_10.images.attach(io:gallery_10_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_10.save
