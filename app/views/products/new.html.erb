@@ -3,7 +3,7 @@
   <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
     <div class="new-product-side">
-      <h1>New product</h1>
+      <h1>Nouveau produit</h1>
       <div class="new-product-form">
         <%= simple_form_for(@product) do |f| %>
           <%= f.input :name %>
@@ -12,7 +12,7 @@
           <p>Indice: Vous pouvez selectionner toutes les images d'un coup</p>
           <%= f.file_field :images, multiple: true %>
           <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
-          <%= f.submit %>
+          <%= f.submit%>
         <% end %>
       </div>
     </div>

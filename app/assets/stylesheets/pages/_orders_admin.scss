@@ -1,11 +1,26 @@
 .orders-gestion-side {
   width: 70%;
   display: inline;
+  .header-orders{
+    margin: 20px 0;
+    border-bottom: 1px solid $brightbg;
+    h2{
+      margin: 0;
+    }
+    small{
+      color: grey;
+    }
+  }
 }
 
 .grid-order-admin-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  li{
+    color: grey;
+    list-style-type: '- ';
+
+  }
 }
 
 .order-admin-form {

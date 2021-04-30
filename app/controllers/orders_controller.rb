@@ -8,9 +8,12 @@ class OrdersController < ApplicationController
     
     # commandes en cours de traitement par Sirius
     @ongoing_orders = find_ongoing_orders
+    @paid_orders = Order.where(status: "Payée")
+    @processing_orders = find_processing_orders
 
     # anciennes commandes
     @past_orders = find_past_orders
+    @past_orders_admin = find_past_orders_admin
 
     if params[:search].present?
       @orders = Order.where(status: params[:search][:status])
@@ -78,6 +81,25 @@ class OrdersController < ApplicationController
       end
     end
     return past_orders
+  end
+  def find_past_orders_admin
+    past_orders = []
+    Order.all.each do |order|
+      if PAST_STATUSES.include?(order.status)
+        past_orders << order
+      end
+    end
+    return past_orders
+  end
+
+  def find_processing_orders
+    process_orders = []
+    Order.all.each do |order|
+      if PROCESSING_STATUSES.include?(order.status)
+        process_orders << order
+      end
+    end
+    return process_orders
   end
 
   def order_params

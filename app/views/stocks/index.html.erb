@@ -3,44 +3,43 @@
   <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
     <div class="stock-edit-side">
-      <h1>Gerez vos stocks</h1>
+      <h1>Gerez vos produits</h1>
 
 
       <div class="stock-search-bar">
         <%= form_tag stocks_path, method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a product" %>
-          <div class="space-btn"> <%= submit_tag "Search", class: "btn-sirius" %> </div>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Rechercher un produit" %>
+          <div class="space-btn"> <%= submit_tag "Rechercher", class: "btn-sirius mb-3" %> </div>
         <% end %>
 
-        <div class="space-btn"> <%= link_to 'créer stock', new_stock_path(@stocks), class: 'btn-sirius '  %> </div>
+        <div class="space-btn"> <%= link_to 'Ajouter taille', new_stock_path(@stocks), class: 'btn-sirius-thick'  %> </div>
       </div>
       <div class="grid-cards-stock">
         <% @stocks.each do |stock| %>
-          <ul>
             <div class="card-stocks">
               <%= link_to edit_product_path(stock.product) do %>
-              <span>  <%= stock.product.name %>  <i class="fas fa-edit"></i></span>
+              <span> <strong><%= stock.product.name %></strong>  <small><i class="fas fa-edit"></i></small> </span>
               <% end %>
 
-              <li> Taille: <%= stock.size %> </li>
-              <li> Prix actuel: <%= stock.price %>€</li>
+              <li><%= stock.size %> </li>
+              <li> Prix : <%= stock.price %>€</li>
               <li>
                 <%= simple_form_for(stock) do |f| %>
                   <%= f.number_field :price_cents %>
                   <%= f.submit 'modifier le prix' %>
                 <% end %>
               </li>
-              <li> Quantitié en stock: <%= stock.quantity %> </li>
+              <li> En stock : <%= stock.quantity %> </li>
               <li>
                 <%= simple_form_for(stock) do |f| %>
                   <%= f.number_field :quantity %>
                   <%= f.submit 'modifier le stock' %>
                 <% end %>
-                <p class=" btn-sirius"><%= link_to '', "#"%></p>
-                <%= link_to 'Supprimer cette taille et son stock', stock_path(stock), method: :delete, data: { confirm: "Etes vous surs ?" } %>
+                <%= link_to stock_path(stock), method: :delete, data: { confirm: "Etes vous surs ?" } do%>
+                  <div>Supprimer cette taille <i class="fas fa-times text-danger"></i></div>
+                <% end %>
               </li>
             </div>
-          </ul>
         <% end %>
       </div>
     </div>
