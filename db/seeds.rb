@@ -50,7 +50,7 @@ puts "-------------------------------"
 
 category_1 = Category.create!( name: 'Nouveautés')
 puts "."
-category_2 = Category.create!( name: 'Edition Limitée')
+category_2 = Category.create!( name: 'Editions Limitées')
 puts "."
 category_3 = Category.create!( name: 'Dernières pièces')
 puts "."
@@ -64,7 +64,7 @@ category_7 = Category.create!( name: 'Parfums')
 puts "."
 category_8 = Category.create!( name: 'Outils de toilettage')
 puts "."
-category_9 = Category.create!( name: 'Bois de Cerf')
+category_9 = Category.create!( name: 'Bois de cerf')
 puts "."
 category_10 = Category.create!( name: 'Bâton de yak')
 puts "."
@@ -78,7 +78,7 @@ category_14 = Category.create!( name: 'Laisses')
 puts "."
 category_15 = Category.create!( name: 'Bandanas')
 puts "."
-category_16 = Category.create!( name: 'Medailles')
+category_16 = Category.create!( name: 'Médailles')
 puts "."
 category_17 = Category.create!( name: 'Pochettes')
 puts "."
@@ -125,7 +125,6 @@ puts "-------------------------------"
 
 shampoing_toutou = Product.new( name: 'Shampoing toudou', small_description: 'tout doux', long_description: 'shampoing tout doux pour les toutou')
 shampoing_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974443/Base%20seeds/sham_ndpnjh.png')
-#shampoing_img2 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1618220970/doge_qit8ec.jpg')
 shampoing_toutou.images.attach(io:shampoing_img, filename: 'images_shampoing.jpg', content_type: 'images/jpg')#shampoing_toutou.images.
 #attach(io:shampoing_img2, filename: 'images_shampoing.jpg', content_type: 'images/jpg')
 shampoing_toutou.categories << category_4
