@@ -53,6 +53,10 @@
                 <% if @order.user.updated_at != nil %>
                   <p>- Date : <%= @order.user.updated_at %></p>
                 <% end %>
+
+                <% if @order.id != nil %>
+                  <p>- Numéro de commande : <%= @order.id%></p>
+                <% end %>
             <% end %>
           </div>
           <div class="user-order-status">
@@ -62,6 +66,7 @@
               <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
               <%= f.submit %>
             <% end %>
+            <h5 class = 'user-order-status-total'>Total <strong><%= @order.amount %> € </strong></h5>
           </div>
         </div>
       </div>
@@ -80,9 +85,25 @@
     <p>Vous ne pouvez pas voir ceci</p>
     <%= link_to "retour à la page d'accueil", root_path %>
 
-  <%# Détail de la commande pour les utilisateurs lambda connectés  + les admins%>
-  <% elsif current_user.id == @order.user.id || current_user.admin? %>
+  <%# Détail de la commande pour les utilisateurs lambda connectés%>
+  <% elsif current_user.id == @order.user.id%>
     <%= render 'shared/order_details' %>
+
+
+  <%# Détail de la commande pour les admins%>
+  <% elsif current_user.admin? %>
+    <div class="container-sirius ">
+      <div class="order-details-side">
+        <h1>Liste des produits</h1>
+
+        <% @order.order_items.each do |item| %>
+          <h5>- <%=item.product.name %> <span > (<%= item.size %>)</span> x <%= item.quantity %></h5>
+        <% end %>
+      </div>
+    </div>
+
+
+    
 
   <%# L'utilisateur n'a pas le droit de voir la page %>
   <% else %>
