@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   end
 
   def friandises
-    @category_bois = Category.find_by(name: 'Bois de Cerf')
+    @category_bois = Category.find_by(name: 'Bois de cerf')
     @category_baton = Category.find_by(name: 'Bâton de yak')
     @category_des = Category.find_by(name: 'Friandises deshydratées')
 
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
     @category_har = Category.find_by(name: 'Harnais')
     @category_lais = Category.find_by(name: 'Laisses')
     @category_band = Category.find_by(name: 'Bandanas')
-    @category_med = Category.find_by(name: 'Medailles')
+    @category_med = Category.find_by(name: 'Médailles')
     @category_poc = Category.find_by(name: 'Pochettes')
 
   end

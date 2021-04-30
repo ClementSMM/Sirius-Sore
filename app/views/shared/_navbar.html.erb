@@ -122,9 +122,9 @@
   <div id= 'dropdown-boutique'>
     <div id = "col-boutique-1" class= "col-boutique"> 
     
-        <p> <%= link_to 'Nouveautés', category_path(1) %></p>
-        <p><%= link_to 'Editions limitées', category_path(2) %></p>
-        <p><%= link_to 'Dernières pièces', category_path(3) %></p>
+        <p> <%= link_to 'Nouveautés', category_path(Category.find_by(name: "Nouveautés")) %></p>
+        <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
+        <p><%= link_to 'Dernières pièces', category_path(Category.find_by(name: "Dernières pièces")) %></p>
         <p><%= link_to 'Voir tous les produits', products_path %></p>
         <%= cl_image_tag $logokey, height: 120, width:120, class: 'dropdown-logo' %>
 
@@ -134,19 +134,19 @@
     <div id = "col-boutique-2" class= "col-boutique"> 
       <div>
         <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
-        <p> <%= link_to 'Shampoings', category_path(4) %></p>
-        <p> <%= link_to 'Après-shampoings', category_path(5) %></p>
-        <p> <%= link_to 'Conditionners', category_path(6) %></p>
-        <p> <%= link_to 'Parfums', category_path(7) %></p>
-        <p> <%= link_to 'Outils de toilettage', category_path(8) %></p>
+        <p> <%= link_to 'Shampoings', category_path(Category.find_by(name: "Shampoings")) %></p>
+        <p> <%= link_to 'Après-shampoings', category_path(Category.find_by(name: "Après-shampoings")) %></p>
+        <p> <%= link_to 'Conditionners', category_path(Category.find_by(name: "Conditionners")) %></p>
+        <p> <%= link_to 'Parfums', category_path(Category.find_by(name: "Parfums")) %></p>
+        <p> <%= link_to 'Outils de toilettage', category_path(Category.find_by(name: "Outils de toilettage")) %></p>
         </div>
 
       <div>
         <h5><%= link_to 'FRIANDISES', friandises_path %>  </h5>
 
-          <p> <%= link_to 'Bois de cerf', category_path(9) %></p>
-          <p> <%= link_to 'Bâton de yak', category_path(10) %></p>
-          <p> <%= link_to 'Friandises Déshydratées', category_path(11) %></p>
+          <p> <%= link_to 'Bois de cerf', category_path(Category.find_by(name: "Bois de cerf")) %></p>
+          <p> <%= link_to 'Bâton de yak', category_path(Category.find_by(name: "Bâton de yak")) %></p>
+          <p> <%= link_to 'Friandises Déshydratées', category_path(Category.find_by(name: "Friandises deshydratées")) %></p>
         </div>
     </div>
 
@@ -154,20 +154,20 @@
       <div>
         <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
 
-          <p> <%= link_to 'Colliers', category_path(12) %></p>
-          <p> <%= link_to 'Harnais', category_path(13) %></p>
-          <p> <%= link_to 'Laisses', category_path(14) %></p>
-          <p> <%= link_to 'Bandanas', category_path(15) %></p>
-          <p> <%= link_to 'Médailles', category_path(16) %></p>
-          <p> <%= link_to 'Pochettes', category_path(17) %></p>
+          <p> <%= link_to 'Colliers', category_path(Category.find_by(name: "Colliers")) %></p>
+          <p> <%= link_to 'Harnais', category_path(Category.find_by(name: "Harnais")) %></p>
+          <p> <%= link_to 'Laisses', category_path(Category.find_by(name: "Laisses")) %></p>
+          <p> <%= link_to 'Bandanas', category_path(Category.find_by(name: "Bandanas")) %></p>
+          <p> <%= link_to 'Médailles', category_path(Category.find_by(name: "Médailles")) %></p>
+          <p> <%= link_to 'Pochettes', category_path(Category.find_by(name: "Pochettes")) %></p>
         </div>
 
       <div>
         <h5><%= link_to 'PANIERS', paniers_path %>  </h5>
-          <p> <%= link_to 'Panier Sirius', category_path(18) %></p>
-          <p> <%= link_to 'Coussins', category_path(19) %></p>
-          <p> <%= link_to 'Orthopédique', category_path(20) %></p>
-          <p> <%= link_to 'Canapés', category_path(21) %></p>
+          <p> <%= link_to 'Paniers Sirius', category_path(Category.find_by(name: "Paniers Sirius")) %></p>
+          <p> <%= link_to 'Coussins', category_path(Category.find_by(name: "Coussins")) %></p>
+          <p> <%= link_to 'Orthopédique', category_path(Category.find_by(name: "Orthopédique")) %></p>
+          <p> <%= link_to 'Canapés', category_path(Category.find_by(name: "Canapés")) %></p>
         </div>
     </div>
 
@@ -175,34 +175,34 @@
       <div>
         <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
 
-          <p> <%= link_to 'Pulls', category_path(22) %></p>
-          <p> <%= link_to 'Manteaux', category_path(23) %></p>
-          <p> <%= link_to 'T-shirts', category_path(24) %></p>
-          <p> <%= link_to 'Autres', category_path(25) %></p>
+          <p> <%= link_to 'Pulls', category_path(Category.find_by(name: "Pulls")) %></p>
+          <p> <%= link_to 'Manteaux', category_path(Category.find_by(name: "Manteaux")) %></p>
+          <p> <%= link_to 'T-shirts', category_path(Category.find_by(name: "T-shirts")) %></p>
+          <p> <%= link_to 'Autres', category_path(Category.find_by(name: "Autres")) %></p>
         </div>
 
       <div>
         <h5><%= link_to 'JEUX', jeux_path %>  </h5>
 
-          <p> <%= link_to 'Doudous', category_path(26) %></p>
-          <p> <%= link_to 'Pour les dents', category_path(27) %></p>
+          <p> <%= link_to 'Doudous', category_path(Category.find_by(name: "Doudous")) %></p>
+          <p> <%= link_to 'Pour les dents', category_path(Category.find_by(name: "Pour les dents")) %></p>
         </div>
     </div>
 
     <div id = "col-boutique-5" class= "col-boutique"> 
       <div>
         <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
-          <p> <%= link_to 'Gamelles Sirius', category_path(28) %></p>
-          <p> <%= link_to 'Gamelles', category_path(29) %></p>
-          <p> <%= link_to 'Gamelles anti-glouton', category_path(30) %></p>
+          <p> <%= link_to 'Gamelles Sirius', category_path(Category.find_by(name: "Gamelles Sirius")) %></p>
+          <p> <%= link_to 'Gamelles', category_path(Category.find_by(name: "Gamelles")) %></p>
+          <p> <%= link_to 'Gamelles anti-glouton', category_path(Category.find_by(name: "Gamelles anti-glouton")) %></p>
         </div>
 
       <div>
         <h5></h5>
         <h5><%= link_to 'TRANSPORTS', transports_path %>  </h5>
-          <p> <%= link_to 'Sacs de transport', category_path(31) %></p>
-          <p> <%= link_to 'Poussettes', category_path(32) %></p>
-          <p> <%= link_to 'Sécurité', category_path(33) %></p>
+          <p> <%= link_to 'Sacs de transport', category_path(Category.find_by(name: "Sacs de transport")) %></p>
+          <p> <%= link_to 'Poussettes', category_path(Category.find_by(name: "Poussettes")) %></p>
+          <p> <%= link_to 'Sécurité', category_path(Category.find_by(name: "Sécurité")) %></p>
         </div>
     </div>
 
