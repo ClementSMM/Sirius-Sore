@@ -1,1 +1,88 @@
 <%= render 'shared/banner' %>
+<div class="container-sirius display-salon-container">
+  <div class="salon-box1">
+    <%= cl_image_tag "#", class: "img-salon-box1" %>
+    <div class="text-salon-box1">
+      <div class="text-header-salon-box1">
+        <h2>BIENVENUE CHEZ LA GRIFFE DE LALY</h2>
+      </div>
+      <p>SALON DE TOILETTAGE CANIN ET FELIN</p>
+      <p>RUE DE VISE 654</p>
+      <p>4020 WANDRE</p>
+      <p>0489.30.10.33</p>
+      <p>ALYSSON-MATHONET@OUTLOOK.COM</p>
+      <p>PAGE FACEBOOK : LA GRIFFE DE LALY</p>
+    </div>
+  </div>
+
+  <div class="salon-box2">
+    <div class="text-salon-box2">
+      <div class="text-header-salon-box2">
+        <h2>PRESENTATION</h2>
+      </div>
+      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et
+        a mise en page avant impression. Le Lorem Ipsum est le faux texte standard de
+        'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble
+        des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il
+        n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique
+        informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les
+        années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem
+        Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
+      texte, comme Aldus PageMaker.</p>
+    </div>
+      <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619773548/Base%20seeds/119709737_473049203669465_8535558611021112864_n_kdo8zo.jpg", class: "img-salon-box2" %>
+  </div>
+
+  <div class="salon-box3">
+    <div class="salon-box3-left-side">
+      <div class="text-header-salon-box3">
+        <h2>SERVICES PROPOSES</h2>
+      </div>
+        <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/doudou_fkjxjg.jpg", class: "img-salon-box3"%>
+   </div>
+    <div class="salon-box3-right-side">
+      <div class="salon-box3-right-side-left">
+        <p>BAIN</p>
+        <p>DEMELAGE</p>
+        <p>TONTE</p>
+        <p>COUPE CISEAUX</p>
+      </div>
+    <div class="salon-box3-right-side-right">
+      <p>TRIMMING, EPILATION</p>
+      <p>COUPE MIXTE</p>
+      <p>DEBOURRAGE</p>
+      <p>SOIN MUE</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="salon-box4">
+    <div class="text-header-salon-box4">
+      <h2>GALERIE</h2>
+    </div>
+    <div class="salon-carousel-container">
+      <div class="carouselContainer carouselSalonShow">
+        <% @gallery_salon.images.each do |image| %>
+        <%= cl_image_tag image.key, crop: :fill, class: 'carouselImgs carouselSalonGallery' %>
+        <% end %>
+        <span class="prev" id="prevcarouselSalonGallery"> </span>
+        <span class="next" id="nextcarouselSalonGallery"> </span>
+      </div>
+      <div id = 'image-dots'>
+        <% @gallery_salon.images.each_with_index do |circle,index| %>
+        <i class="far fa-circle image-dot" id= <%= index +1 %> ></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="salon-box5">
+    <div class="text-header-salon-box5">
+      <h2>TARIFS</h2>
+    </div>
+    <div class="salon-box5-container">
+      <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619773534/Base%20seeds/tarif_2021_fln6nv.jpg", class: "img-salon-box5" %>
+    </div>
+  </div>
+
+</div>

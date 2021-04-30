@@ -36,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   toggleBoutique();
   toggleMobileNavbar();
   carousel('carouselProduit');
+  carousel('carouselSalonGallery');
   navHomePage();
 });
