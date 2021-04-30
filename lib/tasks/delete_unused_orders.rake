@@ -12,7 +12,7 @@ namespace :delete do
     # on récupère aussi toutes celles qui n'ont pas d'utilisateur, et qui sont plus vielles qu'une heure
     order_match = []
     orders.each do |order|
-      if (order.updated_at.before?(now - 1.hour) && order.user === nil) || order.user.last_seen_at.before?(now - 1.hour)
+      if order.updated_at.before?(now - 1.hour) 
         order_match << order
       end
     end

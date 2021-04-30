@@ -36,6 +36,8 @@
                   <%= f.number_field :quantity %>
                   <%= f.submit 'modifier le stock' %>
                 <% end %>
+                <p class=" btn-sirius"><%= link_to '', "#"%></p>
+                <%= link_to 'Supprimer cette taille et son stock', stock_path(stock), method: :delete, data: { confirm: "Etes vous surs ?" } %>
               </li>
             </div>
           </ul>

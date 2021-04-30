@@ -9,7 +9,7 @@
           <%= f.input :name %>
           <%= f.input :small_description %>
           <%= f.input :long_description %>
-          <p>WARNING: Selectionnez toutes les images lors de la selection</p>
+          <p>Indice: Vous pouvez selectionner toutes les images d'un coup</p>
           <%= f.file_field :images, multiple: true %>
           <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
           <%= f.submit %>

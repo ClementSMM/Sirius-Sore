@@ -3,13 +3,13 @@
   <div class="container-sirius dashboard-container">
     <%= render 'shared/admin_dashboard_nav' %>
     <div class="stock-new-side">
-      <h1>Créez votre nouveau stock</h1>
+      <h1>Créez une taille, son prix et son stock</h1>
         <%= simple_form_for(@stock) do |f| %>
       <div class="stock-new-form">
           <%= f.input :size, label: 'Taille'  %>
           <%= f.input :quantity, label: 'Quantité' %>
-          <%= f.input :price_cents, label: 'Prix'%>
-          <%= f.association :product, label: 'Produits', collection: Product.all, include_hidden: false, include_blank: false %>
+          <%= f.input :price_cents, label: 'Prix', hint: 'Sans la virgule, avec les centimes. Ex: 3400 pour 34€ ou 595 pour 5€95'%>
+          <%= f.association :product, label: 'Produit', collection: Product.all.order(:name), include_hidden: false, include_blank: false %>
           <%= f.submit %>
       </div>
           <% end %>

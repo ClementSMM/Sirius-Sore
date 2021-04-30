@@ -21,6 +21,8 @@ class OrderItemsController < ApplicationController
     @order.order_items << @order_item
     current_user != nil ?  @order.user = current_user : @order.user = nil
     @product_stock = @product.stocks.find_by(size: params[:order_item][:size])
+    @order.update(updated_at: Time.current)
+
 
     if @order_item.save
       @product_stock.update_stock(- @quantity.to_i)
@@ -36,6 +38,8 @@ class OrderItemsController < ApplicationController
   def add_one
     @order_item = OrderItem.find(params[:order_item_id])
     @product_stock = @order_item.product.stocks.find_by(size: @order_item.size)
+    @order.update(updated_at: Time.current)
+
     @order_item.quantity +=1
     #empécher de mettre dans le panier plus que le stock actuel
     if @product_stock.quantity > 0
@@ -51,6 +55,8 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.find(params[:order_item_id])
     @product_stock = @order_item.product.stocks.find_by(size: @order_item.size)
     @order_item.quantity -=1
+    @order.update(updated_at: Time.current)
+
     #empêcher les stocks negatifs
     if @product_stock.quantity >= 0 && @order_item.quantity > 0
       validation_saving_and_redirect(1)
@@ -69,6 +75,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item = OrderItem.find(params[:id])
     @order = @order_item.order
+    @order.update(updated_at: Time.current)
     @product_stock = @order_item.product.stocks.find_by(size: @order_item.size)
     @product_stock.update_stock(@order_item.quantity)
     @order_item.delete
