@@ -12,6 +12,8 @@ puts "-------------------------------"
 
 OrderItem.destroy_all
 puts "."
+ProductCategory.destroy_all
+puts "."
 Order.destroy_all
 puts "."
 Stock.destroy_all
