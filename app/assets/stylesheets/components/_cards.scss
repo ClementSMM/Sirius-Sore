@@ -5,7 +5,7 @@
   display: flex;
   padding-bottom: 25px;
   padding-top: 25px;
-  border-bottom: solid 1px gold;
+  border-bottom: solid 1px $primary-yellow;
   width: 75vh;
 }
 
@@ -13,7 +13,7 @@
   img{
     height: 150px;
     width:150px;
-    border: solid 2px gold;
+    border: solid 2px $primary-yellow;
   }
 }
 
@@ -46,8 +46,8 @@
     }
     .btn-card-panier {
       background-color: black;
-      color: gold;
-      border: solid 1px gold;
+      color: $primary-yellow;
+      border: solid 1px $primary-yellow;
     }
   }
 
@@ -60,8 +60,8 @@
     .description-card-panier-box3-btn-supp {
       /*position: absolute;*/
       background-color: black;
-      color: gold;
-      border: solid 1px gold;
+      color: $primary-yellow;
+      border: solid 1px $primary-yellow;
     }
   }
 }
@@ -72,8 +72,8 @@
 
 .btn-payer-panier {
   background-color: black;
-  color: gold;
-  border: solid 1px gold;
+  color: $primary-yellow;
+  border: solid 1px $primary-yellow;
   height: 40px;
   width: 100px;
 }
@@ -142,7 +142,7 @@
   img{
     height: 250px;
     width: 250px;
-    border: solid 2px gold;
+    border: solid 2px $primary-yellow;
   }
 }
 
@@ -163,7 +163,7 @@
     img{
       height: 200px;
       width: 200px;
-      border: solid 2px gold;
+      border: solid 2px $primary-yellow;
     }
   }
 
@@ -181,7 +181,7 @@
     img{
       height: 150px;
       width: 150px;
-      border: solid 2px gold;
+      border: solid 2px $primary-yellow;
     }
   }
   .card-product-index-img {
