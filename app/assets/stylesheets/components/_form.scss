@@ -1,21 +1,27 @@
 .form-sirius{
-  .form-inputs{
-
-    select, option,input{
-      background-color:$overlay !important;
-      color: $primary-yellow !important;
-      border: 1px solid  transparent !important;
+  select, option, input{
+    background-color:$overlay !important;
+    color: $primary-yellow !important;
+    border: 1px solid  transparent !important;
+  }
+  
+  .form-actions{
+    input{
+      background-color: $primary-yellow !important;
+      color: $background !important;
+      text-align: center;
     }
   }
-  .form-actions{
-    text-align: center;
-  }
-
 }
+
 
 .form-account{
   select, option{
     color: $text !important;
+  }
+  .form-actions{
+    display: flex;
+    justify-content: center;
   }
 }
 

@@ -1,7 +1,7 @@
 <div class="container-sirius">
-  <h1>Cosmétiques</h1>
+  <h1 class= 'text-center'>Cosmétiques</h1>
   <div class="categories-show-container">
-    <h2> <%= @category_shamp.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_shamp.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_shamp.products.each do |product| %>
       <% next if product.online == false %>
@@ -13,13 +13,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_ap_shamp.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_ap_shamp.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_ap_shamp.products.each do |product| %>
       <% next if product.online == false %>
@@ -31,13 +31,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_cond.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_cond.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_cond.products.each do |product| %>
       <% next if product.online == false %>
@@ -49,13 +49,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_parf.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_parf.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_parf.products.each do |product| %>
       <% next if product.online == false %>
@@ -67,13 +67,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_out.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_out.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_out.products.each do |product| %>
       <% next if product.online == false %>
@@ -85,7 +85,7 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>

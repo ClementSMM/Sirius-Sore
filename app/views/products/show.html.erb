@@ -30,23 +30,25 @@
     <% end %>
 
     <p><%= @product.small_description %></p>
-    <p>Prix : <span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
+    <p class = "prix-produit"><span id = "product-price" data-prices = "<%= @stock.to_json %>"> </span> €</p>
 
 
     <%= simple_form_for (@order_item), html: {class: 'form-sirius form-product'} do |f| %>
-      <%= f.input :size , label: "Taille", collection: @stock.map{|st| st.size}, include_blank: false%>
+      <%= f.input :size , label: "Choisir le modèle", collection: @stock.map{|st| st.size}, include_blank: false%>
       <%= f.input :quantity, label: 'Quantité', collection: 1..10, include_blank: false%>
       <%= f.input :product_id,
           required: false,
           as: :hidden,
           input_html: { value: params[:id] } %>
       <% if @product.online == true %>
-        <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
+        <div class="form-actions">
+          <%= f.submit 'Ajouter au panier', class: 'btn-sirius-thick'%>
+        </div>
       <% else %>
         <p class = 'text-center btn-sirius-thick'> Nous sommes désolés, ce produit n'est pas disponible actuellement</p>
       <% end %>
     <% end %>
-    <h4>Détails : </h4>
+    <h4>Détails</h4>
     <p><%= @product.long_description %></p>
   </div>
 </div>

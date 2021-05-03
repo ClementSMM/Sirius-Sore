@@ -1,7 +1,7 @@
 <div class="container-sirius">
-  <h1>Vêtements</h1>
+  <h1 class= 'text-center'>Vêtements</h1>
   <div class="categories-show-container">
-    <h2> <%= @category_pu.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_pu.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_pu.products.each do |product| %>
@@ -14,13 +14,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_man.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_man.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_man.products.each do |product| %>
@@ -33,13 +33,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_t.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_t.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_t.products.each do |product| %>
@@ -52,13 +52,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_au.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_au.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_au.products.each do |product| %>
@@ -71,7 +71,7 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>

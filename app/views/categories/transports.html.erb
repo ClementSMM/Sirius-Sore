@@ -1,8 +1,8 @@
 <div class="container-sirius">
-  <h1>Transports</h1>
+  <h1 class= 'text-center' >Transports</h1>
   <div class="categories-show-container">
 
-    <h2> <%= @category_sac.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_sac.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_sac.products.each do |product| %>
@@ -15,13 +15,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_pous.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_pous.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_pous.products.each do |product| %>
@@ -34,13 +34,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_sec.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_sec.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_sec.products.each do |product| %>
@@ -53,7 +53,7 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
