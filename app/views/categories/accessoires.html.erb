@@ -1,8 +1,8 @@
 <div class="container-sirius">
 
-  <h1>Accessoires</h1>
+  <h1 class= 'text-center' >Accessoires</h1>
   <div class="categories-show-container">
-    <h2> <%= @category_col.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_col.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_col.products.each do |product| %>
       <% next if product.online == false %>
@@ -14,13 +14,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_har.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_har.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_har.products.each do |product| %>
       <% next if product.online == false %>
@@ -32,13 +32,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_lais.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_lais.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_lais.products.each do |product| %>
       <% next if product.online == false %>
@@ -50,13 +50,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_band.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_band.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_band.products.each do |product| %>
       <% next if product.online == false %>
@@ -68,13 +68,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_med.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_med.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_med.products.each do |product| %>
       <% next if product.online == false %>
@@ -86,13 +86,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_poc.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_poc.name  %> </h2>
     <div class="sub-categories-container">
       <% @category_poc.products.each do |product| %>
       <% next if product.online == false %>
@@ -104,7 +104,7 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>

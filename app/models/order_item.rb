@@ -4,9 +4,7 @@ class OrderItem < ApplicationRecord
   belongs_to :product
 
   validates_with QuantityValidator
-  validates :quantity, presence: true
   attribute :quantity, :integer, default: 1
-  validates :size, presence: true
 
   def price
     product = self.product.stocks.find_by(size: self.size)

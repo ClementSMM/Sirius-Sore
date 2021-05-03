@@ -51,6 +51,20 @@
         color: $primary-yellow ;
       }
     }
+    #dropdownMenuButton{
+      color: $primary-yellow;
+    }
+    .dropdown-menu{
+      background-color: $brightbg;
+      .dropdown-item{
+        color: $primary-yellow;
+        &:hover{
+          background-color: $overlay;
+        }
+      }
+    }
+
+
     .nav-search{
       position:absolute;
       left: 15px;
@@ -259,6 +273,7 @@
 
   .navbar-sirius{
     height: 100px;
+    justify-content: center;
     #nav-menu{
       color: $primary-yellow;
       font-size: 24px;
@@ -275,7 +290,13 @@
       left: 15px;
       top: 30px;
     }
+    .header-navbar{
+      h1{
+        font-size: 32px;
+      }
+    }
   }
+
 
   .side-menu{
     text-align: center;
@@ -314,7 +335,7 @@
 
     .separation-bar{
       width:50%;
-      border-bottom: 1px solid $primary-yellow;
+      border-bottom: 1px solid $brightbg;
       margin: 8px auto;
     }
 

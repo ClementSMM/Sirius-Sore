@@ -1,8 +1,8 @@
 <div class="container-sirius">
-  <h1>Jeux</h1>
+  <h1 class= 'text-center'>Jeux</h1>
   <div class="categories-show-container">
 
-    <h2> <%= @category_dou.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_dou.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_dou.products.each do |product| %>
@@ -15,13 +15,13 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
     </div>
 
-    <h2> <%= @category_dent.name  %> </h2>
+    <h2 class= 'text-center'> <%= @category_dent.name  %> </h2>
 
     <div class="sub-categories-container">
       <% @category_dent.products.each do |product| %>
@@ -34,7 +34,7 @@
         </div>
         <div class="text-product-index-card">
           <p > <%= link_to product.name, product_path(product)%> </p>
-          <p >A partir de: <%= product.find_first_price %>€</p>
+          <p >A partir de <%= product.find_first_price %>€</p>
         </div>
       </div>
       <% end %>
