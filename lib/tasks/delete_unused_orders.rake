@@ -5,11 +5,11 @@ namespace :delete do
 
   task unused_orders: :environment do
     now = Time.current
-    # lister dans un array toutes les commandes qui sont plus vielles qu'une heure
+    # lister dans un array toutes les commandes qui sont en cours
     orders = Order.where(status: "En cours")
 
-    # a partir de l'array ci dessus, on récupère toutes celles dont l'utilisateur est inactif depuis plus d'une heure
-    # on récupère aussi toutes celles qui n'ont pas d'utilisateur, et qui sont plus vielles qu'une heure
+    # a partir de l'array ci dessus, on récupère toutes les commandes qui sont inactives depuis plus d'une heure 
+    # (la commade est updatee a chaque ajout / retrait de produit + quand elle passe au stade du payement)
     order_match = []
     orders.each do |order|
       if order.updated_at.before?(now - 1.hour) 
