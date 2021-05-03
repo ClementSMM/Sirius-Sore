@@ -28,10 +28,9 @@
     </div>
   </section>
 
-  <h2>Une boutique haut de gamme pour tous les toutous. </h2>
+  <h2 class = 'homepage-argument'>Une boutique haut de gamme</br> pour tous les toutous. </h2>
 
   <section class="discover">
-      <h3 class = 'mb-4'>Découvrir</h3>
 
       <div class="discover-cards">
         <% @discover_cat.each do |cat| %>
@@ -45,11 +44,34 @@
           </div>
         <% end %>
       </div>
-
-      
-
-  
   
   </section>
+
+  <section class="facilities">
+
+    <div class = 'facility-pay'>
+      <i class="far fa-credit-card"></i>
+      <h5>PAIEMENT SÉCURISÉ</h5>
+      <p>Tous vos paiements sont sécurisés</p>
+    </div>
+
+    <div class = 'facility-pay'>
+      <i class="fas fa-store-alt"></i>
+      <h5>CLICK AND COLLECT</h5>
+      <p>Récupérez vos commandes en main propre</p>
+    </div>
+
+    <div class = 'facility-pay'>
+      <i class="fas fa-truck"></i>
+      <h5>LIVRAISON</h5>
+      <p>Nous livrons dans toute la Belgique</p>
+    </div>
+
+  </section>
+
+
+
+
+
 
 </div>  
