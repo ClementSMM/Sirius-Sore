@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :record_user_activity
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :store_user_location!, if: :storable_location?
+
   include CurrentOrder
   before_action :set_order
 
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin?
       dashboard_path
     else
-     root_url
+      stored_location_for(resource) || super
     end
   end
 
@@ -28,11 +29,15 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-  def record_user_activity
-    if current_user
-      current_user.update_attribute(:last_seen_at, Time.current)
-    end
+  # methode pour rediriger l'utilisateur vers la page où il était avant de se login (partie 1)
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr? 
+  end
+  
+  # methode pour rediriger l'utilisateur vers la page où il était avant de se login (partie 2)
+  def store_user_location!
+    # :user is the scope we are authenticating
+    store_location_for(:user, request.fullpath)
   end
 
 end
