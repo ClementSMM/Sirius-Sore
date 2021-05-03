@@ -1,1 +1,30 @@
 <%= render 'shared/banner' %>
+<div class="container-sirius ">
+
+  <h2>Contactez nous :  </h2>
+  <div class="container-contact">
+    <div class="contact-space">
+      <h3>Mail :  </h3> <p>maisonsirius@hotmail.com</p>
+    </div>
+    <div class="contact-space">
+      <h3>Telephone : </h3> <p> 0489/30.10.33</p>
+    </div>
+    <div class="contact-space">
+      <h3>Facebook : </h3>
+      <div class="contact-link">
+        <%= link_to 'La Griffe de Laly ', "https://www.facebook.com/La-Griffe-de-Laly-103241737883888"  %>
+      </div>
+    </div>
+    <div class="contact-space">
+      <h3>Instagram : </h3>
+      <div class="contact-link">
+        <%= link_to '@grooming_lagriffedelaly', "https://www.instagram.com/grooming_lagriffedelaly/" %>
+      </div>
+    </div>
+    <div class="contact-space">
+      <h3>Dans notre salon : </h3> <p>Rue de visé 654</p> <p>4020 wandre</p>
+    </div>
+
+    <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png", crop: :fill%>
+  </div>
+</div>
