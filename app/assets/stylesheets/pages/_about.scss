@@ -25,14 +25,26 @@
 }
 
 .img2-about-container {
-  background-color: red;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 2;
+  text-align: center;
+  margin-top: 25px;
+  img {
+    margin: 10px 20px 10px 20px;
+  }
+}
+
+.img-2-about {
+
 }
 
 @media (max-width:600px) {
+  .about-grid-container {
+    display: block;
+  }
+
   .text-about-container {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -46,11 +58,4 @@
     display: none;
   }
 
-  .img2-about-container {
-    background-color: red;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
 }
