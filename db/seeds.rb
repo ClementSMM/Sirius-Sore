@@ -39,6 +39,8 @@ clement = User.create!( email: 'clem@email.com', password: 'azerty', admin: true
 puts "."
 random = User.create!( email: 'lambda@email.com', password: 'azerty', admin: false, first_name: 'Ima', last_name: 'ramdom', address_1: '404 rue de nower', phone_number: '0707070707', city: 'Montcuq', post_code: 46800)
 puts "."
+rick = User.create!( email: 'ricky@email.com', password: 'azerty', admin: false, first_name: 'Ricky', last_name: 'Trailer', address_1: 'In my car', address_2: 'Trailer Park', phone_number: '0707070707', city: 'Toronto', post_code: 46800)
+puts "."
 
 
 
