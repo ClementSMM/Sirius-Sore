@@ -35,7 +35,12 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-    redirect_to orders_path
+    if current_user.admin?
+      redirect_to orders_path
+    else
+      redirect_to order_path(@order)
+      flash.alert = 'Le mode de livraison a bien été pris en compte'
+    end
   end
 
   def pay
