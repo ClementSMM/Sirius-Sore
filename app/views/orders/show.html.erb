@@ -19,23 +19,23 @@
             <% if @order.user != nil %>
 
                 <% if @order.user.first_name != nil %>
-                  <p><%= @order.user.first_name%> <%= @order.user.last_name %></p>
+                  <div><%= @order.user.first_name%> <%= @order.user.last_name %></div>
                 <% end %>
 
                 <% if @order.user.address_1 != nil%>
-                  <p><%= @order.user.address_1 %></p>
+                  <div><%= @order.user.address_1 %></div>
                 <% end %>
 
                 <% if @order.user.address_2 != nil %>
-                  <p><%= @order.user.address_2 %> </p>
+                  <div><%= @order.user.address_2 %> </div>
                 <% end %>
 
                 <% if @order.user.city != nil %>
-                  <p><%= @order.user.city %> </p>
+                  <div><%= @order.user.city %> </div>
                 <% end %>
 
                 <% if @order.user.post_code != nil %>
-                  <p><%= @order.user.post_code %></p>
+                  <div><%= @order.user.post_code %></div>
                 <% end %>
 
                 <% if @order.user.country != nil %>
@@ -63,7 +63,7 @@
             <h4>Modifier le statut de la commande</h4>
             <%= simple_form_for (@order) do |f| %>
               <%= f.input :status, collection: @statuses, include_blank: false %>
-              <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"] %>
+              <%= f.input :delivery_preference, collection: ["Click & Collect", "Livraison"], include_blank: false %>
               <%= f.submit %>
             <% end %>
             <h5 class = 'user-order-status-total'>Total <strong><%= @order.amount %> € </strong></h5>
