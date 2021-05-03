@@ -19,16 +19,22 @@ header{
     font-size: 64px;
     text-align: center;
   }
+  h3{
+    color: grey;
+  }
 }
 
 .home-page{
   text-align:center;
 
-  h2{
-    margin: 40px;
+  .homepage-argument{
+    margin: 150px 0;
   }
 
   .home-nouveautes{
+    h3{
+      margin: 50px 0;
+    }
     &-produits{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -36,7 +42,20 @@ header{
       justify-content:center;
       div{
         margin: 10px auto;
+      }
+    }
+  }
 
+  .facilities{
+    margin: 200px 0 50px 0;
+    display: flex;
+    justify-content: space-around;
+    i{
+      font-size: 32px;
+      margin-bottom: 24px;
+      transition: transform 0.3s ease-in-out;
+      &:hover{
+        transform: rotate(-30deg);
       }
     }
   }

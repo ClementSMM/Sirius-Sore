@@ -83,13 +83,16 @@
   grid-template-columns: 1fr 1fr 1fr;
   .discover-card{
     position: relative;
-    margin: 10px;
+    margin: 10px auto;
     img{
+      max-width: 330px;
+      max-height: 200px;
       width:400px;
       height: 250px;
     }
     .discover-card-description{
       position: absolute;
+      max-width: 65vw;
       bottom: -20px;
       right: 60px;
     }
@@ -164,6 +167,8 @@
       height: 200px;
       width: 200px;
       border: solid 2px $primary-yellow;
+      border-radius: 5px;
+
     }
   }
 
