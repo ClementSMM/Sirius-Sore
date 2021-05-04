@@ -9,7 +9,7 @@
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
-          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <%= cl_image_tag product.images.first.key%>
           <% end %>
         </div>
         <div class="text-product-index-card">
@@ -27,7 +27,7 @@
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
-          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <%= cl_image_tag product.images.first.key%>
           <% end %>
         </div>
         <div class="text-product-index-card">
@@ -46,7 +46,7 @@
       <div class="product-index-card">
         <div class="card-product-index-img">
           <%= link_to product_path(product) do%>
-          <%= cl_image_tag product.images.first.key, crop: :fill%>
+          <%= cl_image_tag product.images.first.key%>
           <% end %>
         </div>
         <div class="text-product-index-card">

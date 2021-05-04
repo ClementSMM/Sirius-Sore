@@ -78,26 +78,6 @@
   width: 100px;
 }
 
-.discover-cards{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  .discover-card{
-    position: relative;
-    margin: 10px auto;
-    img{
-      max-width: 330px;
-      max-height: 200px;
-      width:400px;
-      height: 250px;
-    }
-    .discover-card-description{
-      position: absolute;
-      max-width: 65vw;
-      bottom: -20px;
-      right: 60px;
-    }
-  }
-}
 
 
 @media (max-width: 600px) {
@@ -138,14 +118,30 @@
 .product-index-card {
   width: 250px;
   justify-self: center;
+
 }
 
 .card-product-index-img {
   width: 250px;
+  position:relative;
+
   img{
     height: 250px;
     width: 250px;
     border: solid 2px $primary-yellow;
+  }
+  .cta-home-nouveautes{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: transform 0.3s ease-in-out;
+    background-color: $primary-yellow;
+    color: $background;
+    padding: 10px 15px;
+    border-radius: 50%;
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -171,10 +167,6 @@
 
     }
   }
-
-  .discover-cards{
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 600px) {
@@ -191,10 +183,6 @@
   }
   .card-product-index-img {
     width: 150px;
-  }
-
-  .discover-cards{
-    grid-template-columns: 1fr;
   }
 
 }

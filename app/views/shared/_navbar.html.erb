@@ -127,7 +127,7 @@
         <p> <%= link_to 'Nouveautés', category_path(Category.find_by(name: "Nouveautés")) %></p>
         <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
         <p><%= link_to 'Dernières pièces', category_path(Category.find_by(name: "Dernières pièces")) %></p>
-        <p><%= link_to 'Voir tous les produits', products_path %></p>
+        <p></br><%= link_to 'Voir tous les produits', products_path %></p>
         <%= cl_image_tag $logokey, height: 120, width:120, class: 'dropdown-logo' %>
 
     </div>

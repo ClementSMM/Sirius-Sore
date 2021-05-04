@@ -6,6 +6,7 @@
   width: 300px;
   text-align: center;
 }
+
 .btn-sirius-thick{
   padding:16px 24px 16px 24px;
   margin: 16px 0 32px 0;
@@ -48,4 +49,12 @@
   background-color: $primary-yellow !important;
   color: $background !important;
   border: none !important;
+  transition: transform 0.3s ease-in-out;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+
+.btn-danger-sirius{
+  background-color: rgb(136, 28, 28);
 }
