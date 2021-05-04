@@ -16,19 +16,23 @@
         <div class="product-index-card">
               <div class="card-product-index-img">
               <%= link_to product_path(product) do%>
-                <%= cl_image_tag product.images.first.key, crop: :fill%>
+                <%= cl_image_tag product.images.first.key%>
               <% end %>
+                <%= link_to product_path(product), class: '' do %>
+                  <div class = 'cta-home-nouveautes'><i class="fas fa-shopping-bag"></i></div>
+                <% end %>
               </div>
               <div class="text-product-index-card">
                 <p > <%= link_to product.name, product_path(product)%> </p>
                 <p >A partir de <%= product.find_first_price %>€</p>
               </div>
-          </div>  
+          </div> 
       <% end %>
     </div>
   </section>
+      <%= link_to 'Découvrir nos Nouveautés', products_path, class: 'btn-sirius-thick cta-strong' %>
 
-  <h2 class = 'homepage-argument'>Une boutique haut de gamme</br> pour tous les toutous. </h2>
+  <h2 class = 'homepage-argument'>Une boutique haut de gamme pour tous les toutous. </h2>
 
   <section class="discover">
 
@@ -44,8 +48,12 @@
           </div>
         <% end %>
       </div>
+
+
   
   </section>
+  
+  <%= link_to 'Découvrir tous nos produits', products_path, class: 'btn-sirius-thick cta-strong' %>
 
   <section class="facilities">
 

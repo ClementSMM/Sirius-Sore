@@ -141,7 +141,7 @@
   background-color: $background;
   color:$primary-yellow;
   width:80%;
-  padding: 50px 50px;
+  padding: 30px 30px;
   grid-template-columns: repeat (5, 1fr);
   grid-gap: 10px;
   align-items:center;
@@ -157,7 +157,7 @@
     justify-self: center;
 
     h5{
-      margin: 16px auto 8px auto;
+      margin: 20px 16px;
       text-align: center;
     }
     p{
@@ -169,6 +169,7 @@
   #col-boutique-1{
     grid-column: 1/2;
     position: relative;
+    padding-top: 16px;
 
   }
   #col-boutique-2{
