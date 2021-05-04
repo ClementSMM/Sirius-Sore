@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   def about
     @gallery_banner = Gallery.find_by(category: "Bannière")
-
+    @gallery_about = Gallery.find_by(category: "about")
   end
 
   def contact
