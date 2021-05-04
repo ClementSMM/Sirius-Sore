@@ -21,7 +21,7 @@
               <span> <strong><%= stock.product.name %></strong>  <small><i class="fas fa-edit"></i></small> </span>
               <% end %>
 
-              <li><%= stock.size %> </li>
+              <li>Taille : <%= stock.size %> </li>
               <li> Prix : <%= stock.price %>€</li>
               <li>
                 <%= simple_form_for(stock) do |f| %>
