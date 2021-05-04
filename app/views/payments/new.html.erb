@@ -5,6 +5,10 @@
   <div class = "order-summary">
     <div class="order-summary-user-info">
         <p><%= @order.user.email %></p>
+        <p> <%= @order.user.post_code %> </p>
+        <p> <%= @order.user.city %> </p>
+        <p> <%= @order.user.address_1 %> </p>
+        <p> <%= @order.user.address_2 %> </p>
         <p>Numéro de téléphone : <%= @order.user.phone_number%></p>
         <p>Mode de retrait : <%= @order.delivery_preference %></p>
         <p class= 'order-summary-info'>Si vos informations sont incomplètes ou erronées, </br>merci de les corriger   <%= link_to "ici", edit_user_registration_path, class: "" %>
@@ -14,7 +18,7 @@
       <p><%= item.product.name %> (<%= item.size %>)<span> - <%= item.quantity %> pièce(s)</p>
     <% end %>
     <h5>Total de la commande <strong><%= @order.amount %></strong>  €</h5>
-  
+
   </div>
 
   <button id="pay" class="btn-sirius-thick">Valider et accéder au payement</button>
