@@ -69,7 +69,7 @@
       </li>
       <% end %>
     </ul>
-      
+
       <%# La commande est en cours : choix du mode de livraison%>
 
       <div class = 'delivery-panier'>
@@ -80,6 +80,7 @@
             <%= f.input :delivery_preference , label: false, collection: ["Livraison", "Click & Collect"], include_blank: false%>
             <%= f.submit "valider le mode de livraison", html: {class: 'btn-sirius-thick'}%>
           <% end %>
+          <p class="mt-3"><strong>Click & collect</strong> à récupérer au salon </br> Rue de Visé 654 </br> 4020 Wandre (Belgique)</p>
         <% else %>
               <h3>Mode de livraison - <%= @order.delivery_preference %></h3>
         <% end %>
