@@ -58,7 +58,7 @@
     <div class = 'nav-menu mobile' id = "nav-menu-open"><i class="fas fa-chevron-left"></i></div>
   </div>
 
-  <%# DROPDOWN DE LA BOUTIQUE MOBILE - version allégée %>
+  <%# DROPDOWN DE LA BOUTIQUE MOBILE (version allégée de la dropdown) %>
   <div class="side-menu mobile" id= 'side-menu'>
     <div class = 'nav-search-mobile'>
       <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
@@ -75,8 +75,8 @@
 
         <div class = "separation-bar"></div>
 
-        <p> <%= link_to 'Nouveautés', category_path(1) %></p>
-        <p><%= link_to 'Editions limitées', category_path(2) %></p>
+        <p> <%= link_to 'Nouveautés', category_path(Category.find_by(name: "Nouveautés")) %></p>
+        <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
         
         <div class = "separation-bar"></div>
 
