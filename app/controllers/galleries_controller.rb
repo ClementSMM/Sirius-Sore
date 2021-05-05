@@ -27,7 +27,8 @@ class GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
     # empêcher un beug en vérifiant qu'il y a bien une image dans l'upload
-    if params[:gallery][:images].nil?
+    
+    if params[:gallery].nil?
       redirect_to galleries_path 
       flash.alert = "Impossible de mettre à jour la gallerie sans avoir selectionné d'images"
     else
