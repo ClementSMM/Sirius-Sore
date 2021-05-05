@@ -362,6 +362,9 @@ puts "."
 gallery_13 = Gallery.create!( category: 'salon')
 gallery_13_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619784963/Base%20seeds/zimba_qokx21.jpg')
 gallery_13.images.attach(io:gallery_13_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_13_img2 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619784959/Base%20seeds/zarko_hter5y.jpg')
+gallery_13.images.attach(io:gallery_13_img2, filename: 'image_banner.jpg', content_type: 'images/jpg')
+
 gallery_13.save
 
 gallery_14 = Gallery.create!( category: 'about')
