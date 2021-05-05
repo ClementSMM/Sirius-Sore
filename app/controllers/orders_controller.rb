@@ -46,7 +46,12 @@ class OrdersController < ApplicationController
   def pay
     @order = Order.find(params[:id])
     @order.update(updated_at: Time.current)
-    @order.amount = @order.total
+    # on applique les frais de livraison
+    if @order.delivery_preference == 'Livraison'
+      @order.amount = @order.total + Money.new(1000, 'EUR')
+    else
+      @order.amount = @order.total
+    end 
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
