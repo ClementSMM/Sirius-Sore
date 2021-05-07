@@ -39,6 +39,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: grey;
     }
     .description-card-panier-box1-btn-qty {
      /* position: absolute; */
@@ -70,13 +71,6 @@
   padding-top: 50px;
 }
 
-.btn-payer-panier {
-  background-color: black;
-  color: $primary-yellow;
-  border: solid 1px $primary-yellow;
-  height: 40px;
-  width: 100px;
-}
 
 
 

@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     @statuses = STATUSES
     if Order.where(id: params[:id]).length == 0
       redirect_to root_path
-      flash.alert = 'Votre panier est vide'
+      flash.alert = 'Oups, il y a eu une erreur'
     else
       @order = Order.find(params[:id])
     end
@@ -45,6 +45,7 @@ class OrdersController < ApplicationController
 
   def pay
     @order = Order.find(params[:id])
+    @order.update(order_params)
     @order.update(updated_at: Time.current)
     # on applique les frais de livraison
     if @order.delivery_preference == 'Livraison'

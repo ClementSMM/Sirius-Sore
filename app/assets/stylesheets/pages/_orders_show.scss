@@ -20,9 +20,9 @@
 
 
 /* PANIER */
-
 .main-div-panier {
-  padding-left: 15vh;
+  padding-top: 32px;
+  margin: 50px;
 }
 
 .title-panier {
@@ -33,37 +33,25 @@
   padding-top: 50px;
 }
 
-.btn-payer-panier {
-  background-color: black;
-  color: gold;
-  border: solid 1px gold;
-  height: 40px;
-  width: 100px;
-}
 
 .delivery-panier{
   margin-top: 50px;
-  width: 50vh;
-  max-width: 300px ;
-
-  .explanation-delivery{
-    margin: 20px 0;
-    color: grey
-  }
+  width: 50vw;
+  max-width: 500px ;
+}
+.explanation-delivery{
+  margin: 20px 0;
+  color: grey
 }
 
 
 @media (max-width: 600px) {
 
   .main-div-panier {
-    padding-left: 2vh;
+    margin: 20px;
   }
 
-  .total-panier {
-    margin-left: 15px;
-  }
-
-  .btn-payer-panier-position{
-    margin-left: 15px;
+  .delivery-panier{
+    width: 100%
   }
 }

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-  post '/orders/:id/pay', to: 'orders#pay', as: :order_pay
+  put '/orders/:id/pay', to: 'orders#pay', as: :order_pay
 
   resources :galleries do
     member do
