@@ -5,10 +5,7 @@
 
   <% if  @order.order_items.length == 0 %>
     <div class="main-div-panier-vide">
-      <div class="panier-vide">
-        <h1>Votre panier est vide</h1>
-      </div>
-
+        <h1 class="panier-vide" >Votre panier est vide</h1>
       <div class="link-empty-panier">
         <%= link_to "Commencez votre shopping", products_path  %>
       </div>
@@ -35,9 +32,7 @@
       <% @order.order_items.each do |item| %>
       <li>
         <div class="main-card-panier">
-          <div class="img-card-panier">
-            <%= cl_image_tag item.product.images.first.key, crop: :fill%>
-          </div>
+          <div class="img-card-panier"> <%= cl_image_tag item.product.images.first.key, crop: :fill%> </div>
           <div class="description-card-panier">
             <div class="description-card-panier-box1">
               <%= link_to product_path(item.product), class: "" do %>
@@ -45,6 +40,7 @@
               <% end %>
               <div class="display-mobile"> <%= item.product.small_description %> </div>
               <div class="description-card-panier-box1-btn-qty">
+
                 <%# La commande est en cours %>
                 <% if @order.status == "En cours" %>
                   <div class="quantity-card-panier"> <p>Quantité:</p> </div>
@@ -70,44 +66,35 @@
       <% end %>
     </ul>
 
-      <%# La commande est en cours : choix du mode de livraison%>
+  <%# La commande est en cours - on peut choisir la livraison puis payer %>
 
-      <div class = 'delivery-panier'>
-        <% if @order.status == "En cours" %>
-
-          <h5>Choisir le mode de livraison</h5>
-          <%= simple_form_for (@order), html: {class: 'form-sirius form-product'} do |f| %>
-            <%= f.input :delivery_preference , label: false, collection: ["Livraison", "Click & Collect"], include_blank: false%>
-            <%= f.submit "valider le mode de livraison", html: {class: 'btn-sirius-thick'}%>
-          <% end %>
-          <div class="explanation-delivery">
-            <p>Pour la <strong>livraison</strong> à domicile, des frais de port de 10€ s'ajoutent à votre commande.</p>
-            <p><strong>Click & collect</strong> à récupérer au salon </br> Rue de Visé 654 </br> 4020 Wandre (Belgique)</p>
-          </div>
-        <% else %>
-              <h3>Mode de livraison - <%= @order.delivery_preference %></h3>
-        <% end %>
-      </div>
-
-
-      <div class="total-panier">
-        <h4>Total de la commande: <%= @order.total %>€</h4>
-        <% if @order.delivery_preference == "Livraison" %>
-          <small>Les frais de livraison seront ajoutés à la prochaine étape</small>
-        <% end %>
-      </div>
-
-      <%# La commande est en cours %>
-      <% if @order.status == "En cours" %>
-        <div class="btn-payer-panier-position">
-          <%= form_tag order_pay_path(@order) do %>
-          <%= hidden_field_tag 'order_id', @order.id %>
-          <%= submit_tag 'Payer', class: 'btn-sirius-thick cta-strong' %>
-          <% end %>
+  <div class="delivery-panier">
+  
+    <% if @order.status == "En cours" %>
+      <%= simple_form_for (@order), html: {class: 'form-sirius'}, url: order_pay_path(@order), method: :put do |f| %>
+        <h4>Choisir le mode de livraison</h4>
+        <%= f.input :delivery_preference , label: false, collection: ["Livraison", "Click & Collect"], include_blank: false%> 
+        <div class="explanation-delivery">
+          <p>Pour la <strong>livraison</strong> à domicile, des frais de port de 10€ s'ajoutent à votre commande.</p>
+          <p>Le <strong>Click & collect</strong> est à récupérer au salon de toilettage </br> Rue de Visé 654 </br> 4020 Wandre (Belgique)</p>
         </div>
 
+        <div class="total-panier">
+          <h4>Total de la commande: <%= @order.total %>€</h4>
+          <% if @order.delivery_preference == "Livraison" %>
+            <small>Les éventuels frais de port seront ajoutés à la prochaine étape</small>
+          <% end %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "valider le mode de livraison et payer", class: 'btn-sirius-thick cta-strong'%>
+        </div>
       <% end %>
-  </div>
 
-  <% end %>
+    <%# La commande est en terminée - on peut voir le mode de livraison %>
+    <% else %>
+      <h3>Mode de livraison - <%= @order.delivery_preference %></h3>
+    <% end %>
+  
+  </div>
+<% end %>
 

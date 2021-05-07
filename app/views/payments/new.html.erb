@@ -5,14 +5,16 @@
   <div class = "order-summary">
     <div class="order-summary-user-info">
         <p><%= @order.user.email %></p>
-        <div> <%= @order.user.post_code %> </div>
-        <div> <%= @order.user.city %> </div>
+
+        <div> <%= @order.user.first_name %> <%= @order.user.last_name %> </div>
+        <div> <%= @order.user.post_code %> <%= @order.user.city %> </div>
         <div> <%= @order.user.address_1 %> </div>
         <div> <%= @order.user.address_2 %> </div>
-        <div>Numéro de téléphone : <%= @order.user.phone_number%></p>
+        <div> <%= @order.user.country %> </div>
+        <p>Téléphone : <%= @order.user.phone_number%></p>
         <p>Mode de retrait : <%= @order.delivery_preference %></p>
-        <p class= 'order-summary-info'>Si vos informations sont incomplètes ou erronées, </br>merci de les corriger   <%= link_to "ici", edit_user_registration_path, class: "" %>
- avant de finaliser le payement</p>
+        <p class= 'order-summary-info'>Si vos informations sont incomplètes ou erronées, 
+          </br>merci de les corriger   <%= link_to "ici", edit_user_registration_path, class: "" %> avant de finaliser le payement</p>
     </div>
     <% @order.order_items.each do |item| %>
       <p><%= item.product.name %> (<%= item.size %>)<span> - <%= item.quantity %> pièce(s)</p>
@@ -23,11 +25,6 @@
 
   <button id="pay" class="btn-sirius-thick">Valider et accéder au payement</button>
   <p class = 'order-summary-info'>Vous allez être redirigés sur une page sécurisée </br>afin de finaliser le payement</p>
-
-
-
-<% console %>
-
 
 
 
