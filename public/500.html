@@ -31,6 +31,17 @@
     line-height: 1.5em;
   }
 
+
+
+  .links{
+    display:flex;
+    flex-direction: column;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
@@ -44,8 +55,11 @@
   <div class="dialog">
     <div>
       <h1>Nous sommes désolés, il y a eu un problème </h1>
-      <a href="/">Revenir à l'accueil</a>
-      <img src="https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png" alt="Logo Maison Sirius">
+      <div class="links">
+
+        <a href="/">Revenir à l'accueil</a>
+        <img src="https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png" alt="Logo Maison Sirius">
+      </div>
     </div>
   </div>
 </body>

@@ -20,7 +20,7 @@
 
   .rails-default-error-page div.dialog > div {
 
-    background-color: white;
+    background-color: #121212;
     padding: 7px 12% 0;
   }
 
@@ -30,6 +30,16 @@
     line-height: 1.5em;
   }
 
+  .links{
+    display:flex;
+    flex-direction: column;
+  }
+
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
@@ -44,8 +54,11 @@
     <div>
       <h1>La page que vous cherchez n'existe pas ... </h1>
       <p>Vous avez peut-être fait une erreur, ou bien la page a été déplacée.</p>
-      <a href="/">Revenir à l'accueil</a>
-      <img src="https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png" alt="Logo Maison Sirius">
+      <div class="links">
+        <a href="/">Revenir à l'accueil</a>
+        <img src="https://res.cloudinary.com/maison-sirius/image/upload/v1619703993/Base%20seeds/logo_petit_lwysur.png" alt="Logo Maison Sirius">
+
+      </div>
     </div>
   </div>
 </body>
