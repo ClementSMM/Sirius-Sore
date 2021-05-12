@@ -92,9 +92,7 @@
 
       <div class="total-panier">
         <h4>Total de la commande: <%= @order.total %>€</h4>
-        <% if @order.delivery_preference == "Livraison" %>
           <small>Les frais de livraison seront ajoutés à la prochaine étape</small>
-        <% end %>
       </div>
 
       <%# La commande est en cours %>
