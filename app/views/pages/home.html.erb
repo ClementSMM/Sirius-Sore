@@ -82,6 +82,16 @@
     </div>
   </section>
 
+  <section class =  'carousel-home'>
+
+    <div class="carouselContainer carouselHomePage">
+      <% @home_pictures.images.each do |image| %>
+      <%= cl_image_tag image.key, class: 'carouselImgs carouselHome' %>
+      <% end %>
+    </div>
+  
+  </section>
+
 
 
 

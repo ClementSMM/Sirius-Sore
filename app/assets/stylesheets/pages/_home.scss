@@ -85,6 +85,17 @@ header{
       }
     }
   }
+  .carousel-home{
+    display:flex;
+    justify-content: center;
+    .carouselHomePage{
+      height:80vh;
+      width: 100vw ;
+      img{
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 
@@ -98,7 +109,14 @@ header{
       grid-template-rows: 1fr 1fr 1fr 1fr;
 
     }
-}
+  }
+  .carousel-home{
+  
+    .carouselHomePage{
+      height:50vh;
+      width: 100vw ;
+    }
+  }
 }
 
 
@@ -126,6 +144,13 @@ header{
     }
     .facilities{
       display: block;
+    }
+    .carousel-home{
+  
+      .carouselHomePage{
+        height:30vh;
+        width: 100vw ;
+      }
     }
   }
 

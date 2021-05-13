@@ -286,6 +286,10 @@ puts "-------------------------------"
 puts "#{Stock.count} stock created (expected: 13)"
 puts "-------------------------------"
 
+puts "-------------------------------"
+puts "creating galleries"
+puts "-------------------------------"
+
 
 gallery_1 = Gallery.create!( category: 'Bannière')
 gallery_1_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619543984/Base%20seeds/Capture_d_e%CC%81cran_2021-04-27_a%CC%80_18.57.06_x9ybgc.png')
@@ -366,6 +370,7 @@ gallery_13_img2 = URI.open('https://res.cloudinary.com/maison-sirius/image/uploa
 gallery_13.images.attach(io:gallery_13_img2, filename: 'image_banner.jpg', content_type: 'images/jpg')
 
 gallery_13.save
+puts "."
 
 gallery_14 = Gallery.create!( category: 'about')
 gallery_14_img1 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773542/Base%20seeds/JB7B2845_egno9q.jpg')
@@ -378,6 +383,18 @@ gallery_14.images.attach(io:gallery_14_img3, filename: 'image_banner.jpg', conte
 gallery_14.images.attach(io:gallery_14_img4, filename: 'image_banner.jpg', content_type: 'images/jpg')
 
 gallery_14.save
+puts "."
+
+gallery_15 = Gallery.create!( category: 'homepage')
+gallery_15_img1 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773542/Base%20seeds/JB7B2845_egno9q.jpg')
+gallery_15_img2 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773539/Base%20seeds/JB7B2395-2NON_agfzyu.jpg')
+gallery_15_img3 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773548/Base%20seeds/119709737_473049203669465_8535558611021112864_n_kdo8zo.jpg')
+gallery_15_img4 = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773544/Base%20seeds/180219641_2955578414718644_4206740040203712725_n_b5fprd.jpg')
+gallery_15.images.attach(io:gallery_15_img1, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_15.images.attach(io:gallery_15_img2, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_15.images.attach(io:gallery_15_img3, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_15.images.attach(io:gallery_15_img4, filename: 'image_banner.jpg', content_type: 'images/jpg')
+gallery_15.save
 
 gallery_16 = Gallery.create!( category: 'salon_presentation')
 gallery_16_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773548/Base%20seeds/119709737_473049203669465_8535558611021112864_n_kdo8zo.jpg')
@@ -398,5 +415,5 @@ gallery_18.images.attach(io:gallery_18_img, filename: 'image_banner.jpg', conten
 gallery_18.save
 
 puts "-------------------------------"
-puts "#{Gallery.count} galleries created (expected: 1)"
+puts "#{Gallery.count} galleries created (expected: 15)"
 puts "-------------------------------"

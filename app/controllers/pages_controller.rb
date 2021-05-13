@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def home
     @gallery_banner = Gallery.find_by(category: "Bannière")
     @gallery_logo = Gallery.find_by(category: "logo_grand").images.first.key
+    @home_pictures = Gallery.find_by(category: "homepage")
     @products_new = find_new_products
     @discover_cat = find_discover
   end
