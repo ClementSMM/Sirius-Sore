@@ -27,6 +27,7 @@ import { dynamicPrice } from './components/dynamicPrice'
 import { toggleBoutique } from './components/toggleBoutique'
 import { toggleMobileNavbar } from './components/toggleMobileNavbar'
 import { carousel } from './components/carousel'
+import { carouselHome } from './components/carouselHome'
 import { navHomePage } from './components/navbar'
 
 document.addEventListener('turbolinks:load', () => {
@@ -37,5 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   toggleMobileNavbar();
   carousel('carouselProduit');
   carousel('carouselSalonGallery');
+  carouselHome('carouselHome');
   navHomePage();
 });
