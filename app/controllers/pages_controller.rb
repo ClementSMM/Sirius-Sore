@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :about, :contact, :salon ]
-  helper_method :find_url #a la base pour afficher des categories au hasard sur la homepage. Finalement on les met toutes ! 
+  helper_method :find_url #a la base pour afficher des categories au hasard sur la homepage. Finalement on les met toutes !
 
   def home
     @gallery_banner = Gallery.find_by(category: "Bannière")
@@ -26,6 +26,11 @@ class PagesController < ApplicationController
   def salon
     @gallery_banner = Gallery.find_by(category: "Bannière")
     @gallery_salon = Gallery.find_by(category: 'salon')
+    @gallery_salon_presentation = Gallery.find_by(category: 'salon_presentation').images.first.key
+    @gallery_salon_services = Gallery.find_by(category: 'salon_services').images.first.key
+    @gallery_salon_tarifs = Gallery.find_by(category: 'salon_tarifs').images.first.key
+
+
   end
 
 
