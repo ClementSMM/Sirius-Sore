@@ -5,7 +5,7 @@
     <%= link_to root_path, class: '' do %>
       <%= cl_image_tag $logokey, height: 100, width:100, class: 'desktop' %>
     <% end %>
-    <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>  
+    <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>
   </div>
   <nav class = 'nav-links desktop'>
       <%= link_to "Accueil", root_path, class: "hover" %>
@@ -75,9 +75,10 @@
 
         <div class = "separation-bar"></div>
 
+        <p> <%= link_to "Accueil", root_path %> </p>
         <p> <%= link_to 'Nouveautés', category_path(Category.find_by(name: "Nouveautés")) %></p>
         <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
-        
+
         <div class = "separation-bar"></div>
 
         <p><%= link_to 'Cosmétiques', cosmetiques_path %>  </p>
@@ -98,14 +99,14 @@
 
     <div class= nav-login-mobile>
     <% if user_signed_in? %>
-        <p><i class="far fa-user"></i> Bonjour <%= current_user.first_name %></p> 
+        <p><i class="far fa-user"></i> Bonjour <%= current_user.first_name %></p>
         <% if current_user.admin? %>
           <p><%= link_to "Dashboard", dashboard_path, class: "" %></p>
 
         <% end %>
         <p><%= link_to "Voir mon compte", orders_path, class: "" %></p>
         <p> <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, class:"" %></p>
-              
+
         <% else %>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: "nav-link" do %>
@@ -115,15 +116,15 @@
         <% end %>
     </div>
 
-    
+
 
   </div>
 
   <%# DROPDOWN DE LA BOUTIQUE DESKTOP%>
   <div class = 'modal-background'></div>
   <div id= 'dropdown-boutique'>
-    <div id = "col-boutique-1" class= "col-boutique"> 
-    
+    <div id = "col-boutique-1" class= "col-boutique">
+
         <p> <%= link_to 'Nouveautés', category_path(Category.find_by(name: "Nouveautés")) %></p>
         <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
         <p><%= link_to 'Dernières pièces', category_path(Category.find_by(name: "Dernières pièces")) %></p>
@@ -131,9 +132,9 @@
         <%= cl_image_tag $logokey, height: 120, width:120, class: 'dropdown-logo' %>
 
     </div>
-    
 
-    <div id = "col-boutique-2" class= "col-boutique"> 
+
+    <div id = "col-boutique-2" class= "col-boutique">
       <div>
         <h5><%= link_to 'COSMETIQUES', cosmetiques_path %>  </h5>
         <p> <%= link_to 'Shampoings', category_path(Category.find_by(name: "Shampoings")) %></p>
@@ -152,7 +153,7 @@
         </div>
     </div>
 
-    <div id = "col-boutique-3" class= "col-boutique"> 
+    <div id = "col-boutique-3" class= "col-boutique">
       <div>
         <h5><%= link_to 'ACCESSOIRES', accessoires_path %>  </h5>
 
@@ -173,7 +174,7 @@
         </div>
     </div>
 
-    <div id = "col-boutique-4" class= "col-boutique"> 
+    <div id = "col-boutique-4" class= "col-boutique">
       <div>
         <h5><%= link_to 'VETEMENTS', vetements_path %>  </h5>
 
@@ -191,7 +192,7 @@
         </div>
     </div>
 
-    <div id = "col-boutique-5" class= "col-boutique"> 
+    <div id = "col-boutique-5" class= "col-boutique">
       <div>
         <h5><%= link_to 'GAMELLES', gamelles_path %>  </h5>
           <p> <%= link_to 'Gamelles Sirius', category_path(Category.find_by(name: "Gamelles Sirius")) %></p>
@@ -227,7 +228,7 @@
         <%= link_to "Visiter la boutique", products_path, class: "hover" %>
         <%= link_to order_path(session[:order_id]), class: "nav-link nav-cart" do %>
           <i class="fas fa-shopping-bag"></i> Panier
-        <% end %>   
+        <% end %>
       </div>
     </div>
 </div>

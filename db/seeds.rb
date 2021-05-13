@@ -381,6 +381,7 @@ gallery_14.images.attach(io:gallery_14_img1, filename: 'image_banner.jpg', conte
 gallery_14.images.attach(io:gallery_14_img2, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_14.images.attach(io:gallery_14_img3, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_14.images.attach(io:gallery_14_img4, filename: 'image_banner.jpg', content_type: 'images/jpg')
+
 gallery_14.save
 puts "."
 
@@ -394,6 +395,24 @@ gallery_15.images.attach(io:gallery_15_img2, filename: 'image_banner.jpg', conte
 gallery_15.images.attach(io:gallery_15_img3, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_15.images.attach(io:gallery_15_img4, filename: 'image_banner.jpg', content_type: 'images/jpg')
 gallery_15.save
+
+gallery_16 = Gallery.create!( category: 'salon_presentation')
+gallery_16_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773548/Base%20seeds/119709737_473049203669465_8535558611021112864_n_kdo8zo.jpg')
+gallery_16.images.attach(io:gallery_16_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+
+gallery_16.save
+
+gallery_17 = Gallery.create!( category: 'salon_services')
+gallery_17_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/doudou_fkjxjg.jpg')
+gallery_17.images.attach(io:gallery_17_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+
+gallery_17.save
+
+gallery_18 = Gallery.create!( category: 'salon_tarifs')
+gallery_18_img = URI.open('https://res.cloudinary.com/maison-sirius/image/upload/v1619773534/Base%20seeds/tarif_2021_fln6nv.jpg')
+gallery_18.images.attach(io:gallery_18_img, filename: 'image_banner.jpg', content_type: 'images/jpg')
+
+gallery_18.save
 
 puts "-------------------------------"
 puts "#{Gallery.count} galleries created (expected: 15)"

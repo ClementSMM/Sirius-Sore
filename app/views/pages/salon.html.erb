@@ -30,7 +30,7 @@
         Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de
       texte, comme Aldus PageMaker.</p>
     </div>
-      <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619773548/Base%20seeds/119709737_473049203669465_8535558611021112864_n_kdo8zo.jpg", class: "img-salon-box2" %>
+      <%= cl_image_tag @gallery_salon_presentation, class: "img-salon-box2"  %>
   </div>
 
   <div class="salon-box3">
@@ -38,7 +38,9 @@
       <div class="text-header-salon-box3">
         <h2>SERVICES PROPOSES</h2>
       </div>
-        <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1617974442/Base%20seeds/doudou_fkjxjg.jpg", class: "img-salon-box3"%>
+
+
+        <%= cl_image_tag @gallery_salon_services, class: "img-salon-box3" %>
    </div>
     <div class="salon-box3-right-side">
       <div class="salon-box3-right-side-left">
@@ -81,7 +83,7 @@
       <h2>TARIFS</h2>
     </div>
     <div class="salon-box5-container">
-      <%= cl_image_tag "https://res.cloudinary.com/maison-sirius/image/upload/v1619773534/Base%20seeds/tarif_2021_fln6nv.jpg", class: "img-salon-box5" %>
+      <%= cl_image_tag @gallery_salon_tarifs, class: "img-salon-box5" %>
     </div>
   </div>
 

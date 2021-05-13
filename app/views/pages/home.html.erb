@@ -8,25 +8,25 @@
 
 
   <section class = "home-nouveautes">
-  
+
     <h3>Nouveautés</h3>
 
     <div class="home-nouveautes-produits">
       <% @products_new.sample(4).each do |product|%>
-        <div class="product-index-card">
-              <div class="card-product-index-img">
-              <%= link_to product_path(product) do%>
-                <%= cl_image_tag product.images.first.key%>
-              <% end %>
-                <%= link_to product_path(product), class: '' do %>
-                  <div class = 'cta-home-nouveautes'><i class="fas fa-shopping-bag"></i></div>
-                <% end %>
-              </div>
-              <div class="text-product-index-card">
-                <p > <%= link_to product.name, product_path(product)%> </p>
-                <p >A partir de <%= product.find_first_price %>€</p>
-              </div>
-          </div> 
+      <div class="product-index-card">
+        <div class="card-product-index-img">
+          <%= link_to product_path(product) do%>
+          <%= cl_image_tag product.images.first.key%>
+          <% end %>
+          <%= link_to product_path(product), class: '' do %>
+          <div class = 'cta-home-nouveautes'><i class="fas fa-shopping-bag"></i></div>
+          <% end %>
+        </div>
+        <div class="text-product-index-card">
+          <p > <%= link_to product.name, product_path(product)%> </p>
+          <p >A partir de <%= product.find_first_price %>€</p>
+        </div>
+      </div>
       <% end %>
     </div>
   </section>
@@ -50,9 +50,9 @@
       </div>
 
 
-  
+
   </section>
-  
+
   <%= link_to 'Découvrir tous nos produits', products_path, class: 'btn-sirius-thick cta-strong' %>
 
   <section class="facilities">
@@ -75,6 +75,11 @@
       <p>Nous livrons dans toute la Belgique</p>
     </div>
 
+    <div class = 'facility-pay'>
+      <i class="fas fa-undo-alt"></i>
+      <h5>RETOUR</h5>
+      <p>Retour possible dans les 14 jours</p>
+    </div>
   </section>
 
   <section class =  'carousel-home'>
@@ -92,4 +97,4 @@
 
 
 
-</div>  
+</div>
