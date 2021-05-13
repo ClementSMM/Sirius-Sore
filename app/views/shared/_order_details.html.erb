@@ -53,6 +53,7 @@
                 <% end %>
               </div>
             </div>
+          </div>
             <div class="description-card-panier-box3">
               <p>Prix: <%= item.total %>€</p>
                   <%# La commande est en cours %>
@@ -60,7 +61,6 @@
                   <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
               <% end %>
             </div>
-          </div>
         </div>
       </li>
       <% end %>
@@ -83,7 +83,7 @@
           <h4>Total de la commande: <%= @order.total %>€</h4>
             <small>Les éventuels frais de port seront ajoutés à la prochaine étape</small>
         </div>
-        <div class="form-actions">
+        <div class="text-center form-actions">
           <%= f.submit "valider le mode de livraison et payer", class: 'btn-sirius-thick cta-strong'%>
         </div>
       <% end %>

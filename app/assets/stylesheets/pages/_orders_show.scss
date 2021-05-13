@@ -23,7 +23,9 @@
 .main-div-panier {
   padding-top: 32px;
   margin: 50px;
-}
+  display:flex;
+  flex-direction: column;
+align-items: center;}
 
 .title-panier {
   padding-bottom: 25px;
