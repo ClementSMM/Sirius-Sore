@@ -53,6 +53,7 @@
                 <% end %>
               </div>
             </div>
+          </div>
             <div class="description-card-panier-box3">
               <p>Prix: <%= item.total %>€</p>
                   <%# La commande est en cours %>
@@ -60,7 +61,6 @@
                   <%= button_to 'supprimer' , order_item_path(item), method: :delete, data: { confirm: "Vous êtes sur le point de supprimer cet article de votre panier. Voulez-vous continuer ?" }, class: 'description-card-panier-box3-btn-supp'%>
               <% end %>
             </div>
-          </div>
         </div>
       </li>
       <% end %>
@@ -74,6 +74,7 @@
       <%= simple_form_for (@order), html: {class: 'form-sirius'}, url: order_pay_path(@order), method: :put do |f| %>
         <h4>Choisir le mode de livraison</h4>
         <%= f.input :delivery_preference , label: false, collection: [ "Livraison", "Click & Collect"], include_blank: false%>
+
         <div class="explanation-delivery">
           <p>Pour la <strong>livraison</strong> à domicile, des frais de port de 10€ s'ajoutent à votre commande.</p>
           <p>Le <strong>Click & collect</strong> est à récupérer au salon de toilettage </br> Rue de Visé 654 </br> 4020 Wandre (Belgique)</p>
@@ -81,11 +82,9 @@
 
         <div class="total-panier">
           <h4>Total de la commande: <%= @order.total %>€</h4>
-          <% if @order.delivery_preference == "Livraison" %>
             <small>Les éventuels frais de port seront ajoutés à la prochaine étape</small>
-          <% end %>
         </div>
-        <div class="form-actions">
+        <div class="text-center form-actions">
           <%= f.submit "valider le mode de livraison et payer", class: 'btn-sirius-thick cta-strong'%>
         </div>
       <% end %>

@@ -22,6 +22,8 @@ module SiriusStore
     # in config/environments, which are processed later.
     config.hosts << "192f0afeb9e1.ngrok.io"
     config.hosts << "sirius-online-store.herokuapp.com"
+    config.hosts << "maisonsirius.be"
+
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end

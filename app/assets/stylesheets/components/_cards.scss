@@ -6,7 +6,8 @@
   padding-bottom: 25px;
   padding-top: 25px;
   border-bottom: solid 1px $primary-yellow;
-  width: 75vh;
+  width: 100vh;
+  justify-content: space-between;
 }
 
 .img-card-panier {
@@ -52,23 +53,25 @@
     }
   }
 
-  .description-card-panier-box3 {
-    /*position: relative;*/
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .description-card-panier-box3-btn-supp {
-      /*position: absolute;*/
-      background-color: black;
-      color: $primary-yellow;
-      border: solid 1px $primary-yellow;
-    }
+}
+.description-card-panier-box3 {
+  /*position: relative;*/
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .description-card-panier-box3-btn-supp {
+    /*position: absolute;*/
+    background-color: black;
+    color: $primary-yellow;
+    border: solid 1px $primary-yellow;
   }
 }
 
 .total-panier {
   padding-top: 50px;
+  text-align: center;
 }
 
 
