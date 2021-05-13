@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_094808) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "status", default: "En cours"
-    t.string "delivery_preference", default: "Click & Collect"
+    t.string "delivery_preference", default: "Livraison"
     t.string "checkout_session_id"
     t.integer "amount_cents", default: 0, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
