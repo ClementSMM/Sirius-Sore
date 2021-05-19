@@ -8,7 +8,7 @@ header{
   align-items:center;
   justify-content:center;
   background-color: $background;
-  
+
   img{
     z-index: 0;
     width:400px;
@@ -30,6 +30,7 @@ header{
 
   .homepage-argument{
     margin: 100px 0;
+    padding: 0 25px 0 25px;
   }
 
   .home-nouveautes{
@@ -111,7 +112,7 @@ header{
     }
   }
   .carousel-home{
-  
+
     .carouselHomePage{
       height:50vh;
       width: 100vw ;
@@ -140,13 +141,13 @@ header{
       display:grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat (8, 1fr);
-  
+
     }
     .facilities{
       display: block;
     }
     .carousel-home{
-  
+
       .carouselHomePage{
         height:30vh;
         width: 100vw ;

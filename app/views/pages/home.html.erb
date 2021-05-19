@@ -1,7 +1,7 @@
 <header>
   <%= cl_image_tag @gallery_logo, class: '' %>
     <h1>MAISON SIRIUS</h1>
-    <h3>La meilleure boutique en ligne</h3>
+    <h3>Pour un style unique</h3>
 </header>
 
 <div class = "home-page">
@@ -32,7 +32,10 @@
   </section>
       <%= link_to 'Découvrir nos nouveautés', products_path, class: 'btn-sirius-thick cta-strong' %>
 
-  <h2 class = 'homepage-argument'>Une boutique haut de gamme pour tous les toutous. </h2>
+  <h4 class = 'homepage-argument'>Maison Sirius est LA boutique où vous trouverez des articles de qualité pour votre chien.
+Nous collaborons avec des artisans / créateurs locaux et européens, minutieusement sélectionnés par nos soins. Soyez attentifs, car certaines pièces sont uniques !
+Plusieurs collections sont limitées, et divers articles personnalisables!
+Vous pouvez également découvrir notre propre marque </br>« Maison Sirius », fabriquée par nos soins. Nous avons mis l’accent sur le recyclable et le naturel. </h4>
 
   <section class="discover">
 
@@ -89,7 +92,7 @@
       <%= cl_image_tag image.key, class: 'carouselImgs carouselHome' %>
       <% end %>
     </div>
-  
+
   </section>
 
 
