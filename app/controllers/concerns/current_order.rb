@@ -5,6 +5,11 @@ module CurrentOrder
  # (il y avait un beug : après un achat payé, le panier reste ici, et on pouvait y ajouter plein d'articles) 
   def set_order
     @order = Order.find_by(id: session[:order_id]) || Order.create
+    
+    if Order.where(id: session[:order_id]).length == 0
+      session[:order_id] = Order.create.id
+    end
+
     if @order.status != "En cours"
       session[:order_id] = Order.create.id
     end
