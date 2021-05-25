@@ -35,17 +35,6 @@ puts "-------------------------------"
 puts "creating users"
 puts "-------------------------------"
 
-louise = User.create!( email: 'lou@email.com', password: 'azerty', admin: true, first_name: 'Louise', last_name: 'Longle', address_1: '22 rue de la Maraude', phone_number: '0667805076', city: 'Lille', post_code: 59000)
-puts "."
-clement = User.create!( email: 'clem@email.com', password: 'azerty', admin: true, first_name: 'Clement', last_name: 'Saad', address_1: '420 rue de la bibi', phone_number: '0606060606', city: 'Bordeaux', post_code: 33000)
-puts "."
-random = User.create!( email: 'lambda@email.com', password: 'azerty', admin: false, first_name: 'Ima', last_name: 'ramdom', address_1: '404 rue de nower', phone_number: '0707070707', city: 'Montcuq', post_code: 46800)
-puts "."
-rick = User.create!( email: 'ricky@email.com', password: 'azerty', admin: false, first_name: 'Ricky', last_name: 'Trailer', address_1: 'In my car', address_2: 'Trailer Park', phone_number: '0707070707', city: 'Toronto', post_code: 46800)
-puts "."
-
-
-
 puts "-------------------------------"
 puts "#{User.count} Users created (expected: 3)"
 puts "-------------------------------"

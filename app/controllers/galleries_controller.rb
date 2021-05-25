@@ -1,11 +1,6 @@
 class GalleriesController < ApplicationController
 
 
-  #NE PAS OUBLIER DE SUPPRIMER
-  def new
-    @gallery = Gallery.new
-  end
-#----------------------------
   def create
     @gallery = Gallery.new(gallery_params)
     @gallery.save
