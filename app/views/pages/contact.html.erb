@@ -25,6 +25,6 @@
       <h3>Dans notre salon : </h3> <p>Rue de visé 654</p> <p>4020 Wandre</p> <p>Belgique</p>
     </div>
 
-    <%= cl_image_tag $logokey%>
+    <%= cl_image_tag Gallery.find_by(category:"logo_petit").images.last.key %>
   </div>
 </div>

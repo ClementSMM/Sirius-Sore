@@ -3,7 +3,7 @@
 
   <div class = 'header-navbar'>
     <%= link_to root_path, class: '' do %>
-      <%= cl_image_tag $logokey, height: 100, width:100, class: 'desktop' %>
+      <%= cl_image_tag Gallery.find_by(category:"logo_petit").images.last.key, height: 100, width:100, class: 'desktop' %>
     <% end %>
     <h1><%= link_to 'Maison Sirius', root_path, class: '' %></h1>
   </div>
@@ -129,7 +129,7 @@
         <p><%= link_to 'Editions limitées', category_path(Category.find_by(name: "Editions Limitées")) %></p>
         <p><%= link_to 'Dernières pièces', category_path(Category.find_by(name: "Dernières pièces")) %></p>
         <p></br><%= link_to 'Voir tous les produits', products_path %></p>
-        <%= cl_image_tag $logokey, height: 120, width:120, class: 'dropdown-logo' %>
+        <%= cl_image_tag Gallery.find_by(category:"logo_petit").images.last.key, height: 120, width:120, class: 'dropdown-logo' %>
 
     </div>
 
